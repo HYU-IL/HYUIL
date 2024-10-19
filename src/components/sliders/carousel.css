@@ -1,0 +1,32 @@
+  .container {
+    margin: 0 auto;
+    padding: 0px 40px 40px 40px;
+    width: 400px;
+  }
+  
+  .slick-slider{
+    transform: scale(1.03, 1.2);
+  }
+
+  .center .slick-center .item {
+      opacity: 1;
+      -ms-transform: scale(1.6, 1.65);
+      transform: scale(1.6, 1.65);
+      margin-bottom: 35px;
+  }
+  .center .item {
+      transition: all .3s ease;
+  }
+
+  .center .slick-center .text{
+    -ms-transform: scale(1.4, 1.26);
+    transform: scale(1.4, 1.26);
+    font-weight: 600;
+    color: #5FBA8E;
+  }
+
+  .center .text{
+    transition: all .3s ease;
+  }
+
+
