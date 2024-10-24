@@ -12,41 +12,41 @@ module.exports = {
         // 다양한 폰트 크기 정의
         title1: [
           "30px",
-          { lineHeight: "40px", letterSpacing: "-2.5%", fontWeight: "bold" },
+          { lineHeight: "40px", letterSpacing: "-0.025em", fontWeight: "bold" },
         ],
         title2: [
           "20px",
-          { lineHeight: "20px", letterSpacing: "-2.5%", fontWeight: "bold" },
+          { lineHeight: "20px", letterSpacing: "-0.025em%", fontWeight: "bold" },
         ],
         subtitle1: [
           "18px",
           {
             lineHeight: "20px",
-            letterSpacing: "-2.5%",
+            letterSpacing: "-0.025em",
             fontWeight: "semibold",
           },
         ],
         subtitle2: [
           "18px",
-          { lineHeight: "24px", letterSpacing: "-2.5%", fontWeight: "medium" },
+          { lineHeight: "24px", letterSpacing: "-0.025em", fontWeight: "medium" },
         ],
         subtitle3: [
           "18px",
-          { lineHeight: "24px", letterSpacing: "-2.5%", fontWeight: "regular" },
+          { lineHeight: "24px", letterSpacing: "-0.025em", fontWeight: "regular" },
         ],
         body1: [
           "14px",
-          { lineHeight: "20px", letterSpacing: "2%", fontWeight: "regular" },
+          { lineHeight: "20px", letterSpacing: "-0.025em", fontWeight: "regular" },
         ],
         body2: [
           "12px",
-          { lineHeight: "14px", letterSpacing: "2%", fontWeight: "regular" },
+          { lineHeight: "14px", letterSpacing: "-0.025em", fontWeight: "regular" },
         ],
         caption1: [
           "14px",
           {
             lineHeight: "16px",
-            letterSpacing: "-2.5%",
+            letterSpacing: "-0.025em",
             fontWeight: "semibold",
           },
         ],
