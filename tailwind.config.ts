@@ -9,7 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Pretendard", "Arial", "sans-serif"], // Pretendard 추가
+        sans: ["Arial", "sans-serif"], // Pretendard 추가
+        Pretendard: ["Pretendard"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
