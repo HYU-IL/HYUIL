@@ -36,6 +36,7 @@ function CenterMode() {
       <div className="absolute bottom-2 right-2 mx-[10px] "> 
         <div className="bg-black w-[30px] h-[24px] opacity-[40%] rounded-[55px] text-white text-[10px] text-center flex items-center justify-center">{activeIndex+1}/6</div>
       </div>
+      <div className="h-[80px]"></div>
     </div>
   );
 }
