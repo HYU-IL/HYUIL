@@ -16,7 +16,11 @@ module.exports = {
         ],
         title2: [
           "20px",
-          { lineHeight: "20px", letterSpacing: "-0.025em%", fontWeight: "bold" },
+          {
+            lineHeight: "20px",
+            letterSpacing: "-0.025em%",
+            fontWeight: "bold",
+          },
         ],
         subtitle1: [
           "18px",
@@ -28,19 +32,35 @@ module.exports = {
         ],
         subtitle2: [
           "18px",
-          { lineHeight: "24px", letterSpacing: "-0.025em", fontWeight: "medium" },
+          {
+            lineHeight: "24px",
+            letterSpacing: "-0.025em",
+            fontWeight: "medium",
+          },
         ],
         subtitle3: [
           "18px",
-          { lineHeight: "24px", letterSpacing: "-0.025em", fontWeight: "regular" },
+          {
+            lineHeight: "24px",
+            letterSpacing: "-0.025em",
+            fontWeight: "regular",
+          },
         ],
         body1: [
           "14px",
-          { lineHeight: "20px", letterSpacing: "-0.025em", fontWeight: "regular" },
+          {
+            lineHeight: "20px",
+            letterSpacing: "-0.025em",
+            fontWeight: "regular",
+          },
         ],
         body2: [
           "12px",
-          { lineHeight: "14px", letterSpacing: "-0.025em", fontWeight: "regular" },
+          {
+            lineHeight: "14px",
+            letterSpacing: "-0.025em",
+            fontWeight: "regular",
+          },
         ],
         caption1: [
           "14px",
