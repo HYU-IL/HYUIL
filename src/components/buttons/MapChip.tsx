@@ -1,5 +1,3 @@
-
-
 interface MapChipProps {
   label?: string;
 }
