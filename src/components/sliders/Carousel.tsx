@@ -28,7 +28,7 @@ function CenterMode() {
           <div className="item h-[100px] mx-[15px] p-[2%] flex flex-col items-center justify-center relative">
             <img className="w-full h-[100px] object-cover rounded-[7px]" src={Hotel.src}/>
           </div>
-          <div className="text w-full text-[#8EDB9B] text-center text-[9px] px-[10px]">강릉 피크닉 앤 글램핑</div>
+          <div className="text w-full text-[#8EDB9B] text-center text-[9px] px-[10px] font-Pretendard">강릉 피크닉 앤 글램핑</div>
         </div>
           
          ))}
@@ -36,7 +36,6 @@ function CenterMode() {
       <div className="absolute bottom-2 right-2 mx-[10px] "> 
         <div className="bg-black w-[30px] h-[24px] opacity-[40%] rounded-[55px] text-white text-[10px] text-center flex items-center justify-center">{activeIndex+1}/6</div>
       </div>
-      <div className="h-[80px]"></div>
     </div>
   );
 }
