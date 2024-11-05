@@ -1,12 +1,16 @@
-"use client";
 import React from "react";
 
+interface SmallListItemProps {
+    label: string;
+    imgurl: string;
+}
 
-export default function SmallListItem(){
+
+export default function SmallListItem({label, imgurl} : SmallListItemProps){
     return (
         <div className="w-[140px]">
-            <img src={"/hotelImage.png"} className="w-[140px] h-[105px] rounded-md" />
-            <div className="w-[140px] font-semibold text-[16px] pt-[8px]">강릉 모던 프라이빗</div>
+            <img src={imgurl} className="w-[140px] h-[105px] rounded-md" />
+            <div className="w-[140px] pt-[8px] text-subtitle2">{label}</div>
         </div>
     );
 }
