@@ -43,7 +43,7 @@ module.exports = {
           {
             lineHeight: "24px",
             letterSpacing: "-0.025em",
-            fontWeight: "regular",
+            fontWeight: "semibold",
           },
         ],
         body1: [
