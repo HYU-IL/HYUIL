@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./banner.css";
 
-function CenterMode() {
+function Banner() {
   const [activeIndex, setActiveIndex] = useState(0);
   const settings = {
     className: "center",
@@ -49,4 +49,4 @@ function CenterMode() {
   );
 }
 
-export default CenterMode;
+export default Banner;
