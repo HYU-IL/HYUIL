@@ -6,6 +6,52 @@ import SmallListItem from "@/components/sliders/SmallListItem";
 import { GrFormNext } from "react-icons/gr";
 
 export default function Main() {
+
+  const MenuOptions = [
+    { icon: "/assets/icons/WorkationIcon.svg", title: "워케이션", description: "공유오피스와 숙박" },
+    { icon: "/assets/icons/CampingIcon.svg", title: "캠핑", description: "녹지와 푸른 숲" },
+    { icon: "/assets/icons/RecreationIcon.svg", title: "휴양", description: "해변과 템플스테이" },
+    { icon: "/assets/icons/MapIcon.svg", title: "지도선택", description: "탐색" },
+    { icon: "/assets/icons/LeisureIcon.svg", title: "레저", description: "스포츠와 놀이" },
+    { icon: "/assets/icons/FestivalIcon.svg", title: "지역축제", description: "강원 페스티벌" },
+];
+
+  const largeListItem = [
+    { label: "쉼으로 가득한 반식욕 공간 강릉 핫플레이스 하우스" },
+    { label: "쉼으로 가득한 반식욕 공간 강릉 핫플레이스 하우스" },
+    { label: "쉼으로 가득한 반식욕 공간 강릉 핫플레이스 하우스" },
+    { label: "쉼으로 가득한 반식욕 공간 강릉 핫플레이스 하우스" },
+    { label: "쉼으로 가득한 반식욕 공간 강릉 핫플레이스 하우스" },
+    { label: "쉼으로 가득한 반식욕 공간 강릉 핫플레이스 하우스" },
+  ];
+
+  const smallListItems = [
+    { label: "강릉 모던 프라이빗", imgurl: "/hotelImage.png" },
+    { label: "강릉 모던 프라이빗", imgurl: "/hotelImage.png" },
+    { label: "강릉 모던 프라이빗", imgurl: "/hotelImage.png" },
+    { label: "강릉 모던 프라이빗", imgurl: "/hotelImage.png" },
+    { label: "강릉 모던 프라이빗", imgurl: "/hotelImage.png" },
+    { label: "강릉 모던 프라이빗", imgurl: "/hotelImage.png" },
+  ];
+
+  const mediumInnerTitleItems = [
+    { label: "강릉시 황리단 민속마을" },
+    { label: "강릉시 황리단 민속마을" },
+    { label: "강릉시 황리단 민속마을" },
+    { label: "강릉시 황리단 민속마을" },
+    { label: "강릉시 황리단 민속마을" },
+    { label: "강릉시 황리단 민속마을" },
+  ];
+
+  const mediumListItems = [
+    { label: "강릉 모던 프라이빗 공간 | 휴휴가", imgurl: "/hotelImage.png", addr: "강릉시 황리단 민속마을" },
+    { label: "강릉 모던 프라이빗 공간 | 휴휴가", imgurl: "/hotelImage.png", addr: "강릉시 황리단 민속마을" },
+    { label: "강릉 모던 프라이빗 공간 | 휴휴가", imgurl: "/hotelImage.png", addr: "강릉시 황리단 민속마을" },
+    { label: "강릉 모던 프라이빗 공간 | 휴휴가", imgurl: "/hotelImage.png", addr: "강릉시 황리단 민속마을" },
+    { label: "강릉 모던 프라이빗 공간 | 휴휴가", imgurl: "/hotelImage.png", addr: "강릉시 황리단 민속마을" },
+    { label: "강릉 모던 프라이빗 공간 | 휴휴가", imgurl: "/hotelImage.png", addr: "강릉시 황리단 민속마을" },
+  ];
+
     return (
       <div className="w-full ">
         <div className="w-full flex justify-between">
@@ -29,42 +75,18 @@ export default function Main() {
         <div className="w-full bg-[#ededed] rounded-tl-[24px] rounded-b-[12px]">
           <div className="text-caption3 mx-[24px] pt-[15px] text-gray-600">ABOUT WORKERS</div>
           <div className="text-subtitle3 text-secondary-core mx-[24px] pb-[10px]">원하는 휴일을 선택하세요</div>
-          <div className="flex justify-center my-[5px]">
-            <div className="w-[96px] h-[96px] bg-white rounded-[16px] border-[0.5px] border-[#dbdbdb] flex flex-col justify-center items-center mx-[6px]  my-[3px]">
-              <img src={"/assets/icons/WorkationIcon.svg"}/>
-              <p className="text-body2 m-[1px]">워케이션</p>
-              <p className="text-caption3 text-gray-500">공유오피스와 숙박</p>
-            </div>
-            <div className="w-[96px] h-[96px] bg-white rounded-[16px] border-[0.5px] border-[#dbdbdb] flex flex-col justify-center items-center mx-[6px]  my-[3px]">
-              <img src={"/assets/icons/CampingIcon.svg"}/>
-              <p className="text-body2 m-[1px]">캠핑</p>
-              <p className="text-caption3 text-gray-500">녹지와 푸른 숲</p>
-            </div>
-            <div className="w-[96px] h-[96px] bg-white rounded-[16px] border-[0.5px] border-[#dbdbdb] flex flex-col justify-center items-center mx-[6px]  my-[3px]">
-              <img src={"/assets/icons/RecreationIcon.svg"}/>
-              <p className="text-body2 m-[1px]">휴양</p>
-              <p className="text-caption3 text-gray-500">해변과 템플스테이</p>
-            </div>
+          <div className="flex justify-center my-[5px] flex-wrap">
+            {MenuOptions.map((option, index) => (
+              <div key={index} className="w-[96px] h-[96px] bg-white rounded-[16px] border-[0.5px] border-[#dbdbdb] flex flex-col justify-center items-center mx-[6px] my-[3px]">
+                <img src={option.icon} />
+                <p className="text-body2 m-[1px]">{option.title}</p>
+                <p className="text-caption3 text-gray-500">{option.description}</p>
+              </div>
+            ))}
           </div>
-          <div className="flex justify-center my-[5px]">
-            <div className="w-[96px] h-[96px] bg-white rounded-[16px] border-[0.5px] border-[#dbdbdb] flex flex-col justify-center items-center mx-[6px]  my-[3px]">
-              <img src={"/assets/icons//MapIcon.svg"}/>
-              <p className="text-body2 m-[1px]">지도선택</p>
-              <p className="text-caption3 text-gray-500">탐색</p>
-            </div>
-            <div className="w-[96px] h-[96px] bg-white rounded-[16px] border-[0.5px] border-[#dbdbdb] flex flex-col justify-center items-center mx-[6px]  my-[3px]">
-              <img src={"/assets/icons/LeisureIcon.svg"}/>
-              <p className="text-body2 m-[1px]">레저</p>
-              <p className="text-caption3 text-gray-500">스포츠와 놀이</p>
-            </div>
-            <div className="w-[96px] h-[96px] bg-white rounded-[16px] border-[0.5px] border-[#dbdbdb] flex flex-col justify-center items-center mx-[6px] my-[3px]">
-              <img src={"/assets/icons/FestivalIcon.svg"}/>
-              <p className="text-body2 m-[1px]">지역축제</p>
-              <p className="text-caption3 text-gray-500">강원 페스티벌</p>
-            </div>
-          </div>
+
           <div className="my-[20px]">
-            <Banner/>
+            <Banner />
           </div>
         </div>
 
@@ -85,12 +107,9 @@ export default function Main() {
             </div>
           </div>
           <div className="whitespace-nowrap overflow-x-auto flex gap-x-[8px] scrollbar-hide">
-            <LargeListItem label={"쉼으로 가득한 반식욕 공간 강릉 핫플레이스 하우스"}/>
-            <LargeListItem label={"쉼으로 가득한 반식욕 공간 강릉 핫플레이스 하우스"}/>
-            <LargeListItem label={"쉼으로 가득한 반식욕 공간 강릉 핫플레이스 하우스"}/>
-            <LargeListItem label={"쉼으로 가득한 반식욕 공간 강릉 핫플레이스 하우스"}/>
-            <LargeListItem label={"쉼으로 가득한 반식욕 공간 강릉 핫플레이스 하우스"}/>
-            <LargeListItem label={"쉼으로 가득한 반식욕 공간 강릉 핫플레이스 하우스"}/>
+          {largeListItem.map((place, index) => (
+              <LargeListItem key={index} label={place.label} />
+            ))}
           </div>
 
           <div className="h-[40px]"/>
@@ -102,12 +121,9 @@ export default function Main() {
             </button>
           </div>
           <div className="whitespace-nowrap overflow-x-auto flex gap-x-[8px] scrollbar-hide">
-            <SmallListItem label={"강릉 모던 프라이빗"} imgurl={"/hotelImage.png"}/>
-            <SmallListItem label={"강릉 모던 프라이빗"} imgurl={"/hotelImage.png"}/>
-            <SmallListItem label={"강릉 모던 프라이빗"} imgurl={"/hotelImage.png"}/>
-            <SmallListItem label={"강릉 모던 프라이빗"} imgurl={"/hotelImage.png"}/>
-            <SmallListItem label={"강릉 모던 프라이빗"} imgurl={"/hotelImage.png"}/>
-            <SmallListItem label={"강릉 모던 프라이빗"} imgurl={"/hotelImage.png"}/>
+          {smallListItems.map((item, index) => (
+              <SmallListItem key={index} label={item.label} imgurl={item.imgurl} />
+            ))}
           </div>
 
           <div className="h-[40px]"/>
@@ -123,12 +139,9 @@ export default function Main() {
           </div>
           <div className="text-gray-700 text-subtitle3 mb-[7px]">#호캉스 #프라이빗 공간</div>
           <div className="whitespace-nowrap overflow-x-auto flex gap-x-[8px] scrollbar-hide">
-            <MediumInnerTitleItem/>
-            <MediumInnerTitleItem/>
-            <MediumInnerTitleItem/>
-            <MediumInnerTitleItem/>
-            <MediumInnerTitleItem/>
-            <MediumInnerTitleItem/>
+          {mediumInnerTitleItems.map((item, index) => (
+              <MediumInnerTitleItem key={index} label={item.label} />
+            ))}
           </div>
 
           <div className="h-[40px]"/>
@@ -140,12 +153,9 @@ export default function Main() {
             </button>
           </div>
           <div className="whitespace-nowrap overflow-x-auto flex gap-x-[8px] scrollbar-hide">
-            <MediumListItem label={"강릉 모던 프라이빗 공간 | 휴휴가"} imgurl={"/hotelImage.png"} addr={"강릉시 황리단 민속마을"}/>
-            <MediumListItem label={"강릉 모던 프라이빗 공간 | 휴휴가"} imgurl={"/hotelImage.png"} addr={"강릉시 황리단 민속마을"}/>
-            <MediumListItem label={"강릉 모던 프라이빗 공간 | 휴휴가"} imgurl={"/hotelImage.png"} addr={"강릉시 황리단 민속마을"}/>
-            <MediumListItem label={"강릉 모던 프라이빗 공간 | 휴휴가"} imgurl={"/hotelImage.png"} addr={"강릉시 황리단 민속마을"}/>
-            <MediumListItem label={"강릉 모던 프라이빗 공간 | 휴휴가"} imgurl={"/hotelImage.png"} addr={"강릉시 황리단 민속마을"}/>
-            <MediumListItem label={"강릉 모던 프라이빗 공간 | 휴휴가"} imgurl={"/hotelImage.png"} addr={"강릉시 황리단 민속마을"}/>
+          {mediumListItems.map((item, index) => (
+              <MediumListItem key={index} label={item.label} imgurl={item.imgurl} addr={item.addr} />
+            ))}
           </div>
         </div>
         <div className="h-[40px]"/>
