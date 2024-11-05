@@ -70,12 +70,12 @@ export default function Main() {
 
         <div>
           <div>
-            <div className="flex">
-              <img src={"/assets/icons/HotPlace.svg"} className="m-[3px]"/>
-              <img src={"/assets/icons/CityView.svg"} className="m-[3px]"/>
+            <div className="flex my-[2px]">
+              <img src={"/assets/icons/HotPlace.svg"} className="mr-[3px]"/>
+              <img src={"/assets/icons/CityView.svg"} className="mx-[3px]"/>
             </div>
-            <div className="flex justify-between items-center mb-[10px]">
-              <div className="m-[5px]">
+            <div className="flex justify-between items-center">
+              <div className="my-[7px]">
                 <span className="text-primary-core text-title2">놀면서 일하자! </span>
                 <span className="text-primary-900 text-title2"> 인기 워케이션</span>
               </div>
@@ -85,35 +85,35 @@ export default function Main() {
             </div>
           </div>
           <div className="whitespace-nowrap overflow-x-auto flex gap-x-[8px] scrollbar-hide">
-            <LargeListItem/>
-            <LargeListItem/>
-            <LargeListItem/>
-            <LargeListItem/>
-            <LargeListItem/>
-            <LargeListItem/>
+            <LargeListItem label={"쉼으로 가득한 반식욕 공간 강릉 핫플레이스 하우스"}/>
+            <LargeListItem label={"쉼으로 가득한 반식욕 공간 강릉 핫플레이스 하우스"}/>
+            <LargeListItem label={"쉼으로 가득한 반식욕 공간 강릉 핫플레이스 하우스"}/>
+            <LargeListItem label={"쉼으로 가득한 반식욕 공간 강릉 핫플레이스 하우스"}/>
+            <LargeListItem label={"쉼으로 가득한 반식욕 공간 강릉 핫플레이스 하우스"}/>
+            <LargeListItem label={"쉼으로 가득한 반식욕 공간 강릉 핫플레이스 하우스"}/>
           </div>
 
           <div className="h-[40px]"/>
 
-          <div className="flex justify-between items-center mb-[10px]">
-            <div className="text-primary-900 text-title2 m-[5px]">강원도의 가을 축제</div>
+          <div className="flex justify-between items-center ">
+            <div className="text-primary-900 text-title2 my-[7px]">강원도의 가을 축제</div>
             <button className="text-caption2 text-gray-800 mx-[10px] flex items-center">
               <span>더보기</span><GrFormNext className="text-[13px]"/>
             </button>
           </div>
           <div className="whitespace-nowrap overflow-x-auto flex gap-x-[8px] scrollbar-hide">
-            <SmallListItem/>
-            <SmallListItem/>
-            <SmallListItem/>
-            <SmallListItem/>
-            <SmallListItem/>
-            <SmallListItem/>
+            <SmallListItem label={"강릉 모던 프라이빗"} imgurl={"/hotelImage.png"}/>
+            <SmallListItem label={"강릉 모던 프라이빗"} imgurl={"/hotelImage.png"}/>
+            <SmallListItem label={"강릉 모던 프라이빗"} imgurl={"/hotelImage.png"}/>
+            <SmallListItem label={"강릉 모던 프라이빗"} imgurl={"/hotelImage.png"}/>
+            <SmallListItem label={"강릉 모던 프라이빗"} imgurl={"/hotelImage.png"}/>
+            <SmallListItem label={"강릉 모던 프라이빗"} imgurl={"/hotelImage.png"}/>
           </div>
 
           <div className="h-[40px]"/>
 
           <div className="flex justify-between items-center">
-            <div className="m-[5px]">
+            <div className="">
               <span className="text-primary-core text-title2">놀면서 일하자! </span>
               <span className="text-primary-900 text-title2"> 인기 워케이션</span>
             </div>
@@ -121,7 +121,7 @@ export default function Main() {
                 <span>더보기</span><GrFormNext className="text-[13px]"/>
               </button>
           </div>
-          <div className="text-gray-700 text-subtitle3 mx-[5px] mb-[10px]">#호캉스 #프라이빗 공간</div>
+          <div className="text-gray-700 text-subtitle3 mb-[7px]">#호캉스 #프라이빗 공간</div>
           <div className="whitespace-nowrap overflow-x-auto flex gap-x-[8px] scrollbar-hide">
             <MediumInnerTitleItem/>
             <MediumInnerTitleItem/>
@@ -134,18 +134,18 @@ export default function Main() {
           <div className="h-[40px]"/>
 
           <div className="flex justify-between items-center mb-[10px]">
-          <div className="text-primary-900 text-title2 m-[5px]">이번주 HOT 인기 레저활동</div>
+          <div className="text-primary-900 text-title2 my-[7px]">이번주 HOT 인기 레저활동</div>
             <button className="text-caption2 text-gray-800 mx-[10px] flex items-center">
               <span>더보기</span><GrFormNext className="text-[13px]"/>
             </button>
           </div>
           <div className="whitespace-nowrap overflow-x-auto flex gap-x-[8px] scrollbar-hide">
-            <MediumListItem/>
-            <MediumListItem/>
-            <MediumListItem/>
-            <MediumListItem/>
-            <MediumListItem/>
-            <MediumListItem/>
+            <MediumListItem label={"강릉 모던 프라이빗 공간 | 휴휴가"} imgurl={"/hotelImage.png"} addr={"강릉시 황리단 민속마을"}/>
+            <MediumListItem label={"강릉 모던 프라이빗 공간 | 휴휴가"} imgurl={"/hotelImage.png"} addr={"강릉시 황리단 민속마을"}/>
+            <MediumListItem label={"강릉 모던 프라이빗 공간 | 휴휴가"} imgurl={"/hotelImage.png"} addr={"강릉시 황리단 민속마을"}/>
+            <MediumListItem label={"강릉 모던 프라이빗 공간 | 휴휴가"} imgurl={"/hotelImage.png"} addr={"강릉시 황리단 민속마을"}/>
+            <MediumListItem label={"강릉 모던 프라이빗 공간 | 휴휴가"} imgurl={"/hotelImage.png"} addr={"강릉시 황리단 민속마을"}/>
+            <MediumListItem label={"강릉 모던 프라이빗 공간 | 휴휴가"} imgurl={"/hotelImage.png"} addr={"강릉시 황리단 민속마을"}/>
           </div>
         </div>
       </div>

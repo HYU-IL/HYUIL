@@ -24,22 +24,22 @@ function Banner() {
     <div className="slider-container h-[133px] relative ">
       <Slider {...settings}>
         <div className="flex flex-col justify-center items-center">
-          <div className="h-[100px] px-[3px] flex flex-col items-center justify-center relative">
+          <div className="h-[100px] px-[2px] flex flex-col items-center justify-center relative">
             <img className="w-full h-[100px] object-cover rounded-[7px]" src={"/assets/images/BannerImage1.svg"}/>
           </div>
         </div>
         <div className="flex flex-col justify-center items-center">
-          <div className="h-[100px] px-[3px] flex flex-col items-center justify-center relative">
+          <div className="h-[100px] px-[2px] flex flex-col items-center justify-center relative">
             <img className="w-full h-[100px] object-cover rounded-[7px]" src={"/assets/images/BannerImage2.svg"}/>
           </div>
         </div>
         <div className="flex flex-col justify-center items-center">
-          <div className="h-[100px] px-[3px] flex flex-col items-center justify-center relative">
+          <div className="h-[100px] px-[2px] flex flex-col items-center justify-center relative">
             <img className="w-full h-[100px] object-cover rounded-[7px]" src={"/assets/images/BannerImage1.svg"}/>
           </div>
         </div>
         <div className="flex flex-col justify-center items-center">
-          <div className="h-[100px] px-[3px] flex flex-col items-center justify-center relative">
+          <div className="h-[100px] px-[2px] flex flex-col items-center justify-center relative">
             <img className="w-full h-[100px] object-cover rounded-[7px]" src={"/assets/images/BannerImage2.svg"}/>
           </div>
         </div>
