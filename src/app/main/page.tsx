@@ -148,6 +148,8 @@ export default function Main() {
             <MediumListItem label={"강릉 모던 프라이빗 공간 | 휴휴가"} imgurl={"/hotelImage.png"} addr={"강릉시 황리단 민속마을"}/>
           </div>
         </div>
+        <div className="h-[40px]"/>
+        <div className="w-full h-[200px] bg-gray-400"/>
       </div>
     );
   }
