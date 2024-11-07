@@ -90,7 +90,7 @@ export default function Main() {
           </div>
         </div>
 
-        <div>
+        <div className="ml-[16px]">
           <div>
             <div className="flex my-[2px]">
               <img src={"/assets/icons/HotPlace.svg"} className="mr-[3px]"/>
