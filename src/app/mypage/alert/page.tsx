@@ -1,12 +1,15 @@
 import { GrPrevious } from "react-icons/gr";
+import CategoryTitle from "@/components/common/CategoryTitle";
 
 
 export default function Alert() {
   return (
     <div className="w-full h-[100vh]">
-        <div className="flex justify-between items-center p-[14px] border-b border-[#ededed] sticky top-0 bg-white">
-            <GrPrevious className="ml-0 w-[20px] h-[20px] text-gray-600"/>
-            <div className="absolute left-1/2 transform -translate-x-1/2 text-primary-core text-title2">알림함</div>
+        <div className="flex items-center p-[14px] border-b border-[#ededed] sticky top-0 bg-white">
+          <GrPrevious className="w-[20px] h-[20px] text-gray-600" />
+          <div className="flex-1 text-center">
+            <CategoryTitle label="알림함" />
+          </div>
         </div>
         <div className="w-[90%] m-auto">
             <div className="w-full my-[30px]">
