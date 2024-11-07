@@ -6,6 +6,7 @@ import SubInfoTypo from "@/components/common/SubInfoTypo";
 import Mountain from "../../../public/assets/images/Mountain.svg";
 import Private from "../../../public/assets/images/Private.svg";
 import MediumCardItem from "@/components/common/MediumCardItem";
+import MediumInnerTitleItem from "@/components/sliders/MediumInnerTitleItem";
 
 export default function CampingPage() {
   return (
@@ -74,7 +75,7 @@ export default function CampingPage() {
       </div>
 
       {/* 인기 캠핑 div */}
-      <div className="flex flex-col w-full h-[400px] px-[16px] pt-4">
+      <div className="flex flex-col w-full h-[400px] px-[16px] pt-8">
         <div className="flex items-center justify-between w-full">
           <div className="text-subtitle3 text-gray-800">
             <span className="text-primary-core">고민 끝! </span>인기 캠핑 모음
@@ -86,8 +87,19 @@ export default function CampingPage() {
         <span className="text-gray-800 text-caption2">
           #인기 캠핑 #낭만적인 워케이션
         </span>
-        <div className="w-full whitespace-nowrap overflow-x-auto flex gap-x-[8px] scrollbar-hide">
-          {/* 추가할 카드 아이템을 여기에 배치 */}
+        <div className="w-full whitespace-nowrap overflow-x-auto flex gap-x-[8px] scrollbar-hide pt-3">
+          <MediumInnerTitleItem label="강릉시-황리단 민속마을" />
+          <MediumInnerTitleItem label="강릉시-황리단 민속마을" />
+          <MediumInnerTitleItem label="강릉시-황리단 민속마을" />
+          <MediumInnerTitleItem label="강릉시-황리단 민속마을" />
+        </div>
+      </div>
+
+      {/* bottom div */}
+      <div className="w-full h-[270px]">
+        <div className="bg-[#d9d9d9] w-full h-[70px]"/>
+        <div className="bg-gray-400 w-full h-[200px] text-title2 text-gray-600 px-[16px] pt-[32px]">
+          Hue il
         </div>
       </div>
     </div>
