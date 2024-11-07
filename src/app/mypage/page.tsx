@@ -1,5 +1,6 @@
 import { GrPrevious } from "react-icons/gr";
 import { GrFormNext } from "react-icons/gr";
+import Image from 'next/image';
 
 export default function MyPage() {
   return (
@@ -11,7 +12,7 @@ export default function MyPage() {
 
         <div className="border-[1px] border-[#dbdbdb]  w-[90%] rounded-[8px] flex flex-col m-auto my-[10px]">
             <div className="flex m-[10px]">
-                <img src={"/assets/icons/CampingIcon.svg"}/>
+                <Image src="/assets/icons/CampingIcon.svg" width={58} height={58} alt="나무아이콘"/>
                 <div className="mx-[10px]">
                     <div className="text-caption3 text-gray-600">ABOUT WROKERS</div>
                     <div>
@@ -22,17 +23,17 @@ export default function MyPage() {
             </div>
             <div className="flex my-[10px] items-center justify-between">
                 <div className="flex flex-col jsutify-center items-center w-[30%]">
-                    <img src={"/assets/icons/heart.svg"}/>
+                    <Image src="/assets/icons/heart.svg" width={24} height={24} alt="찜 아이콘"/>
                     <div className="text-caption2 text-gray-900 my-[5px]">나의 찜</div>
                 </div>
                 <span className="text-[18px] text-center m-[10px] text-[#ededed]">|</span>
                 <div className="flex flex-col jsutify-center items-center w-[35%]">
-                    <img src={"/assets/icons/clock.svg"}/>
+                    <Image src="/assets/icons/clock.svg" width={24} height={24} alt="시계 아이콘콘" />
                     <div className="text-caption2 text-gray-900 my-[5px]">최근 본 상품</div>
                 </div>
                 <span className="text-[18px] text-center m-[10px] text-[#ededed]">|</span>
                 <div className="flex flex-col jsutify-center items-center w-[30%]">
-                    <img src={"/assets/icons/bell.svg"}/>
+                    <Image src="/assets/icons/bell.svg" width={24} height={24} alt="벨 아이콘"/>
                     <div className="text-caption2 text-gray-900 my-[5px]">알림함</div>
                 </div>
             </div>
