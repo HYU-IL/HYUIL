@@ -9,8 +9,8 @@ import MediumCardItem from "@/components/common/MediumCardItem";
 
 export default function CampingPage() {
   return (
-    <div className="w-full h-[800px] flex flex-col items-center justify-center">
-      {/* Top Navigation */}
+    <div className="w-full min-h-screen flex flex-col items-center justify-start">
+      {/* 상단바 */}
       <div className="grid grid-cols-3 w-full px-[16px] py-3 items-center">
         <Link href="" className="flex justify-start">
           <Image src={left} alt="left" />
@@ -20,7 +20,7 @@ export default function CampingPage() {
         </div>
       </div>
 
-      {/* About Camping Section */}
+      {/* 캐러셀 */}
       <div className="w-full h-[298px] px-[16px] pt-3 border-gray-500 border-t">
         <div className="flex flex-col items-start">
           <SubInfoTypo label="ABOUT CAMPING" />
@@ -33,14 +33,16 @@ export default function CampingPage() {
               더보기 &gt;
             </Link>
           </div>
-          <div className="flex items-center justify-center w-full h-[248px]">캐러셀이 들어갑니다</div>
+          <div className="flex items-center justify-center w-full h-[248px]">
+            캐러셀이 들어갑니다
+          </div>
         </div>
       </div>
 
-      {/* Gradient Divider */}
-      <div className="w-full h-[40px] bg-gradient-to-b from-gray-100" />
+      {/* 그라데이션 div */}
+      <div className="w-full h-[40%] bg-gradient-to-b from-gray-100 via-white" />
 
-      {/* Camping List Section */}
+      {/* 캠핑 리스트 div */}
       <div className="flex flex-col w-full h-[46%] px-[16px]">
         <div className="flex flex-row gap-1">
           <Image src={Mountain} alt="mountain" />
@@ -58,7 +60,7 @@ export default function CampingPage() {
           #산 속 캠핑 #낭만적인 캠핑
         </span>
 
-        {/* Card Items Grid */}
+        {/* 캠핑 리스트(4개 고정) */}
         <div className="grid grid-cols-1 w-full gap-y-6 mt-3 place-content-center">
           <div className="w-full flex justify-between items-center">
             <MediumCardItem label="강릉 디프라이빗 캠핑" />
@@ -71,8 +73,8 @@ export default function CampingPage() {
         </div>
       </div>
 
-      {/* Popular Camping Section */}
-      <div className="flex flex-col w-full h-[50%] px-[16px]">
+      {/* 인기 캠핑 div */}
+      <div className="flex flex-col w-full h-[400px] px-[16px] pt-4">
         <div className="flex items-center justify-between w-full">
           <div className="text-subtitle3 text-gray-800">
             <span className="text-primary-core">고민 끝! </span>인기 캠핑 모음
