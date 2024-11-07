@@ -12,7 +12,7 @@ function Banner() {
     dots: true,
     centerMode: true,
     infinite: false,
-    centerPadding: "15px",
+    centerPadding: "16px",
     slidesToShow: 1,
     speed: 500,
     arrows: false,
