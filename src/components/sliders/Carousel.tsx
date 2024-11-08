@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./carousel.css";
 import Hotel from "../../../public/hotelImage.png";
 
-function CenterMode() {
+function Carousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const settings = {
     className: "center",
@@ -40,4 +40,4 @@ function CenterMode() {
   );
 }
 
-export default CenterMode;
+export default Carousel;

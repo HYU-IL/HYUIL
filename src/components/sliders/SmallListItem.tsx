@@ -1,13 +1,18 @@
-"use client";
 import React from "react";
-import Img from "./hotel.png";
+
+interface SmallListItemProps {
+    label: string;
+    imgurl: string;
+}
 
 
-export default function SmallListItem(){
+export default function SmallListItem({label, imgurl} : SmallListItemProps){
     return (
-        <div className="w-[140px] h-[133px] ">
-            <img src={Img.src} className="h-[105px] rounded-md w-full" />
-            <div className="w-full font-semibold text-[16px] pt-[8px]">강릉 모던 프라이빗</div>
+        <div className="w-[140px]">
+            <div className="w-[140px] h-[105px] mb-[8px]">
+              <img src={imgurl} className="w-[140px] h-[105px] rounded-[4px] " />
+            </div>
+            <span className="w-[140px] pt-[8px] text-subtitle2 whitespace-pre-wrap">{label}</span>
         </div>
     );
 }
