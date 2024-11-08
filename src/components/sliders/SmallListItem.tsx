@@ -12,7 +12,7 @@ export default function SmallListItem({label, imgurl} : SmallListItemProps){
             <div className="w-[140px] h-[105px] mb-[8px]">
               <img src={imgurl} className="w-[140px] h-[105px] rounded-[4px] " />
             </div>
-            <span className="w-[140px] pt-[8px] text-subtitle2 whitespace-pre-wrap">{label}</span>
+            <span className="w-[140px] pt-[8px] text-body1 whitespace-pre-wrap">{label}</span>
         </div>
     );
 }
