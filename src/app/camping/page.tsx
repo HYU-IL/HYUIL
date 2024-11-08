@@ -7,6 +7,7 @@ import Mountain from "../../../public/assets/images/Mountain.svg";
 import Private from "../../../public/assets/images/Private.svg";
 import MediumCardItem from "@/components/common/MediumCardItem";
 import MediumInnerTitleItem from "@/components/sliders/MediumInnerTitleItem";
+import Carousel from "@/components/sliders/Carousel";
 
 export default function CampingPage() {
   return (
@@ -35,7 +36,7 @@ export default function CampingPage() {
             </Link>
           </div>
           <div className="flex items-center justify-center w-full h-[248px]">
-            캐러셀이 들어갑니다
+            <Carousel/>
           </div>
         </div>
       </div>
