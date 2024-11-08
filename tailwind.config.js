@@ -31,7 +31,7 @@ module.exports = {
           },
         ],
         subtitle2: [
-          "18px",
+          "16px",
           {
             lineHeight: "24px",
             letterSpacing: "-0.025em",
@@ -39,11 +39,11 @@ module.exports = {
           },
         ],
         subtitle3: [
-          "18px",
+          "16px",
           {
             lineHeight: "24px",
             letterSpacing: "-0.025em",
-            fontWeight: "regular",
+            fontWeight: "semibold",
           },
         ],
         body1: [

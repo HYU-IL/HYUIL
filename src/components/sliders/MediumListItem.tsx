@@ -1,14 +1,25 @@
-"use client";
 import React from "react";
-import Img from "./hotel.png";
 
+interface MediumListItemProps {
+    label: string;
+    imgurl: string;
+    addr: string;
+}
 
-export default function MediumListItem(){
+export default function MediumListItem({label, imgurl, addr} : MediumListItemProps){
     return (
-        <div className="w-[154px] h-[178px] ">
-            <img src={Img.src} className="h-[110px] rounded-[4px] w-full" />
-            <div className="w-full font-semibold text-[16px] pt-[8px]">강릉 모던 프라이빗 <br/>공간 | 휴휴가</div>
-            <div className="w-full f-[16px] text-[12px] text-gray-400 pt-[4px]">강릉시 황리단 민속마을</div>
+        <div className="w-[154px] h-fit">
+            <div className="w-[154px] h-[110px] mb-[8px]">
+                <img src={imgurl} className="w-full h-full rounded-[4px]"/>
+            </div>
+                <div className="flex flex-col">
+                <span className="text-[16px] block leading-[20px] whitespace-pre-wrap mb-[4px]">
+                    {label && label}
+                </span>
+                <span className="h-fit text-[12px] text-[#999999] whitespace-pre-wrap">
+                    {addr && addr}
+                </span>
+            </div>
         </div>
     );
 }
