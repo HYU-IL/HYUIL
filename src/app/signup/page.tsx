@@ -15,12 +15,13 @@ import PEOPLE2 from "../../../public/assets/images/step_3or4_on.svg";
 import PEOPLE3 from "../../../public/assets/images/step_morethan5_on.svg";
 import BYCAR from "../../../public/assets/images/step_car.svg";
 import BYROAD from "../../../public/assets/images/step_road.svg";
+import KAKAO from "../../../public/assets/images/kakaobutton.svg";
 
 export default function SignupPage() {
   const whatStep = useRef(1);
   const [isFinished, setIsFinished] = useState(false);
   return (
-    <div className="flex flex-col w-full pb-[80px]">
+    <div className="flex flex-col w-full">
       <div className="w-full h-[48px] items-center justify-center flex border-b">
         <Image src={LOGO} alt="logo" className="w-[76px]" />
       </div>
@@ -28,12 +29,8 @@ export default function SignupPage() {
       {/* stepper div */}
       <div className="flex flex-col w-full items-center justify-center">
         <div className="flex flex-row w-full h-[3px]">
-          <div
-            className={`w-[${whatStep.current*33}%] bg-primary-core items-start`}
-          />
-          <div
-            className={`w-[${100 - (whatStep.current*33)}%] bg-gray-300 items-start`}
-          />
+          <div className={`w-[${whatStep.current * 33}%] bg-primary-core`} />
+          <div className={`w-[${100 - whatStep.current * 33}%] bg-gray-300`} />
         </div>
         <span className="text-[12px] leading-3 tracking-tight text-gray-700 pt-3 items-center">
           {whatStep.current}/3
@@ -117,7 +114,7 @@ export default function SignupPage() {
       </div>
 
       <button
-        className={`bg-primary-core text-white text-subtitle1 rounded-lg mx-[28px] py-3 ${
+        className={`bg-primary-core text-white text-subtitle1 rounded-lg mx-[28px] py-3 mb-[80px] ${
           isFinished
             ? ``
             : `bg-opacity-80 backdrop-filter backdrop-brightness-125`
@@ -125,6 +122,20 @@ export default function SignupPage() {
       >
         확인
       </button>
+
+      {/* 카카오 로그인 div */}
+      <div className="flex flex-col justify-center items-center w-full h-[100vh] font-Pretendard text-[20px] leading-6 tracking-tight font-semibold text-primary-800">
+        <div className="flex flex-col justify-center items-center w-full h-[70%] mt-4">
+          <Image src={LOGO} alt="logo" />
+          <span className="">일과 휴식을 연결하는</span>
+          <span className="">강릉 워케이션, 휴일</span>
+        </div>
+
+        <div className="flex flex-col w-full h-[30%] items-center gap-2 text-gray-800 text-body2 mt-[150px]">
+          SNS 계정으로 간편 가입하기
+          <Image src={KAKAO} alt="kakao" onClick={() => {}} />
+        </div>
+      </div>
     </div>
   );
 }
