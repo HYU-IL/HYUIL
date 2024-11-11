@@ -18,36 +18,91 @@ import BYROAD from "../../../public/assets/images/step_road.svg";
 import KAKAO from "../../../public/assets/images/kakaobutton.svg";
 
 export default function SignupPage() {
-  const whatStep = useRef(1);
+  const [whatStep, setWhatStep] = useState<number>(1);
+  const whatPercent =
+    whatStep === 1
+      ? 33
+      : whatStep === 2
+      ? 33
+      : whatStep === 3
+      ? 66
+      : whatStep === 4
+      ? 100
+      : 0;
   const step2Ref = useRef<HTMLDivElement>(null);
-  
-  // 스크롤 위치 조절 메소드
-  const scrollCallBack = () => {
-    step2Ref?.current?.scrollIntoView({ behavior: "smooth", block: 'center' });
+  const stepRef = useRef<HTMLDivElement[]>([]);
+  type dataType = {
+    isMountain: boolean;
+    residence: string[];
+    partner_type: string;
+    transportation: string;
   };
+
+  const [data, setData] = useState<dataType>({
+    isMountain: false,
+    residence: [],
+    partner_type: "",
+    transportation: "",
+  });
+  // 스크롤 위치 조절 메소드
+  const scrollCallBack = (targetDiv: number) => {
+    stepRef.current[targetDiv]?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  };
+
+  // step1 버튼 클릭 메소드
+  const onStep1Click = (kind: string) => {
+    setData({ ...data, isMountain: kind === "mountain" ? true : false });
+    scrollCallBack(2);
+  };
+
+  // step2 버튼 클릭 메소드
+  const onStep2Click = (kind: string) => {
+    setData({ ...data, residence: [...data.residence, kind] });
+    console.log(data);
+    data.residence.length > 1 ? scrollCallBack(3) : null;
+    setWhatStep(2);
+  };
+
+
+  // step3 버튼 클릭 메소드
+  const onStep3Click = (kind: string) => {
+    setData({ ...data, partner_type: kind });
+    scrollCallBack(4);
+  };
+
+  // step3 버튼 클릭 메소드
+  const onStep4Click = (kind: string) => {
+    setData({ ...data, transportation: kind });
+    scrollCallBack(5);
+  };
+
   const [step1Selected, setStep1Selcected] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
   return (
-    <div className="flex flex-col w-full scrollbar-hide whitespace-nowrap">
-      <div className="w-full h-[48px] items-center justify-center flex border-b">
-        <Image src={LOGO} alt="logo" className="w-[76px]" />
-      </div>
-
-      {/* stepper div */}
-      <div className="flex flex-col w-full items-center justify-center">
-        <div className="flex flex-row w-full h-[3px]">
-          <div className={`w-[${whatStep.current * 33}%] bg-primary-core`} />
-          <div className={`w-[${100 - whatStep.current * 33}%] bg-gray-300`} />
+    <div className="flex flex-col w-full scrollbar-hide whitespace-nowrap overflow-y-auto">
+      {/* 상단바 div(고정) */}
+      <div className="flex flex-col w-full fixed top-0 left-0">
+        <div className="w-full h-[48px] items-center justify-center flex border-b bg-white">
+          <Image src={LOGO} alt="logo" className="w-[76px]" />
         </div>
-        <span className="text-[12px] leading-3 tracking-tight text-gray-700 pt-3 items-center">
-          {whatStep.current}/3
-        </span>
+        <div className="flex flex-col w-full items-center justify-center">
+          <div className="flex flex-row w-full h-[3px]">
+            <div className={`w-[${whatPercent}%] bg-primary-core`} />
+            <div className={`w-[${100 - whatPercent}%] bg-gray-300`} />
+          </div>
+          <span className="text-[12px] leading-3 tracking-tight text-gray-700 pt-3 items-center">
+            {whatStep}/3
+          </span>
+        </div>
       </div>
 
       {/* step1 div */}
       <div
         id="step1"
-        className="flex flex-col font-Pretendard text-[20px] leading-6 tracking-tight font-semibold text-primary-800 mx-[16px] mt-[50px]"
+        className="flex flex-col font-Pretendard text-[20px] leading-6 tracking-tight font-semibold text-primary-800 mx-[16px] mt-[120px]"
       >
         <span className="ml-3">평소, 가장 가고 싶은</span>
         <span className="ml-3">워케이션 한 곳을 선택해주세요</span>
@@ -56,11 +111,17 @@ export default function SignupPage() {
           선택한 유형을 기반으로 추천해드려요
         </div>
         <div className="flex flex-row justify-center rounded-xl shadow-lg py-[8px] gap-[8px] w-full h-[255px]">
-          <Image src={MOUNTAIN} alt="moutain" onClick={() => scrollCallBack()} />
           <Image
+            id="mountain"
+            src={MOUNTAIN}
+            alt="moutain"
+            onClick={(e) => onStep1Click(e.currentTarget.id)}
+          />
+          <Image
+            id="ocean"
             src={OCEAN}
             alt="ocean"
-            onClick={() => setStep1Selcected(!step1Selected)}
+            onClick={(e) => onStep1Click(e.currentTarget.id)}
           />
         </div>
       </div>
@@ -75,7 +136,11 @@ export default function SignupPage() {
       {/* step2 div */}
       <div
         id="step2"
-        ref={step2Ref}
+        ref={(el: HTMLDivElement | null) => {
+          if (el) {
+            stepRef.current[2] = el;
+          }
+        }}
         className="flex flex-col h-fit font-Pretendard text-[20px] leading-6 tracking-tight font-semibold text-primary-800 mx-[16px] mt-[50px] mb-4"
       >
         <span className="ml-3">평소, 어디서 편하게</span>
@@ -86,12 +151,32 @@ export default function SignupPage() {
         </div>
         <div className="flex flex-col items-center justify-center rounded-xl shadow-lg py-[8px] gap-[8px] w-full h-[472px] border">
           <div className="flex flex-row gap-[8px]">
-            <Image src={CAMPING} alt="camping" />
-            <Image src={RESORT} alt="resort" />
+            <Image
+              id="camping"
+              src={CAMPING}
+              alt="camping"
+              onClick={(e) => onStep2Click(e.currentTarget.id)}
+            />
+            <Image
+              id="resort"
+              src={RESORT}
+              alt="resort"
+              onClick={(e) => onStep2Click(e.currentTarget.id)}
+            />
           </div>
           <div className="flex flex-row gap-[8px]">
-            <Image src={LEISURE} alt="leisure" />
-            <Image src={FESTIVAL} alt="festival" />
+            <Image
+              id="leisure"
+              src={LEISURE}
+              alt="leisure"
+              onClick={(e) => onStep2Click(e.currentTarget.id)}
+            />
+            <Image
+              id="festival"
+              src={FESTIVAL}
+              alt="festival"
+              onClick={(e) => onStep2Click(e.currentTarget.id)}
+            />
           </div>
         </div>
       </div>
@@ -99,6 +184,11 @@ export default function SignupPage() {
       {/* step3 div */}
       <div
         id="step3"
+        ref={(el: HTMLDivElement | null) => {
+          if (el) {
+            stepRef.current[3] = el;
+          }
+        }}
         className="flex flex-col h-fit font-Pretendard text-[20px] leading-6 tracking-tight font-semibold text-primary-800 mx-[16px] mt-[50px] mb-4"
       >
         <span className="ml-3">편한 휴일을 함께</span>
@@ -107,9 +197,24 @@ export default function SignupPage() {
           <Image src={PAPERICON} alt="icon" />몇 명과 떠날지 하나만 선택해주세요
         </div>
         <div className="flex flex-col items-center justify-center w-full">
-          <Image src={PEOPLE1} alt="people" />
-          <Image src={PEOPLE2} alt="people" />
-          <Image src={PEOPLE3} alt="people" />
+          <Image
+            id="alone"
+            src={PEOPLE1}
+            alt="people"
+            onClick={(e) => onStep3Click(e.currentTarget.id)}
+          />
+          <Image
+            id="twoorthree"
+            src={PEOPLE2}
+            alt="people"
+            onClick={(e) => onStep3Click(e.currentTarget.id)}
+          />
+          <Image
+            id="together"
+            src={PEOPLE3}
+            alt="people"
+            onClick={(e) => onStep3Click(e.currentTarget.id)}
+          />
         </div>
       </div>
 
@@ -123,6 +228,11 @@ export default function SignupPage() {
       {/* step4(이동방식) div*/}
       <div
         id="step4"
+        ref={(el: HTMLDivElement | null) => {
+          if (el) {
+            stepRef.current[4] = el;
+          }
+        }}
         className="flex flex-col h-fit font-Pretendard text-[20px] leading-6 tracking-tight font-semibold text-primary-800 mx-[16px] mt-[50px] mb-4"
       >
         <span className="ml-3">차량과 도보 중</span>
@@ -132,8 +242,8 @@ export default function SignupPage() {
           여행 방법에 따라 추천해드려요
         </div>
         <div className="flex flex-col items-center justify-center w-full">
-          <Image src={BYCAR} alt="" />
-          <Image src={BYROAD} alt="" />
+          <Image id="car" src={BYCAR} alt="" onClick={(e) => onStep4Click(e.currentTarget.id)}/>
+          <Image id="road" src={BYROAD} alt="" onClick={(e) => onStep4Click(e.currentTarget.id)}/>
         </div>
       </div>
 
@@ -150,6 +260,11 @@ export default function SignupPage() {
       {/* 카카오 로그인 div */}
       <div
         id="login"
+        ref={(el: HTMLDivElement | null) => {
+          if (el) {
+            stepRef.current[5] = el;
+          }
+        }}
         className="flex flex-col justify-center items-center w-full h-[100vh] font-Pretendard text-[20px] leading-6 tracking-tight font-semibold text-primary-800"
       >
         <div className="flex flex-col justify-center items-center w-full h-[70%] mt-4">
