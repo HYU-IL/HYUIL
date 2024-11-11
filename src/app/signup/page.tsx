@@ -19,9 +19,16 @@ import KAKAO from "../../../public/assets/images/kakaobutton.svg";
 
 export default function SignupPage() {
   const whatStep = useRef(1);
+  const step2Ref = useRef<HTMLDivElement>(null);
+  
+  // 스크롤 위치 조절 메소드
+  const scrollCallBack = () => {
+    step2Ref?.current?.scrollIntoView({ behavior: "smooth", block: 'center' });
+  };
+  const [step1Selected, setStep1Selcected] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full scrollbar-hide whitespace-nowrap">
       <div className="w-full h-[48px] items-center justify-center flex border-b">
         <Image src={LOGO} alt="logo" className="w-[76px]" />
       </div>
@@ -38,7 +45,10 @@ export default function SignupPage() {
       </div>
 
       {/* step1 div */}
-      <div className="flex flex-col font-Pretendard text-[20px] leading-6 tracking-tight font-semibold text-primary-800 mx-[16px] mt-[50px]">
+      <div
+        id="step1"
+        className="flex flex-col font-Pretendard text-[20px] leading-6 tracking-tight font-semibold text-primary-800 mx-[16px] mt-[50px]"
+      >
         <span className="ml-3">평소, 가장 가고 싶은</span>
         <span className="ml-3">워케이션 한 곳을 선택해주세요</span>
         <div className="flex flex-row gap-1 text-caption1 text-sub-core pt-[8px] pb-[24px] ml-3">
@@ -46,8 +56,12 @@ export default function SignupPage() {
           선택한 유형을 기반으로 추천해드려요
         </div>
         <div className="flex flex-row justify-center rounded-xl shadow-lg py-[8px] gap-[8px] w-full h-[255px]">
-          <Image src={MOUNTAIN} alt="moutain" />
-          <Image src={OCEAN} alt="ocean" />
+          <Image src={MOUNTAIN} alt="moutain" onClick={() => scrollCallBack()} />
+          <Image
+            src={OCEAN}
+            alt="ocean"
+            onClick={() => setStep1Selcected(!step1Selected)}
+          />
         </div>
       </div>
 
@@ -59,7 +73,11 @@ export default function SignupPage() {
       </div>
 
       {/* step2 div */}
-      <div className="flex flex-col h-fit font-Pretendard text-[20px] leading-6 tracking-tight font-semibold text-primary-800 mx-[16px] mt-[50px] mb-4">
+      <div
+        id="step2"
+        ref={step2Ref}
+        className="flex flex-col h-fit font-Pretendard text-[20px] leading-6 tracking-tight font-semibold text-primary-800 mx-[16px] mt-[50px] mb-4"
+      >
         <span className="ml-3">평소, 어디서 편하게</span>
         <span className="ml-3">휴일을 보내고 싶으신가요?</span>
         <div className="flex flex-row gap-1 text-caption1 text-sub-core pt-[8px] pb-[24px] ml-3">
@@ -79,7 +97,10 @@ export default function SignupPage() {
       </div>
 
       {/* step3 div */}
-      <div className="flex flex-col h-fit font-Pretendard text-[20px] leading-6 tracking-tight font-semibold text-primary-800 mx-[16px] mt-[50px] mb-4">
+      <div
+        id="step3"
+        className="flex flex-col h-fit font-Pretendard text-[20px] leading-6 tracking-tight font-semibold text-primary-800 mx-[16px] mt-[50px] mb-4"
+      >
         <span className="ml-3">편한 휴일을 함께</span>
         <span className="ml-3">보낼 지인은 몇 명인가요?</span>
         <div className="flex flex-row items-center h-fit gap-1 text-caption1 text-sub-core mt-[8px] pb-[20px] ml-3">
@@ -100,7 +121,10 @@ export default function SignupPage() {
       </div>
 
       {/* step4(이동방식) div*/}
-      <div className="flex flex-col h-fit font-Pretendard text-[20px] leading-6 tracking-tight font-semibold text-primary-800 mx-[16px] mt-[50px] mb-4">
+      <div
+        id="step4"
+        className="flex flex-col h-fit font-Pretendard text-[20px] leading-6 tracking-tight font-semibold text-primary-800 mx-[16px] mt-[50px] mb-4"
+      >
         <span className="ml-3">차량과 도보 중</span>
         <span className="ml-3">어떻게 떠나실 건가요?</span>
         <div className="flex flex-row items-center h-fit gap-1 text-caption1 text-sub-core mt-[8px] ml-3">
@@ -124,7 +148,10 @@ export default function SignupPage() {
       </button>
 
       {/* 카카오 로그인 div */}
-      <div className="flex flex-col justify-center items-center w-full h-[100vh] font-Pretendard text-[20px] leading-6 tracking-tight font-semibold text-primary-800">
+      <div
+        id="login"
+        className="flex flex-col justify-center items-center w-full h-[100vh] font-Pretendard text-[20px] leading-6 tracking-tight font-semibold text-primary-800"
+      >
         <div className="flex flex-col justify-center items-center w-full h-[70%] mt-4">
           <Image src={LOGO} alt="logo" />
           <span className="">일과 휴식을 연결하는</span>
