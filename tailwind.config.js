@@ -80,15 +80,12 @@ module.exports = {
         ],
       },
       fontFamily: {
-        sans: ["Arial", "sans-serif"],
-        Pretendard: ["Pretendard"],
+        sans: ["Pretendard", "Arial", "sans-serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        // "bg-mountain":
-        //   "url('/public/assets/images/bg_mountain.png')"
       },
       colors: {
         background: "var(--background)",

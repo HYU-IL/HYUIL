@@ -3,13 +3,22 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import LOGO from "../../../public/assets/images/logo.svg";
 import PAPERICON from "../../../public/assets/icons/paperplaneicon.svg";
-import ChoiceComponent from "./_component/ChoiceComponent";
+import StepCard from "./_component/StepCard";
+import LongStepCard from "./_component/LongStepCard";
 import bgocean from "../../../public/assets/images/bg_ocean.png";
 import bgmountain from "../../../public/assets/images/bg_mountain.png";
 import bgcamping from "../../../public/assets/images/bg_camping.png";
 import bgresort from "../../../public/assets/images/bg_resort.png";
 import bgleisure from "../../../public/assets/images/bg_leisure.png";
 import bgfestival from "../../../public/assets/images/bg_festival.png";
+import PEOPLE1OFF from "../../../public/assets/images/step_1or2_off.svg";
+import PEOPLE2OFF from "../../../public/assets/images/step_3or4_off.svg";
+import PEOPLE3OFF from "../../../public/assets/images/step_morethan5_off.svg";
+import PEOPLE1 from "../../../public/assets/images/step_1or2_on.svg";
+import PEOPLE2 from "../../../public/assets/images/step_3or4_on.svg";
+import PEOPLE3 from "../../../public/assets/images/step_morethan5_on.svg";
+import BYCAR from "../../../public/assets/images/step_car.svg";
+import BYROAD from "../../../public/assets/images/step_road.svg";
 import DOWN from "../../../public/assets/icons/downicon.svg";
 
 import KAKAO from "../../../public/assets/images/kakaobutton.svg";
@@ -87,7 +96,7 @@ export default function SignupPage() {
   return (
     <div className="flex flex-col w-full scrollbar-hide whitespace-nowrap overflow-y-auto">
       {/* 상단바 div(고정) */}
-      <div className="flex flex-col w-full fixed top-0 left-0">
+      <div className="flex flex-col w-full fixed top-0 left-0 bg-opacity-0 z-50">
         <div className="w-full h-[48px] items-center justify-center flex border-b bg-white">
           <Image src={LOGO} alt="logo" className="w-[76px]" />
         </div>
@@ -114,7 +123,7 @@ export default function SignupPage() {
           선택한 유형을 기반으로 추천해드려요
         </div>
         <div className="flex flex-row justify-center items-center rounded-xl shadow-lg py-[8px] gap-[8px] w-full h-[255px]">
-          <ChoiceComponent
+          <StepCard
             id="mountain"
             imgurl={bgmountain}
             width={150}
@@ -123,7 +132,7 @@ export default function SignupPage() {
             selected={data.nature_type === "mountain"}
             onClick={(e) => onStep1Click(e.currentTarget.id)}
           />
-          <ChoiceComponent
+          <StepCard
             id="ocean"
             imgurl={bgocean}
             width={150}
@@ -160,7 +169,7 @@ export default function SignupPage() {
         </div>
         <div className="flex flex-col items-center justify-center rounded-xl shadow-lg py-[8px] gap-[8px] w-full h-[472px] border">
           <div className="flex flex-row gap-[8px]">
-            <ChoiceComponent
+            <StepCard
               id="camping"
               imgurl={bgcamping}
               width={150}
@@ -171,7 +180,7 @@ export default function SignupPage() {
                 onStep2Click(e.currentTarget.id);
               }}
             />
-            <ChoiceComponent
+            <StepCard
               id="resort"
               imgurl={bgresort}
               width={150}
@@ -184,7 +193,7 @@ export default function SignupPage() {
             />
           </div>
           <div className="flex flex-row gap-[8px]">
-            <ChoiceComponent
+            <StepCard
               id="leisure"
               imgurl={bgleisure}
               width={150}
@@ -195,7 +204,7 @@ export default function SignupPage() {
                 onStep2Click(e.currentTarget.id);
               }}
             />
-            <ChoiceComponent
+            <StepCard
               id="festival"
               imgurl={bgfestival}
               width={150}
@@ -226,24 +235,24 @@ export default function SignupPage() {
           <Image src={PAPERICON} alt="icon" />몇 명과 떠날지 하나만 선택해주세요
         </div>
         <div className="flex flex-col items-center justify-center w-full">
-          {/* <Image
+          <Image
             id="alone"
-            src={PEOPLE1}
+            src={data.partner_type === "alone" ? PEOPLE1OFF : PEOPLE1}
             alt="people"
             onClick={(e) => onStep3Click(e.currentTarget.id)}
           />
           <Image
             id="twoorthree"
-            src={PEOPLE2}
+            src={data.partner_type === "alone" ? PEOPLE2OFF : PEOPLE2}
             alt="people"
             onClick={(e) => onStep3Click(e.currentTarget.id)}
           />
           <Image
             id="together"
-            src={PEOPLE3}
+            src={data.partner_type === "alone" ? PEOPLE3OFF : PEOPLE3}
             alt="people"
             onClick={(e) => onStep3Click(e.currentTarget.id)}
-          /> */}
+          />
         </div>
       </div>
 
@@ -271,7 +280,7 @@ export default function SignupPage() {
           여행 방법에 따라 추천해드려요
         </div>
         <div className="flex flex-col items-center justify-center w-full">
-          {/* <Image
+          <Image
             id="car"
             src={BYCAR}
             alt=""
@@ -282,7 +291,7 @@ export default function SignupPage() {
             src={BYROAD}
             alt=""
             onClick={(e) => onStep4Click(e.currentTarget.id)}
-          /> */}
+          />
         </div>
       </div>
 
