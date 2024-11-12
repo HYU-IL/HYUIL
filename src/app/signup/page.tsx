@@ -6,16 +6,12 @@ import PAPERICON from "../../../public/assets/icons/paperplaneicon.svg";
 import ChoiceComponent from "./_component/ChoiceComponent";
 import bgocean from "../../../public/assets/images/bg_ocean.png";
 import bgmountain from "../../../public/assets/images/bg_mountain.png";
+import bgcamping from "../../../public/assets/images/bg_camping.png";
+import bgresort from "../../../public/assets/images/bg_resort.png";
+import bgleisure from "../../../public/assets/images/bg_leisure.png";
+import bgfestival from "../../../public/assets/images/bg_festival.png";
 import DOWN from "../../../public/assets/icons/downicon.svg";
-import CAMPING from "../../../public/assets/images/step_camping.svg";
-import RESORT from "../../../public/assets/images/step_resort.svg";
-import LEISURE from "../../../public/assets/images/step_leisure.svg";
-import FESTIVAL from "../../../public/assets/images/step_festival.svg";
-import PEOPLE1 from "../../../public/assets/images/step_1or2_on.svg";
-import PEOPLE2 from "../../../public/assets/images/step_3or4_on.svg";
-import PEOPLE3 from "../../../public/assets/images/step_morethan5_on.svg";
-import BYCAR from "../../../public/assets/images/step_car.svg";
-import BYROAD from "../../../public/assets/images/step_road.svg";
+
 import KAKAO from "../../../public/assets/images/kakaobutton.svg";
 
 export default function SignupPage() {
@@ -62,10 +58,16 @@ export default function SignupPage() {
 
   // step2 버튼 클릭 메소드
   const onStep2Click = (kind: string) => {
-    setData({ ...data, residence: [...data.residence, kind] });
-    console.log(data);
-    data.residence.length > 1 ? scrollCallBack(3) : null;
+    // kind가 data.residence에 없으면 추가
+    if (data.residence.indexOf(kind) === -1) {
+      setData({ ...data, residence: [...data.residence, kind] });
+    } else {
+      // 있으면 빼기(토글 형식으로 되면 좋겠는데)
+      setData({ ...data, residence: data.residence.filter((e) => e !== kind) });
+    }
+    data.residence.length >= 1 ? scrollCallBack(3) : null;
     setWhatStep(2);
+    console.log(data);
   };
 
   // step3 버튼 클릭 메소드
@@ -128,10 +130,7 @@ export default function SignupPage() {
             height={210}
             label="오션"
             selected={data.nature_type === "ocean"}
-            onClick={(e) => {
-              onStep1Click(e.currentTarget.id);
-              console.log(e.currentTarget.id);
-            }}
+            onClick={(e) => onStep1Click(e.currentTarget.id)}
           />
         </div>
       </div>
@@ -161,32 +160,52 @@ export default function SignupPage() {
         </div>
         <div className="flex flex-col items-center justify-center rounded-xl shadow-lg py-[8px] gap-[8px] w-full h-[472px] border">
           <div className="flex flex-row gap-[8px]">
-            {/* <Image
+            <ChoiceComponent
               id="camping"
-              src={CAMPING}
-              alt="camping"
-              onClick={(e) => onStep2Click(e.currentTarget.id)}
+              imgurl={bgcamping}
+              width={150}
+              height={210}
+              label="캠핑"
+              selected={data.residence.indexOf("camping") !== -1}
+              onClick={(e) => {
+                onStep2Click(e.currentTarget.id);
+              }}
             />
-            <Image
+            <ChoiceComponent
               id="resort"
-              src={RESORT}
-              alt="resort"
-              onClick={(e) => onStep2Click(e.currentTarget.id)}
-            /> */}
+              imgurl={bgresort}
+              width={150}
+              height={210}
+              label="휴양"
+              selected={data.residence.indexOf("resort") !== -1}
+              onClick={(e) => {
+                onStep2Click(e.currentTarget.id);
+              }}
+            />
           </div>
           <div className="flex flex-row gap-[8px]">
-            {/* <Image
+            <ChoiceComponent
               id="leisure"
-              src={LEISURE}
-              alt="leisure"
-              onClick={(e) => onStep2Click(e.currentTarget.id)}
+              imgurl={bgleisure}
+              width={150}
+              height={210}
+              label="레저"
+              selected={data.residence.indexOf("leisure") !== -1}
+              onClick={(e) => {
+                onStep2Click(e.currentTarget.id);
+              }}
             />
-            <Image
+            <ChoiceComponent
               id="festival"
-              src={FESTIVAL}
-              alt="festival"
-              onClick={(e) => onStep2Click(e.currentTarget.id)}
-            /> */}
+              imgurl={bgfestival}
+              width={150}
+              height={210}
+              label="페스티벌"
+              selected={data.residence.indexOf("festival") !== -1}
+              onClick={(e) => {
+                onStep2Click(e.currentTarget.id);
+              }}
+            />
           </div>
         </div>
       </div>

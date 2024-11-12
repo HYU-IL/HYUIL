@@ -30,23 +30,16 @@ function ChoiceComponent({
       style={{
         width: `${width}px`,
         height: `${height}px`,
-        backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(${imgurl?.src})`,
+        backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url(${imgurl?.src})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      {/* <Image
-        alt="backgroundImg"
-        layout="fill"
-        src={imgurl || ""}
-        objectFit="cover"
-        className="rounded-[12px]"
-      /> */}
-      {/* <Image
+      <Image
         src={selected ? SELECTEDICON : ADDICON}
         alt="btn"
-        className="absolute left-[80%] top-[3%]"
-      /> */}
+        className="absolute left-[80%] top-[3%] w-[20px]"
+      />
       <span className="text-white text-subtitle3 absolute bottom-2 left-1/2 transform -translate-x-1/2 px-10 py-1 ">
         {label && label}
       </span>
