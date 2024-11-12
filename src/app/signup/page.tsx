@@ -3,8 +3,9 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import LOGO from "../../../public/assets/images/logo.svg";
 import PAPERICON from "../../../public/assets/icons/paperplaneicon.svg";
-import MOUNTAIN from "../../../public/assets/images/step_mountain.svg";
-import OCEAN from "../../../public/assets/images/step_ocean.svg";
+import ChoiceComponent from "./_component/ChoiceComponent";
+import bgocean from "../../../public/assets/images/bg_ocean.png";
+import bgmountain from "../../../public/assets/images/bg_mountain.png";
 import DOWN from "../../../public/assets/icons/downicon.svg";
 import CAMPING from "../../../public/assets/images/step_camping.svg";
 import RESORT from "../../../public/assets/images/step_resort.svg";
@@ -32,14 +33,14 @@ export default function SignupPage() {
   const step2Ref = useRef<HTMLDivElement>(null);
   const stepRef = useRef<HTMLDivElement[]>([]);
   type dataType = {
-    isMountain: boolean;
+    nature_type: string;
     residence: string[];
     partner_type: string;
     transportation: string;
   };
 
   const [data, setData] = useState<dataType>({
-    isMountain: false,
+    nature_type: "",
     residence: [],
     partner_type: "",
     transportation: "",
@@ -54,8 +55,9 @@ export default function SignupPage() {
 
   // step1 버튼 클릭 메소드
   const onStep1Click = (kind: string) => {
-    setData({ ...data, isMountain: kind === "mountain" ? true : false });
+    setData({ ...data, nature_type: kind });
     scrollCallBack(2);
+    console.log(data);
   };
 
   // step2 버튼 클릭 메소드
@@ -65,7 +67,6 @@ export default function SignupPage() {
     data.residence.length > 1 ? scrollCallBack(3) : null;
     setWhatStep(2);
   };
-
 
   // step3 버튼 클릭 메소드
   const onStep3Click = (kind: string) => {
@@ -111,17 +112,26 @@ export default function SignupPage() {
           선택한 유형을 기반으로 추천해드려요
         </div>
         <div className="flex flex-row justify-center rounded-xl shadow-lg py-[8px] gap-[8px] w-full h-[255px]">
-          <Image
+          <ChoiceComponent
             id="mountain"
-            src={MOUNTAIN}
-            alt="moutain"
+            imgurl={bgmountain}
+            width={150}
+            height={210}
+            label="마운틴"
+            selected={data.nature_type === "mountain"}
             onClick={(e) => onStep1Click(e.currentTarget.id)}
           />
-          <Image
+          <ChoiceComponent
             id="ocean"
-            src={OCEAN}
-            alt="ocean"
-            onClick={(e) => onStep1Click(e.currentTarget.id)}
+            imgurl={bgocean}
+            width={150}
+            height={210}
+            label="오션"
+            selected={data.nature_type === "ocean"}
+            onClick={(e) => {
+              onStep1Click(e.currentTarget.id);
+              console.log(e.currentTarget.id);
+            }}
           />
         </div>
       </div>
@@ -151,7 +161,7 @@ export default function SignupPage() {
         </div>
         <div className="flex flex-col items-center justify-center rounded-xl shadow-lg py-[8px] gap-[8px] w-full h-[472px] border">
           <div className="flex flex-row gap-[8px]">
-            <Image
+            {/* <Image
               id="camping"
               src={CAMPING}
               alt="camping"
@@ -162,10 +172,10 @@ export default function SignupPage() {
               src={RESORT}
               alt="resort"
               onClick={(e) => onStep2Click(e.currentTarget.id)}
-            />
+            /> */}
           </div>
           <div className="flex flex-row gap-[8px]">
-            <Image
+            {/* <Image
               id="leisure"
               src={LEISURE}
               alt="leisure"
@@ -176,7 +186,7 @@ export default function SignupPage() {
               src={FESTIVAL}
               alt="festival"
               onClick={(e) => onStep2Click(e.currentTarget.id)}
-            />
+            /> */}
           </div>
         </div>
       </div>
@@ -197,7 +207,7 @@ export default function SignupPage() {
           <Image src={PAPERICON} alt="icon" />몇 명과 떠날지 하나만 선택해주세요
         </div>
         <div className="flex flex-col items-center justify-center w-full">
-          <Image
+          {/* <Image
             id="alone"
             src={PEOPLE1}
             alt="people"
@@ -214,7 +224,7 @@ export default function SignupPage() {
             src={PEOPLE3}
             alt="people"
             onClick={(e) => onStep3Click(e.currentTarget.id)}
-          />
+          /> */}
         </div>
       </div>
 
@@ -242,8 +252,18 @@ export default function SignupPage() {
           여행 방법에 따라 추천해드려요
         </div>
         <div className="flex flex-col items-center justify-center w-full">
-          <Image id="car" src={BYCAR} alt="" onClick={(e) => onStep4Click(e.currentTarget.id)}/>
-          <Image id="road" src={BYROAD} alt="" onClick={(e) => onStep4Click(e.currentTarget.id)}/>
+          {/* <Image
+            id="car"
+            src={BYCAR}
+            alt=""
+            onClick={(e) => onStep4Click(e.currentTarget.id)}
+          />
+          <Image
+            id="road"
+            src={BYROAD}
+            alt=""
+            onClick={(e) => onStep4Click(e.currentTarget.id)}
+          /> */}
         </div>
       </div>
 
