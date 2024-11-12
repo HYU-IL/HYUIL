@@ -111,7 +111,7 @@ export default function SignupPage() {
           <Image src={PAPERICON} alt="icon" />
           선택한 유형을 기반으로 추천해드려요
         </div>
-        <div className="flex flex-row justify-center rounded-xl shadow-lg py-[8px] gap-[8px] w-full h-[255px]">
+        <div className="flex flex-row justify-center items-center rounded-xl shadow-lg py-[8px] gap-[8px] w-full h-[255px]">
           <ChoiceComponent
             id="mountain"
             imgurl={bgmountain}

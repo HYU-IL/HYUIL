@@ -1,10 +1,10 @@
 import Image, { StaticImageData } from "next/image";
 import SELECTEDICON from "../../../../public/assets/icons/selectedicon.svg";
 import ADDICON from "../../../../public/assets/icons/addicon.svg";
-
+import tmp from "../../../../public/tmp.jpg";
 interface ChoiceComponentProps {
   label?: string;
-  imgurl?: string | StaticImageData;
+  imgurl?: StaticImageData;
   width?: number;
   height?: number;
   id?: string;
@@ -14,7 +14,7 @@ interface ChoiceComponentProps {
 
 function ChoiceComponent({
   label,
-  imgurl,
+  imgurl = tmp,
   width,
   height,
   id,
@@ -25,17 +25,28 @@ function ChoiceComponent({
   return (
     <div
       id={id}
-      className={`relative w-[${width}px] h-[${height}px] rounded-[12px] overflow-hidden`}
+      className={`relative rounded-[12px] overflow-hidden`}
       onClick={onClick}
+      style={{
+        width: `${width}px`,
+        height: `${height}px`,
+        backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(${imgurl?.src})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
-      <Image
+      {/* <Image
         alt="backgroundImg"
         layout="fill"
         src={imgurl || ""}
         objectFit="cover"
         className="rounded-[12px]"
-      />
-      <Image src={selected?SELECTEDICON:ADDICON} alt="btn" className="absolute left-[80%] top-[3%]"/>
+      /> */}
+      {/* <Image
+        src={selected ? SELECTEDICON : ADDICON}
+        alt="btn"
+        className="absolute left-[80%] top-[3%]"
+      /> */}
       <span className="text-white text-subtitle3 absolute bottom-2 left-1/2 transform -translate-x-1/2 px-10 py-1 ">
         {label && label}
       </span>
