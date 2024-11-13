@@ -19,12 +19,14 @@ import PEOPLE2 from "../../../public/assets/images/step_3or4_on.svg";
 import PEOPLE3 from "../../../public/assets/images/step_morethan5_on.svg";
 import BYCAR from "../../../public/assets/images/step_car.svg";
 import BYROAD from "../../../public/assets/images/step_road.svg";
+import BYCAROFF from "../../../public/assets/images/step_car_off.svg";
+import BYROADOFF from "../../../public/assets/images/step_road_off.svg";
 import DOWN from "../../../public/assets/icons/downicon.svg";
-
+import UP from "../../../public/assets/icons/upicon.svg";
 import KAKAO from "../../../public/assets/images/kakaobutton.svg";
 
 export default function SignupPage() {
-  const [whatStep, setWhatStep] = useState<number>(1);
+  const [whatStep, setWhatStep] = useState<number>(1); // percentage bar를 위한
   const whatPercent =
     whatStep === 1
       ? 33
@@ -35,7 +37,7 @@ export default function SignupPage() {
       : whatStep === 4
       ? 100
       : 0;
-  const step2Ref = useRef<HTMLDivElement>(null);
+
   const stepRef = useRef<HTMLDivElement[]>([]);
   type dataType = {
     nature_type: string;
@@ -62,7 +64,7 @@ export default function SignupPage() {
   const onStep1Click = (kind: string) => {
     setData({ ...data, nature_type: kind });
     scrollCallBack(2);
-    console.log(data);
+    setWhatStep(2);
   };
 
   // step2 버튼 클릭 메소드
@@ -75,7 +77,7 @@ export default function SignupPage() {
       setData({ ...data, residence: data.residence.filter((e) => e !== kind) });
     }
     data.residence.length >= 1 ? scrollCallBack(3) : null;
-    setWhatStep(2);
+    setWhatStep(3);
     console.log(data);
   };
 
@@ -83,6 +85,7 @@ export default function SignupPage() {
   const onStep3Click = (kind: string) => {
     setData({ ...data, partner_type: kind });
     scrollCallBack(4);
+    setWhatStep(4);
   };
 
   // step3 버튼 클릭 메소드
@@ -94,7 +97,7 @@ export default function SignupPage() {
   const [step1Selected, setStep1Selcected] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
   return (
-    <div className="flex flex-col w-full scrollbar-hide whitespace-nowrap overflow-y-auto">
+    <div className="flex flex-col w-full scrollbar-hide whitespace-nowrap overflow-y-auto h-full">
       {/* 상단바 div(고정) */}
       <div className="flex flex-col w-full fixed top-0 left-0 bg-opacity-0 z-50">
         <div className="w-full h-[48px] items-center justify-center flex border-b bg-white">
@@ -111,6 +114,9 @@ export default function SignupPage() {
         </div>
       </div>
 
+      {/* 그라데이션 필터 div */}
+      <div className={`w-full fixed left-0 bottom-0 h-[50%] z-10 bg-gradient-to-b from-[#00ff0000] to-white via-[#00ff0000]`}/>
+
       {/* step1 div */}
       <div
         id="step1"
@@ -122,7 +128,7 @@ export default function SignupPage() {
           <Image src={PAPERICON} alt="icon" />
           선택한 유형을 기반으로 추천해드려요
         </div>
-        <div className="flex flex-row justify-center items-center rounded-xl shadow-lg py-[8px] gap-[8px] w-full h-[255px]">
+        <div className="flex flex-row justify-center items-center rounded-xl shadow-lg border py-[8px] gap-[8px] w-full h-[255px]">
           <StepCard
             id="mountain"
             imgurl={bgmountain}
@@ -145,11 +151,17 @@ export default function SignupPage() {
       </div>
 
       {/* 내려가요 div */}
-      <div className="flex flex-col w-full items-center text-body2 text-gray-900 pt-5 ">
-        <span>선택하면 아래로</span>
-        <span>내려가요</span>
-        <Image src={DOWN} alt="down" className="pt-2" />
-      </div>
+      {whatStep === 1 ? (
+        <div className="flex flex-col w-full items-center text-body2 text-gray-900 h-[80px] pt-7">
+          <span>선택하면 아래로</span>
+          <span>내려가요</span>
+          <Image src={DOWN} alt="down" className="pt-2" />
+        </div>
+      ) : (
+        <div className="flex flex-col w-full items-center text-body2 text-gray-900 h-[80px] pt-7">
+          <Image src={UP} alt="up" className="pt-2" />
+        </div>
+      )}
 
       {/* step2 div */}
       <div
@@ -243,13 +255,13 @@ export default function SignupPage() {
           />
           <Image
             id="twoorthree"
-            src={data.partner_type === "alone" ? PEOPLE2OFF : PEOPLE2}
+            src={data.partner_type === "twoorthree" ? PEOPLE2OFF : PEOPLE2}
             alt="people"
             onClick={(e) => onStep3Click(e.currentTarget.id)}
           />
           <Image
             id="together"
-            src={data.partner_type === "alone" ? PEOPLE3OFF : PEOPLE3}
+            src={data.partner_type === "together" ? PEOPLE3OFF : PEOPLE3}
             alt="people"
             onClick={(e) => onStep3Click(e.currentTarget.id)}
           />
@@ -282,13 +294,13 @@ export default function SignupPage() {
         <div className="flex flex-col items-center justify-center w-full">
           <Image
             id="car"
-            src={BYCAR}
+            src={data.transportation === "car" ? BYCAROFF : BYCAR}
             alt=""
             onClick={(e) => onStep4Click(e.currentTarget.id)}
           />
           <Image
             id="road"
-            src={BYROAD}
+            src={data.transportation === "road" ? BYROADOFF : BYROAD}
             alt=""
             onClick={(e) => onStep4Click(e.currentTarget.id)}
           />
