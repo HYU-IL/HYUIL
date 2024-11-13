@@ -76,9 +76,13 @@ export default function SignupPage() {
       // 있으면 빼기(토글 형식으로 되면 좋겠는데)
       setData({ ...data, residence: data.residence.filter((e) => e !== kind) });
     }
-    data.residence.length >= 1 ? scrollCallBack(3) : null;
-    setWhatStep(3);
-    console.log(data);
+    // data.residence.length >= 1 ? scrollCallBack(3) : null;
+    // data.residence.length >= 1 ? setWhatStep(3) : null;
+    if (data.residence.length >= 1) {
+      scrollCallBack(3);
+      setWhatStep(3);
+    }
+    console.log(data.residence);
   };
 
   // step3 버튼 클릭 메소드
@@ -101,7 +105,15 @@ export default function SignupPage() {
       {/* 상단바 div(고정) */}
       <div className="flex flex-col w-full fixed top-0 left-0 bg-opacity-0 z-50">
         <div className="w-full h-[48px] items-center justify-center flex border-b bg-white">
-          <Image src={LOGO} alt="logo" className="w-[76px]" />
+          <Image
+            src={LOGO}
+            alt="logo"
+            className="w-[76px]"
+            onClick={() => {
+              console.log(whatStep);
+              console.log(data);
+            }}
+          />
         </div>
         <div className="flex flex-col w-full items-center justify-center">
           <div className="flex flex-row w-full h-[3px]">
@@ -109,13 +121,21 @@ export default function SignupPage() {
             <div className={`w-[${100 - whatPercent}%] bg-gray-300`} />
           </div>
           <span className="text-[12px] leading-3 tracking-tight text-gray-700 pt-3 items-center">
-            {whatStep}/3
+            {`${whatStep === 1 ? whatStep : whatStep - 1}`}/3
           </span>
         </div>
       </div>
 
       {/* 그라데이션 필터 div */}
-      <div className={`w-full fixed left-0 bottom-0 h-[50%] z-10 bg-gradient-to-b from-[#00ff0000] to-white via-[#00ff0000]`}/>
+      <div
+        className={`w-full fixed left-0 z-10 via-[#00ff0000] ${
+          whatStep === 1 || whatStep === 3
+            ? `bottom-0 h-[30%] bg-gradient-to-b from-[#00ff0000] to-white`
+            : whatStep === 2 || whatStep === 4
+            ? `top-0 h-[40%] bg-gradient-to-t from-[#00ff0000] to-white`
+            : ``
+        } `}
+      />
 
       {/* step1 div */}
       <div
@@ -269,11 +289,17 @@ export default function SignupPage() {
       </div>
 
       {/* 내려가요 div */}
-      <div className="flex flex-col w-full items-center text-body2 text-gray-900 pt-5">
-        <span>선택하면 아래로</span>
-        <span>내려가요</span>
-        <Image src={DOWN} alt="down" className="pt-2" />
-      </div>
+      {whatStep === 3 ? (
+        <div className="flex flex-col w-full items-center text-body2 text-gray-900 h-[80px] pt-7">
+          <span>선택하면 아래로</span>
+          <span>내려가요</span>
+          <Image src={DOWN} alt="down" className="pt-2" />
+        </div>
+      ) : (
+        <div className="flex flex-col w-full items-center text-body2 text-gray-900 h-[80px] pt-7">
+          <Image src={UP} alt="up" className="pt-2" />
+        </div>
+      )}
 
       {/* step4(이동방식) div*/}
       <div
