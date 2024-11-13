@@ -117,8 +117,14 @@ export default function SignupPage() {
         </div>
         <div className="flex flex-col w-full items-center justify-center">
           <div className="flex flex-row w-full h-[3px]">
-            <div className={`w-[${whatPercent}%] bg-primary-core`} />
-            <div className={`w-[${100 - whatPercent}%] bg-gray-300`} />
+            <div
+              className="bg-primary-core transition-width duration-500 ease-in-out"
+              style={{ width: `${whatPercent}%` }}
+            />
+            <div
+              className="bg-gray-300 transition-width duration-500 ease-in-out"
+              style={{ width: `${100 - whatPercent}%` }}
+            />
           </div>
           <span className="text-[12px] leading-3 tracking-tight text-gray-700 pt-3 items-center">
             {`${whatStep === 1 ? whatStep : whatStep - 1}`}/3
