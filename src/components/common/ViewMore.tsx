@@ -6,10 +6,10 @@ import { VscHeartFilled } from "react-icons/vsc";
 
 interface ViewMoreContent{
     imgurl:string; 
-    title:string; // 큰 제목
-    subtitle:string; // 소제목
-    info1: string; // 주차,와이파이 여부 or 축제시간
-    info2: string; // 수용 인원 or 축제 날짜
+    title:string; 
+    subtitle:string; 
+    info1: string; 
+    info2: string; 
     like:boolean;
     private: boolean;
     mountain: boolean;
@@ -21,6 +21,7 @@ interface ViewMoreProps{
     contents: ViewMoreContent[];
 
 }
+
 // 컴포넌트 사용 법
 // <ViewMore title={"휴일이 추천하는 강원 캠핑"} contents={contents}/>
 
@@ -29,6 +30,8 @@ interface ViewMoreProps{
 //   {imgurl:"/hotelImage.png", title:"강릉 디프라이빗 캠핑", subtitle:"글램핑 · 카라반 · 캠핑", info1:"주차, 와이파이 가능", info2:"숙소 최대 인원 3명", like:false, private:true, mountain:true, ocean:false},
 //   {imgurl:"/hotelImage.png", title:"강릉 두부 축제", subtitle:"11월 강릉 축제", info1:"오후 1-6시", info2:"11월 25일 토요일", like:true, private:false, mountain:false, ocean:true},
 // ]
+
+
 
 export default function ViewMore({title, contents} : ViewMoreProps) {
   return (
