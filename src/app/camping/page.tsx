@@ -35,7 +35,7 @@ export default function CampingPage() {
               더보기 &gt;
             </Link>
           </div>
-          <div className="flex items-center justify-center w-full h-[248px]">
+          <div className="items-center justify-center w-full h-[248px]">
             <Carousel/>
           </div>
         </div>

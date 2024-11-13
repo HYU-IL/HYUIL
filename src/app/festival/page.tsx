@@ -36,8 +36,8 @@ export default function FestivalPage() {
               더보기 &gt;
             </Link>
           </div>
-          <div className="flex items-center justify-center w-full h-[248px]">
-            {/* <Carousel /> */}
+          <div className="items-center justify-center w-full h-[248px]">
+            <Carousel />
           </div>
         </div>
       </div>

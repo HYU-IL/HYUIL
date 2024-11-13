@@ -36,14 +36,14 @@ export default function ResortPage() {
               더보기 &gt;
             </Link>
           </div>
-          <div className="flex items-center justify-center w-full h-[248px]">
-            {/* <Carousel /> */}
+          <div className="items-center justify-center w-full h-[248px]">
+            <Carousel />
           </div>
         </div>
       </div>
 
       {/* 첫번째 추천 상단바*/}
-      <div className="flex flex-col w-full px-[16px]">
+      <div className="flex flex-col w-full px-[16px] pt-4">
         <div className="flex flex-row gap-1">
           <Image src={Mountain} alt="mountain" />
           <Image src={Private} alt="private" />
