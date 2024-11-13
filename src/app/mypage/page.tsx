@@ -12,7 +12,7 @@ export default function MyPage() {
 
         <div className="border-[1px] border-[#dbdbdb]  w-[90%] rounded-[8px] flex flex-col m-auto my-[10px]">
             <div className="flex m-[10px]">
-                <Image src="/assets/icons/CampingIcon.svg" width={58} height={58} alt="나무아이콘"/>
+                <Image src="/assets/icons/TreeIcon.svg" width={58} height={58} alt="나무아이콘"/>
                 <div className="mx-[10px]">
                     <div className="text-caption3 text-gray-600">ABOUT WROKERS</div>
                     <div>
