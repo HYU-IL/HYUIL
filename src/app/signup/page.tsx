@@ -4,7 +4,6 @@ import Image from "next/image";
 import LOGO from "../../../public/assets/images/logo.svg";
 import PAPERICON from "../../../public/assets/icons/paperplaneicon.svg";
 import StepCard from "./_component/StepCard";
-import LongStepCard from "./_component/LongStepCard";
 import bgocean from "../../../public/assets/images/bg_ocean.png";
 import bgmountain from "../../../public/assets/images/bg_mountain.png";
 import bgcamping from "../../../public/assets/images/bg_camping.png";
@@ -24,7 +23,6 @@ import BYROADOFF from "../../../public/assets/images/step_road_off.svg";
 import DOWN from "../../../public/assets/icons/downicon.svg";
 import UP from "../../../public/assets/icons/upicon.svg";
 import KAKAO from "../../../public/assets/images/kakaobutton.svg";
-
 export default function SignupPage() {
   const [whatStep, setWhatStep] = useState<number>(1); // percentage bar를 위한
   const whatPercent =
@@ -101,7 +99,7 @@ export default function SignupPage() {
   const [step1Selected, setStep1Selcected] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
   return (
-    <div className="flex flex-col w-full scrollbar-hide whitespace-nowrap overflow-y-auto h-full">
+    <div className="flex flex-col w-full whitespace-nowrap h-full">
       {/* 상단바 div(고정) */}
       <div className="flex flex-col w-full fixed top-0 left-0 bg-opacity-0 z-50">
         <div className="w-full h-[48px] items-center justify-center flex border-b bg-white">
@@ -142,7 +140,6 @@ export default function SignupPage() {
             : ``
         } `}
       />
-
       {/* step1 div */}
       <div
         id="step1"
