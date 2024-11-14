@@ -6,7 +6,7 @@ interface SubInfoTypoProps {
 
 const SubInfoTypo: React.FC<SubInfoTypoProps> = ({ label }) => {
   return (
-    <h2 className='text-secondary-400 w-[600] font-semibold leading-[14px] tracking-tighter font-Pretendard'>
+    <h2 className='text-secondary-core w-[600] text-[10px] font-semibold leading-[14px] tracking-tighter font-Pretendard'>
       {label}
     </h2>
   );
