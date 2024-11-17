@@ -33,7 +33,7 @@ export default function MyPage() {
                 </div>
                 <span className="text-[18px] text-center m-[10px] text-[#ededed]">|</span>
                 <div className="flex flex-col jsutify-center items-center w-[30%]">
-                    <Image src="/assets/icons/bell.svg" width={24} height={24} alt="벨 아이콘"/>
+                    <Image src="/assets/icons/alert.svg" width={24} height={24} alt="벨 아이콘"/>
                     <div className="text-caption2 text-gray-900 my-[5px]">알림함</div>
                 </div>
             </div>
