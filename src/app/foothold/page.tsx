@@ -1,9 +1,10 @@
 import Image from "next/image";
-import CategoryTitle from "@/components/common/CategoryTitle";
 import left from "../../../public/assets/icons/left.svg";
 import Link from "next/link";
 import ChangeLocationButton from "@/components/buttons/ChangeLocButton";
 import WalkorCarButton from "@/components/buttons/WalkorCarButton";
+import KakaoMap from "@/components/KakoMap";
+import BottomSheet from "@/components/BottomSheet";
 
 export default function FootHoldPage() {
   return (
@@ -20,6 +21,10 @@ export default function FootHoldPage() {
           <ChangeLocationButton />
         </div>
       </div>
+      <div style={{ width: "100vw", height: "100vh" }}>
+        <KakaoMap />
+      </div>
+      <BottomSheet />
     </div>
   );
 }
