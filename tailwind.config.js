@@ -1,5 +1,6 @@
 // tailwind.config.js
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -81,7 +82,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Pretendard", "Arial", "sans-serif"],
-        Pretendard: ["Pretendard"],
+
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -125,6 +126,9 @@ module.exports = {
           red: "#FF5858",
           100: "#FF8A8A",
         },
+      },
+      dropShadow: {
+        custom: "0px 40px 10px rgba(0,0,0,0,25)",
       },
     },
   },
