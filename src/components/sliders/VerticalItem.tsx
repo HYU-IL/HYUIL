@@ -18,7 +18,9 @@ function VerticalItem({ label, imgurl, addr, ...props }: VerticalItemProps) {
           objectFit="cover"
         />
       </div>
-      <span className="text-[14px] block leading-[20px]">{label && label}</span>
+      <span className="text-[14px] block leading-[20px] whitespace-pre-wrap">
+        {label && label}
+      </span>
       <span className="text-[12px] text-[#999999] leading-[16px] block">
         {addr && addr}
       </span>
