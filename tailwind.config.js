@@ -80,7 +80,7 @@ module.exports = {
         ],
       },
       fontFamily: {
-        sans: ["Arial", "sans-serif"],
+        sans: ["Pretendard", "Arial", "sans-serif"],
         Pretendard: ["Pretendard"],
       },
       backgroundImage: {
