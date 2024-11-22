@@ -7,10 +7,7 @@ import SubInfoTypo from "@/components/common/SubInfoTypo";
 export default function Home() {
   return (
     <div>
-      <p className="text-secondary-100 text-subtitle1">hello world!!</p>
-      <MediumInnerTitleItem label="용산 쌤쌤쌤"/>
-      <SubInfoTypo label="ABOUT RESORT"/>
-      <CategoryTitle label="휴일"/>
+      <button className="w-10 py-3 border border-[#552e05]">kakao</button>
     </div>
   );
 }

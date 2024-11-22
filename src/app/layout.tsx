@@ -23,7 +23,15 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </Head>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        <script
+          async
+          src={`https://t1.kakaocdn.net/kakao_js_sdk/${process.env.NEXT_PUBLIC_VERSION}/kakao.min.js`}
+          integrity={`${process.env.NEXT_PUBLIC_INTEGRITY}`}
+          crossOrigin="anonymous"
+        ></script>
+        {children}
+      </body>
     </html>
   );
 }
