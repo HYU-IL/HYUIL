@@ -1,30 +1,32 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
-
-import LOGO from "../../../public/assets/images/logo.svg";
-import PAPERICON from "../../../public/assets/icons/paperplaneicon.svg";
+import LOGO from "@_images/logo.svg";
+import PAPERICON from "@_icons/paperplaneicon.svg";
 import StepCard from "./_component/StepCard";
-import bgocean from "../../../public/assets/images/bg_ocean.png";
-import bgmountain from "../../../public/assets/images/bg_mountain.png";
-import bgcamping from "../../../public/assets/images/bg_camping.png";
-import bgresort from "../../../public/assets/images/bg_resort.png";
-import bgleisure from "../../../public/assets/images/bg_leisure.png";
-import bgfestival from "../../../public/assets/images/bg_festival.png";
-import PEOPLE1OFF from "../../../public/assets/images/step_1or2_off.svg";
-import PEOPLE2OFF from "../../../public/assets/images/step_3or4_off.svg";
-import PEOPLE3OFF from "../../../public/assets/images/step_morethan5_off.svg";
-import PEOPLE1 from "../../../public/assets/images/step_1or2_on.svg";
-import PEOPLE2 from "../../../public/assets/images/step_3or4_on.svg";
-import PEOPLE3 from "../../../public/assets/images/step_morethan5_on.svg";
-import BYCAR from "../../../public/assets/images/step_car.svg";
-import BYROAD from "../../../public/assets/images/step_road.svg";
-import BYCAROFF from "../../../public/assets/images/step_car_off.svg";
-import BYROADOFF from "../../../public/assets/images/step_road_off.svg";
-import DOWN from "../../../public/assets/icons/downicon.svg";
-import UP from "../../../public/assets/icons/upicon.svg";
-import KAKAO from "../../../public/assets/images/kakaobutton.svg";
+import {
+  bgocean,
+  bgfestival,
+  bgleisure,
+  bgcamping,
+  bgmountain,
+  bgresort,
+} from "@_images/background";
+import {
+  PEOPLE1OFF,
+  PEOPLE2OFF,
+  PEOPLE3OFF,
+  PEOPLE1,
+  PEOPLE2,
+  PEOPLE3,
+  BYCAR,
+  BYCAROFF,
+  BYROAD,
+  BYROADOFF,
+} from "@_images/step";
+import DOWN from "@_icons/downicon.svg";
+import UP from "@_icons/upicon.svg";
 import KakaoButton from "./_component/KakaoButton";
+
 export default function SignupPage() {
   const [whatStep, setWhatStep] = useState<number>(1); // percentage bar를 위한
   const whatPercent =
@@ -265,19 +267,43 @@ export default function SignupPage() {
         </div>
         <div className="flex flex-col items-center justify-center w-full">
           {data.partner_type === "alone" ? (
-            <PEOPLE1OFF onClick={(e: { currentTarget: { id: string; }; }) => onStep3Click(e.currentTarget.id)} />
+            <PEOPLE1OFF
+              onClick={(e: { currentTarget: { id: string } }) =>
+                onStep3Click(e.currentTarget.id)
+              }
+            />
           ) : (
-            <PEOPLE1 onClick={(e: { currentTarget: { id: string; }; }) => onStep3Click(e.currentTarget.id)} />
+            <PEOPLE1
+              onClick={(e: { currentTarget: { id: string } }) =>
+                onStep3Click(e.currentTarget.id)
+              }
+            />
           )}
           {data.partner_type === "twoorthree" ? (
-            <PEOPLE2OFF onClick={(e: { currentTarget: { id: string; }; }) => onStep3Click(e.currentTarget.id)} />
+            <PEOPLE2OFF
+              onClick={(e: { currentTarget: { id: string } }) =>
+                onStep3Click(e.currentTarget.id)
+              }
+            />
           ) : (
-            <PEOPLE2 onClick={(e: { currentTarget: { id: string; }; }) => onStep3Click(e.currentTarget.id)} />
+            <PEOPLE2
+              onClick={(e: { currentTarget: { id: string } }) =>
+                onStep3Click(e.currentTarget.id)
+              }
+            />
           )}
           {data.partner_type === "together" ? (
-            <PEOPLE3OFF onClick={(e: { currentTarget: { id: string; }; }) => onStep3Click(e.currentTarget.id)} />
+            <PEOPLE3OFF
+              onClick={(e: { currentTarget: { id: string } }) =>
+                onStep3Click(e.currentTarget.id)
+              }
+            />
           ) : (
-            <PEOPLE3 onClick={(e: { currentTarget: { id: string; }; }) => onStep3Click(e.currentTarget.id)} />
+            <PEOPLE3
+              onClick={(e: { currentTarget: { id: string } }) =>
+                onStep3Click(e.currentTarget.id)
+              }
+            />
           )}
         </div>
       </div>
@@ -312,15 +338,31 @@ export default function SignupPage() {
           여행 방법에 따라 추천해드려요
         </div>
         <div className="flex flex-col items-center justify-center w-full">
-        {data.transportation === "car" ? (
-            <BYCAROFF onClick={(e: { currentTarget: { id: string; }; }) => onStep4Click(e.currentTarget.id)} />
+          {data.transportation === "car" ? (
+            <BYCAROFF
+              onClick={(e: { currentTarget: { id: string } }) =>
+                onStep4Click(e.currentTarget.id)
+              }
+            />
           ) : (
-            <BYCAR onClick={(e: { currentTarget: { id: string; }; }) => onStep4Click(e.currentTarget.id)} />
+            <BYCAR
+              onClick={(e: { currentTarget: { id: string } }) =>
+                onStep4Click(e.currentTarget.id)
+              }
+            />
           )}
           {data.transportation === "car" ? (
-            <BYROADOFF onClick={(e: { currentTarget: { id: string; }; }) => onStep4Click(e.currentTarget.id)} />
+            <BYROADOFF
+              onClick={(e: { currentTarget: { id: string } }) =>
+                onStep4Click(e.currentTarget.id)
+              }
+            />
           ) : (
-            <BYROAD onClick={(e: { currentTarget: { id: string; }; }) => onStep4Click(e.currentTarget.id)} />
+            <BYROAD
+              onClick={(e: { currentTarget: { id: string } }) =>
+                onStep4Click(e.currentTarget.id)
+              }
+            />
           )}
           {/* <Image
             id="car"
