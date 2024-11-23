@@ -115,6 +115,7 @@ export default function DetailPage() {
         {/* 기타 정보 안내 div */}
         <div></div>
       </div>
+      
       <div className="w-full bg-gray-300 h-[30px]" />
       {/* 이용안내 */}
       <div className="w-full h-[48%] flex flex-col items-start justify-center p-[16px]">
