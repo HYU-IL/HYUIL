@@ -9,7 +9,7 @@ import BYROAD from "./step_road.svg";
 import BYCAROFF from "./step_car_off.svg";
 import BYROADOFF from "./step_road_off.svg";
 
-export {
+const STEPIMAGES = {
   PEOPLE1OFF,
   PEOPLE2OFF,
   PEOPLE3OFF,
@@ -20,4 +20,6 @@ export {
   BYCAROFF,
   BYROAD,
   BYROADOFF,
-};
+  }
+
+export default STEPIMAGES;

@@ -5,4 +5,6 @@ import bgresort from "./bg_resort.png";
 import bgleisure from "./bg_leisure.png";
 import bgfestival from "./bg_festival.png";
 
-export { bgocean, bgfestival, bgleisure, bgcamping, bgmountain, bgresort };
+const BGIMAGES = { bgocean, bgfestival, bgleisure, bgcamping, bgmountain, bgresort };
+
+export default BGIMAGES;
