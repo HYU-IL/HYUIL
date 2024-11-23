@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+
 import LOGO from "../../../public/assets/images/logo.svg";
 import PAPERICON from "../../../public/assets/icons/paperplaneicon.svg";
 import StepCard from "./_component/StepCard";
@@ -103,11 +104,7 @@ export default function SignupPage() {
       {/* 상단바 div(고정) */}
       <div className="flex flex-col w-full fixed top-0 left-0 bg-opacity-0 z-50">
         <div className="w-full h-[48px] items-center justify-center flex border-b bg-white">
-          <Image
-            src={LOGO}
-            alt="logo"
-            className="w-[76px]"
-          />
+          <LOGO className="" />
         </div>
         <div className="flex flex-col w-full items-center justify-center">
           <div className="flex flex-row w-full h-[3px]">
@@ -144,7 +141,8 @@ export default function SignupPage() {
         <span className="ml-3">평소, 가장 가고 싶은</span>
         <span className="ml-3">워케이션 한 곳을 선택해주세요</span>
         <div className="flex flex-row gap-1 text-caption1 text-sub-core pt-[8px] pb-[24px] ml-3">
-          <Image src={PAPERICON} alt="icon" />
+          {/* <Image src={PAPERICON} alt="icon" /> */}
+          <PAPERICON />
           선택한 유형을 기반으로 추천해드려요
         </div>
         <div className="flex flex-row justify-center items-center rounded-xl shadow-lg border py-[8px] gap-[8px] w-full h-[255px]">
@@ -174,11 +172,11 @@ export default function SignupPage() {
         <div className="flex flex-col w-full items-center text-body2 text-gray-900 h-[80px] pt-7">
           <span>선택하면 아래로</span>
           <span>내려가요</span>
-          <Image src={DOWN} alt="down" className="pt-2" />
+          <DOWN className="pt-2" />
         </div>
       ) : (
         <div className="flex flex-col w-full items-center text-body2 text-gray-900 h-[80px] pt-7">
-          <Image src={UP} alt="up" className="pt-2" />
+          <UP className="pt-2" />
         </div>
       )}
 
@@ -195,7 +193,7 @@ export default function SignupPage() {
         <span className="ml-3">평소, 어디서 편하게</span>
         <span className="ml-3">휴일을 보내고 싶으신가요?</span>
         <div className="flex flex-row gap-1 text-caption1 text-sub-core pt-[8px] pb-[24px] ml-3">
-          <Image src={PAPERICON} alt="icon" />
+          <PAPERICON />
           2곳을 선택하면 휴일이 기억해서 추천해드려요
         </div>
         <div className="flex flex-col items-center justify-center rounded-xl shadow-lg py-[8px] gap-[8px] w-full h-[472px] border">
@@ -263,27 +261,24 @@ export default function SignupPage() {
         <span className="ml-3">편한 휴일을 함께</span>
         <span className="ml-3">보낼 지인은 몇 명인가요?</span>
         <div className="flex flex-row items-center h-fit gap-1 text-caption1 text-sub-core mt-[8px] pb-[20px] ml-3">
-          <Image src={PAPERICON} alt="icon" />몇 명과 떠날지 하나만 선택해주세요
+          <PAPERICON />몇 명과 떠날지 하나만 선택해주세요
         </div>
         <div className="flex flex-col items-center justify-center w-full">
-          <Image
-            id="alone"
-            src={data.partner_type === "alone" ? PEOPLE1OFF : PEOPLE1}
-            alt="people"
-            onClick={(e) => onStep3Click(e.currentTarget.id)}
-          />
-          <Image
-            id="twoorthree"
-            src={data.partner_type === "twoorthree" ? PEOPLE2OFF : PEOPLE2}
-            alt="people"
-            onClick={(e) => onStep3Click(e.currentTarget.id)}
-          />
-          <Image
-            id="together"
-            src={data.partner_type === "together" ? PEOPLE3OFF : PEOPLE3}
-            alt="people"
-            onClick={(e) => onStep3Click(e.currentTarget.id)}
-          />
+          {data.partner_type === "alone" ? (
+            <PEOPLE1OFF onClick={(e: { currentTarget: { id: string; }; }) => onStep3Click(e.currentTarget.id)} />
+          ) : (
+            <PEOPLE1 onClick={(e: { currentTarget: { id: string; }; }) => onStep3Click(e.currentTarget.id)} />
+          )}
+          {data.partner_type === "twoorthree" ? (
+            <PEOPLE2OFF onClick={(e: { currentTarget: { id: string; }; }) => onStep3Click(e.currentTarget.id)} />
+          ) : (
+            <PEOPLE2 onClick={(e: { currentTarget: { id: string; }; }) => onStep3Click(e.currentTarget.id)} />
+          )}
+          {data.partner_type === "together" ? (
+            <PEOPLE3OFF onClick={(e: { currentTarget: { id: string; }; }) => onStep3Click(e.currentTarget.id)} />
+          ) : (
+            <PEOPLE3 onClick={(e: { currentTarget: { id: string; }; }) => onStep3Click(e.currentTarget.id)} />
+          )}
         </div>
       </div>
 
@@ -292,11 +287,11 @@ export default function SignupPage() {
         <div className="flex flex-col w-full items-center text-body2 text-gray-900 h-[80px] pt-7">
           <span>선택하면 아래로</span>
           <span>내려가요</span>
-          <Image src={DOWN} alt="down" className="pt-2" />
+          <DOWN className="pt-2" />
         </div>
       ) : (
         <div className="flex flex-col w-full items-center text-body2 text-gray-900 h-[80px] pt-7">
-          <Image src={UP} alt="up" className="pt-2" />
+          <UP className="pt-2" />
         </div>
       )}
 
@@ -313,11 +308,21 @@ export default function SignupPage() {
         <span className="ml-3">차량과 도보 중</span>
         <span className="ml-3">어떻게 떠나실 건가요?</span>
         <div className="flex flex-row items-center h-fit gap-1 text-caption1 text-sub-core mt-[8px] ml-3">
-          <Image src={PAPERICON} alt="icon" />
+          <PAPERICON />
           여행 방법에 따라 추천해드려요
         </div>
         <div className="flex flex-col items-center justify-center w-full">
-          <Image
+        {data.transportation === "car" ? (
+            <BYCAROFF onClick={(e: { currentTarget: { id: string; }; }) => onStep4Click(e.currentTarget.id)} />
+          ) : (
+            <BYCAR onClick={(e: { currentTarget: { id: string; }; }) => onStep4Click(e.currentTarget.id)} />
+          )}
+          {data.transportation === "car" ? (
+            <BYROADOFF onClick={(e: { currentTarget: { id: string; }; }) => onStep4Click(e.currentTarget.id)} />
+          ) : (
+            <BYROAD onClick={(e: { currentTarget: { id: string; }; }) => onStep4Click(e.currentTarget.id)} />
+          )}
+          {/* <Image
             id="car"
             src={data.transportation === "car" ? BYCAROFF : BYCAR}
             alt=""
@@ -328,7 +333,7 @@ export default function SignupPage() {
             src={data.transportation === "road" ? BYROADOFF : BYROAD}
             alt=""
             onClick={(e) => onStep4Click(e.currentTarget.id)}
-          />
+          /> */}
         </div>
       </div>
 
@@ -353,14 +358,14 @@ export default function SignupPage() {
         className="flex flex-col justify-center items-center w-full h-[100vh] font-Pretendard text-[20px] leading-6 tracking-tight font-semibold text-primary-800"
       >
         <div className="flex flex-col justify-center items-center w-full h-[70%] mt-4">
-          <Image src={LOGO} alt="logo" />
+          <LOGO />
           <span className="">일과 휴식을 연결하는</span>
           <span className="">강릉 워케이션, 휴일</span>
         </div>
 
         <div className="flex flex-col w-full h-[30%] items-center gap-2 text-gray-800 text-body2 mt-[150px]">
           SNS 계정으로 간편 가입하기
-          <KakaoButton/>
+          <KakaoButton />
         </div>
       </div>
     </div>

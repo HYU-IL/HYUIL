@@ -35,11 +35,11 @@ function StepCard({
         backgroundPosition: "center",
       }}
     >
-      <Image
-        src={selected ? SELECTEDICON : ADDICON}
-        alt="btn"
-        className="absolute left-[80%] top-[3%] w-[20px]"
-      />
+      {selected ? (
+        <SELECTEDICON className="absolute left-[80%] top-[3%] w-[20px]" />
+      ) : (
+        <ADDICON className="absolute left-[80%] top-[3%] w-[20px]" />
+      )}
       <span className="text-white text-subtitle3 absolute bottom-2 left-1/2 transform -translate-x-1/2 px-10 py-1 ">
         {label && label}
       </span>
