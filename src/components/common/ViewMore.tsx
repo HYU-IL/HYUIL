@@ -1,5 +1,4 @@
 import { GrPrevious } from "react-icons/gr";
-import CategoryTitle from "@/components/common/CategoryTitle";
 import Image from 'next/image';
 import { VscHeartFilled } from "react-icons/vsc";
 
@@ -11,7 +10,7 @@ interface ViewMoreContent{
     info1: string; 
     info2: string; 
     like:boolean;
-    private: boolean;
+    popular: boolean;
     mountain: boolean;
     ocean: boolean;
 }
@@ -56,8 +55,9 @@ export default function ViewMore({title, contents} : ViewMoreProps) {
                 <div className="flex flex-col w-full justify-between mr-[24px]">
                     <div className=" w-full">
                         <div className="mb-[8px] flex">
-                            {content.private && <Image src="/assets/icons/Private.svg" width={51} height={24} alt="프라이빗"/>}
-                            {content.mountain && <Image src="/assets/icons/Mountain.svg" width={64} height={24} alt="마운틴"/>}
+                            {content.popular && <Image src="/assets/icons/Popular.svg" width={51} height={24} alt="popular" className="mx-[2px]"/>}
+                            {content.mountain && <Image src="/assets/icons/Mountain.svg" width={64} height={24} alt="mountain" className="mx-[2px]"/>}
+                            {content.ocean && <Image src="/assets/icons/Ocean.svg" width={47} height={24} alt="ocean" className="mx-[2px]"/>}
                         </div>
                         <p className="text-caption2 text-gray-700">{content.subtitle}</p>
                         <p className="text-subtitle3">{content.title}</p>
