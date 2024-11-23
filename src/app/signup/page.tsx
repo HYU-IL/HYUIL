@@ -3,8 +3,22 @@ import { useState, useEffect, useRef } from "react";
 import LOGO from "@_images/logo.svg";
 import PAPERICON from "@_icons/paperplaneicon.svg";
 import StepCard from "./_component/StepCard";
-import STEPIMAGES from "@_images/step";
-import BGIMAGES from "@_images/background";
+import bgocean from "@_images/bg_ocean.png";
+import bgmountain from "@_images/bg_mountain.png";
+import bgcamping from "@_images/bg_camping.png";
+import bgresort from "@_images/bg_resort.png";
+import bgleisure from "@_images/bg_leisure.png";
+import bgfestival from "@_images/bg_festival.png";
+import PEOPLE1OFF from "@_images/step_1or2_off.svg";
+import PEOPLE2OFF from "@_images/step_3or4_off.svg";
+import PEOPLE3OFF from "@_images/step_morethan5_off.svg";
+import PEOPLE1 from "@_images/step_1or2_on.svg";
+import PEOPLE2 from "@_images/step_3or4_on.svg";
+import PEOPLE3 from "@_images/step_morethan5_on.svg";
+import BYCAR from "@_images/step_car.svg";
+import BYROAD from "@_images/step_road.svg";
+import BYCAROFF from "@_images/step_car_off.svg";
+import BYROADOFF from "@_images/step_road_off.svg";
 import DOWN from "@_icons/downicon.svg";
 import UP from "@_icons/upicon.svg";
 import KakaoButton from "./_component/KakaoButton";
@@ -132,7 +146,7 @@ export default function SignupPage() {
         <div className="flex flex-row justify-center items-center rounded-xl shadow-lg border py-[8px] gap-[8px] w-full h-[255px]">
           <StepCard
             id="mountain"
-            imgurl={BGIMAGES.bgmountain}
+            imgurl={bgmountain}
             width={150}
             height={210}
             label="마운틴"
@@ -141,7 +155,7 @@ export default function SignupPage() {
           />
           <StepCard
             id="ocean"
-            imgurl={BGIMAGES.bgocean}
+            imgurl={bgocean}
             width={150}
             height={210}
             label="오션"
@@ -184,7 +198,7 @@ export default function SignupPage() {
           <div className="flex flex-row gap-[8px]">
             <StepCard
               id="camping"
-              imgurl={BGIMAGES.bgcamping}
+              imgurl={bgcamping}
               width={150}
               height={210}
               label="캠핑"
@@ -195,7 +209,7 @@ export default function SignupPage() {
             />
             <StepCard
               id="resort"
-              imgurl={BGIMAGES.bgresort}
+              imgurl={bgresort}
               width={150}
               height={210}
               label="휴양"
@@ -208,7 +222,7 @@ export default function SignupPage() {
           <div className="flex flex-row gap-[8px]">
             <StepCard
               id="leisure"
-              imgurl={BGIMAGES.bgleisure}
+              imgurl={bgleisure}
               width={150}
               height={210}
               label="레저"
@@ -219,7 +233,7 @@ export default function SignupPage() {
             />
             <StepCard
               id="festival"
-              imgurl={BGIMAGES.bgfestival}
+              imgurl={bgfestival}
               width={150}
               height={210}
               label="페스티벌"
@@ -249,14 +263,14 @@ export default function SignupPage() {
         </div>
         <div className="flex flex-col items-center justify-center w-full">
           {data.partner_type === "alone" ? (
-            <STEPIMAGES.PEOPLE1OFF
+            <PEOPLE1OFF
               id="alone"
               onClick={(e: { currentTarget: { id: string } }) =>
                 onStep3Click(e.currentTarget.id)
               }
             />
           ) : (
-            <STEPIMAGES.PEOPLE1
+            <PEOPLE1
               id="alone"
               onClick={(e: { currentTarget: { id: string } }) =>
                 onStep3Click(e.currentTarget.id)
@@ -264,14 +278,14 @@ export default function SignupPage() {
             />
           )}
           {data.partner_type === "twoorthree" ? (
-            <STEPIMAGES.PEOPLE2OFF
+            <PEOPLE2OFF
               id="twoorthree"
               onClick={(e: { currentTarget: { id: string } }) =>
                 onStep3Click(e.currentTarget.id)
               }
             />
           ) : (
-            <STEPIMAGES.PEOPLE2
+            <PEOPLE2
               id="twoorthree"
               onClick={(e: { currentTarget: { id: string } }) =>
                 onStep3Click(e.currentTarget.id)
@@ -279,14 +293,14 @@ export default function SignupPage() {
             />
           )}
           {data.partner_type === "together" ? (
-            <STEPIMAGES.PEOPLE3OFF
+            <PEOPLE3OFF
               id="together"
               onClick={(e: { currentTarget: { id: string } }) =>
                 onStep3Click(e.currentTarget.id)
               }
             />
           ) : (
-            <STEPIMAGES.PEOPLE3
+            <PEOPLE3
               id="together"
               onClick={(e: { currentTarget: { id: string } }) =>
                 onStep3Click(e.currentTarget.id)
@@ -327,14 +341,14 @@ export default function SignupPage() {
         </div>
         <div className="flex flex-col items-center justify-center w-full">
           {data.transportation === "car" ? (
-            <STEPIMAGES.BYCAROFF
+            <BYCAROFF
               id="car"
               onClick={(e: { currentTarget: { id: string } }) =>
                 onStep4Click(e.currentTarget.id)
               }
             />
           ) : (
-            <STEPIMAGES.BYCAR
+            <BYCAR
               id="car"
               onClick={(e: { currentTarget: { id: string } }) =>
                 onStep4Click(e.currentTarget.id)
@@ -342,14 +356,14 @@ export default function SignupPage() {
             />
           )}
           {data.transportation === "car" ? (
-            <STEPIMAGES.BYROADOFF
+            <BYROADOFF
               id="road"
               onClick={(e: { currentTarget: { id: string } }) =>
                 onStep4Click(e.currentTarget.id)
               }
             />
           ) : (
-            <STEPIMAGES.BYROAD
+            <BYROAD
               id="road"
               onClick={(e: { currentTarget: { id: string } }) =>
                 onStep4Click(e.currentTarget.id)
