@@ -1,5 +1,3 @@
-"use client";
-
 import Image, { StaticImageData } from "next/image";
 import SELECTEDICON from "../../../../public/assets/icons/selectedicon.svg";
 import ADDICON from "../../../../public/assets/icons/addicon.svg";
@@ -16,23 +14,27 @@ interface StepCardProps {
 
 function StepCard({
   label,
-  imgurl,
+  imgurl=tmp,
   width,
   height,
   id,
   onClick,
   selected,
+  ...props
 }: StepCardProps) {
   return (
-    <div id={id} className="relative rounded-[12px] overflow-hidden" onClick={onClick}>
-      <div style={{ width: `${width}px`, height: `${height}px` }}>
-        <Image
-          src={imgurl || ""}
-          alt={label || "Image"}
-          layout="fill"
-          objectFit="cover"
-        />
-      </div>
+    <div
+      id={id}
+      className={`relative rounded-[12px] overflow-hidden`}
+      onClick={onClick}
+      style={{
+        width: `${width}px`,
+        height: `${height}px`,
+        backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url(${imgurl?.src})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       {selected ? (
         <SELECTEDICON className="absolute left-[80%] top-[3%] w-[20px]" />
       ) : (
