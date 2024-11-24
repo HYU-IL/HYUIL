@@ -5,6 +5,9 @@ import TMP from "../../../../public/tmp.jpg";
 import campingData from "@/data/campingData";
 import LocationBox from "../_component/LocationBox";
 import Appbar from "../_component/Appbar";
+import SearchButton from "../_component/SearchButton";
+import TitleContainer from "../_component/TitleContainer";
+import GuideBox from "../_component/GuideBox";
 
 export default function DetailCampingPage() {
   return (
@@ -20,23 +23,16 @@ export default function DetailCampingPage() {
           alt="tmp"
           className="w-full h-auto"
         />
-        <button className="flex bg-white p-3 rounded-full items-center justify-center gap-2 absolute z-10 top-[180px] left-[220px] text-primary-900 text-body1">
-          여행지 검색 <Image src={RIGHT} alt="right" />
-        </button>
+        <SearchButton url={campingData.url} />
       </div>
 
       {/* title div */}
-      <div className="w-full flex flex-col items-center">
-        <div className="px-[16px] pt-[20px] pb-[30px] w-full flex flex-col items-start justify-center gap-1">
-          <span className="text-caption2 text-primary-900">캠핑</span>
-          <span className="text-primary-900 font-semibold text-[24px] leading-5 tracking-tight ">
-            {campingData.name}
-          </span>
-          <span className="text-[#999999] font-normal leading-4">
-            #야영장 #카라반 #글램핑
-          </span>
-        </div>
-      </div>
+      <TitleContainer
+        arrange="middle"
+        name={campingData.name}
+        rdnm_adr={campingData.rdnm_adr}
+        category="캠핑장"
+      />
 
       <div className="bg-gray-400 w-[90%] h-[1px]" />
 
@@ -50,7 +46,7 @@ export default function DetailCampingPage() {
         </div>
         <div className="py-[20px] w-full flex flex-col items-start justify-center gap-1">
           <span className="text-subtitle1 font-bold">캠핑 유형</span>
-          <p className="block w-full text-body2">{campingData.type}</p>
+          <p className="block w-full text-body2">{campingData.camping_type}</p>
         </div>
         <div className="py-[20px] w-full flex flex-col items-start justify-center gap-1">
           <span className="text-subtitle1 font-bold">운영 기간</span>
@@ -65,14 +61,11 @@ export default function DetailCampingPage() {
       <div className="w-full bg-gray-300 h-[30px]" />
 
       {/* 위치 및 교통 div */}
-      <LocationBox adr={campingData.rdnm_adr}/>
-      
+      <LocationBox adr={campingData.rdnm_adr} />
+
       <div className="w-full bg-gray-300 h-[30px]" />
       {/* 이용안내 */}
-      <div className="w-full h-[48%] flex flex-col items-start justify-center p-[16px]">
-        <span className="text-subtitle1 font-bold">위치 및 교통</span>
-        <div className="w-full h-[100px] mt-4 rounded-lg bg-gray-200" />
-      </div>
+      <GuideBox />
 
       <div className="w-full bg-gray-300 h-[30px]" />
       <div className="w-full bg-gray-500 h-[60px]" />
