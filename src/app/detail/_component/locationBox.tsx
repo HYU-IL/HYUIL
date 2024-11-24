@@ -1,10 +1,23 @@
-import { FaMapMarkerAlt } from "react-icons/fa";
+"use client";
 
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { useParams } from "next/navigation";
 interface LocationBoxProps {
   adr?: string;
 }
 
 function LocationBox({ adr }: LocationBoxProps) {
+  const params = useParams() as { id: string };
+
+  const copyToClipboard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (err) {}
+  };
+
+  const handleCopyClick = () => {
+    copyToClipboard(adr || "");
+  }
   return (
     <div className="w-full h-[48%] flex flex-col items-start justify-center p-[16px]">
       <span className="text-subtitle1 font-bold">위치 및 교통</span>
@@ -14,7 +27,9 @@ function LocationBox({ adr }: LocationBoxProps) {
         {adr && adr}
       </div>
       <div className="flex w-full justify-between">
-        <button className="bg-white text-caption3 border border-gray-700 text-gray-700 rounded-[4px] w-[155px] py-1">
+        <button 
+          onClick={handleCopyClick}
+          className="bg-white text-caption3 border border-gray-700 text-gray-700 rounded-[4px] w-[155px] py-1">
           주소복사
         </button>
         <button className="bg-white text-caption3 border border-gray-700 text-gray-700 rounded-[4px] w-[155px] py-1">
