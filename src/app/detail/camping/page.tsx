@@ -24,7 +24,7 @@ export default function DetailCampingPage() {
       <Appbar />
 
       {/* 이미지 div */}
-      <div className="flex flex-col w-full h-[240px] overflow-hidden relative">
+      <div className="flex flex-col w-full h-[288px]  overflow-hidden relative">
         <Image
           src={TMP}
           objectFit="cover"

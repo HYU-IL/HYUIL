@@ -4,7 +4,6 @@ import TMP from "../../../../public/tmp.jpg";
 import festivalData from "@/data/festivalData";
 import LocationBox from "../_component/LocationBox";
 import Appbar from "../_component/Appbar";
-import SearchButton from "../_component/SearchButton";
 import TitleBox from "../_component/TitleBox";
 import Divider from "../_component/Divider";
 import RIGHT from "../../../../public/assets/icons/right.svg";
@@ -16,7 +15,7 @@ export default function DetailFestivalPage() {
       <Appbar />
 
       {/* 이미지 div */}
-      <div className="flex flex-col w-full h-[240px] overflow-hidden relative">
+      <div className="flex flex-col w-full h-[288px] overflow-hidden relative">
         <Image
           src={TMP}
           objectFit="cover"
