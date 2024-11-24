@@ -1,15 +1,23 @@
 "use client";
 import Image from "next/image";
-import RIGHT from "../../../../public/assets/icons/right.svg";
 import TMP from "../../../../public/tmp.jpg";
 import campingData from "@/data/campingData";
 import LocationBox from "../_component/LocationBox";
 import Appbar from "../_component/Appbar";
 import SearchButton from "../_component/SearchButton";
-import TitleContainer from "../_component/TitleContainer";
+import TitleBox from "../_component/TitleBox";
 import GuideBox from "../_component/GuideBox";
+import Divider from "../_component/Divider";
+import FacilitiesBox from "../_component/FacilitiesBox";
 
 export default function DetailCampingPage() {
+  const facilities = {
+    grass: campingData.grass,
+    deck: campingData.deck,
+    soil: campingData.soil,
+    crushed_stone: campingData.crushed_stone,
+    gravel: campingData.gravel,
+  };
   return (
     <div className="flex flex-col w-full whitespace-nowrap h-full items-center">
       {/* 상단바 div */}
@@ -27,7 +35,7 @@ export default function DetailCampingPage() {
       </div>
 
       {/* title div */}
-      <TitleContainer
+      <TitleBox
         arrange="middle"
         name={campingData.name}
         rdnm_adr={campingData.rdnm_adr}
@@ -49,25 +57,28 @@ export default function DetailCampingPage() {
           <p className="block w-full text-body2">{campingData.camping_type}</p>
         </div>
         <div className="py-[20px] w-full flex flex-col items-start justify-center gap-1">
+          <span className="text-subtitle1 font-bold">내부 시설</span>
+          <p className="block w-full text-body2">{campingData.facility}</p>
+        </div>
+        <div className="py-[20px] w-full flex flex-col items-start justify-center gap-1">
           <span className="text-subtitle1 font-bold">운영 기간</span>
           <p className="block w-full text-body2">{campingData.oper_date}</p>
         </div>
-        <div className="py-[20px] w-full flex flex-col items-start justify-center gap-1">
-          <span className="text-subtitle1 font-bold">부대 시설</span>
-          <p className="block w-full text-body2">{campingData.facility}</p>
-        </div>
       </div>
 
-      <div className="w-full bg-gray-300 h-[30px]" />
+      <Divider height="30" />
+      {/* 기타 환경 div */}
+      <FacilitiesBox facilities={facilities} />
 
+      <Divider height="30" />
       {/* 위치 및 교통 div */}
       <LocationBox adr={campingData.rdnm_adr} />
 
-      <div className="w-full bg-gray-300 h-[30px]" />
+      <Divider height="30" />
       {/* 이용안내 */}
       <GuideBox />
 
-      <div className="w-full bg-gray-300 h-[30px]" />
+      <Divider height="30" />
       <div className="w-full bg-gray-500 h-[60px]" />
     </div>
   );

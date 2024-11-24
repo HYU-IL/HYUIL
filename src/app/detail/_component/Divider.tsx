@@ -1,11 +1,11 @@
-interface LocationBoxProps {
+interface DividerProps {
   height?: string;
 }
 
-function LocationBox({ height }: LocationBoxProps) {
+function Divider({ height }: DividerProps) {
   return (
-    <div className="bg-gray-400 w-[90%] h-[1px]" />
+    <div className={`w-full bg-gray-300 h-[${height}px]`} />
   );
 }
 
-export default LocationBox;
+export default Divider;

@@ -1,17 +1,17 @@
-interface TitleContainerProps {
+interface TitleBoxProps {
   arrange?: string;
   name?: string;
   rdnm_adr?: string;
   category?: string;
 }
 
-function TitleContainer({
+function TitleBox({
   arrange,
   name,
   rdnm_adr = "",
   category = "",
   ...props
-}: TitleContainerProps) {
+}: TitleBoxProps) {
   const subtitle = (): string => {
     const siIndex = rdnm_adr?.indexOf("시") || 0;
     const si = rdnm_adr?.slice(siIndex - 2, siIndex) || "";
@@ -33,4 +33,4 @@ function TitleContainer({
   );
 }
 
-export default TitleContainer;
+export default TitleBox;
