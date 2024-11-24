@@ -1,23 +1,16 @@
 "use client";
 import Image from "next/image";
-import LEFT from "../../../../public/assets/icons/left.svg";
 import RIGHT from "../../../../public/assets/icons/right.svg";
-import HEART from "../../../../public/assets/icons/heart.svg";
 import TMP from "../../../../public/tmp.jpg";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import campingData, {campingDataType} from "@/data/campingData";
-import LocationBox from "../_component/locationBox";
+import campingData from "@/data/campingData";
+import LocationBox from "../_component/LocationBox";
+import Appbar from "../_component/Appbar";
 
 export default function DetailCampingPage() {
   return (
     <div className="flex flex-col w-full whitespace-nowrap h-full items-center">
       {/* 상단바 div */}
-      <div className="flex flex-col w-full fixed top-0 left-0 bg-opacity-0 z-50">
-        <div className="w-full h-[48px] items-center justify-between flex border-b bg-white px-6">
-          <Image src={LEFT} alt="left" />
-          <Image src={HEART} alt="heart" />
-        </div>
-      </div>
+      <Appbar />
 
       {/* 이미지 div */}
       <div className="flex flex-col w-full h-[240px] overflow-hidden relative">
