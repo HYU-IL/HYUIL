@@ -36,7 +36,7 @@ export default function DetailCampingPage() {
 
       {/* title div */}
       <TitleBox
-        arrange="middle"
+        arrange="left"
         name={campingData.name}
         rdnm_adr={campingData.rdnm_adr}
         category="캠핑장"

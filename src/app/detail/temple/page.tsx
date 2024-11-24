@@ -7,6 +7,7 @@ import Appbar from "../_component/Appbar";
 import SearchButton from "../_component/SearchButton";
 import TitleBox from "../_component/TitleBox";
 import GuideBox from "../_component/GuideBox";
+import Divider from "../_component/Divider";
 
 export default function DetailTemplePage() {
   return (
@@ -27,25 +28,16 @@ export default function DetailTemplePage() {
 
       {/* title div */}
       <TitleBox
-        arrange="middle"
+        arrange="left"
         name={templestayData.name}
         rdnm_adr={templestayData.rdnm_adr}
-        category="캠핑장"
+        category="템플스테이"
       />
-
-      <div className="bg-gray-400 w-[90%] h-[1px]" />
-
-
-      <div className="w-full bg-gray-300 h-[30px]" />
-
-      {/* 위치 및 교통 div */}
+      <Divider height="30" />
       <LocationBox adr={templestayData.rdnm_adr} />
-
-      <div className="w-full bg-gray-300 h-[30px]" />
-      {/* 이용안내 */}
+      <Divider height="30" />
       <GuideBox />
-
-      <div className="w-full bg-gray-300 h-[30px]" />
+      <Divider height="30" />
       <div className="w-full bg-gray-500 h-[60px]" />
     </div>
   );
