@@ -1,17 +1,38 @@
+import Image from "next/image";
+
 interface MapChipProps {
-  label?: string;
+  icon?: string;
+  label: string;
+  isSelected: boolean;
+  onClick: () => void;
 }
 
-function MapChip({ label }: MapChipProps) {
+function MapChip({ icon, label, isSelected, onClick }: MapChipProps) {
   return (
     <button
-      type="button"
-      className="flex justify-center items-center w-fit px-4 gap-2 py-1 border border-[#cdcece] rounded-full shadow-xl focus:border-2 focus:border-[#649EFF]"
+      onClick={onClick}
+      className={`flex items-center max-w-full gap-[4px] pl-[8px] pr-[12px] py-[6px] border rounded-full cursor-pointer whitespace-nowrap overflow-visible shadow-chip 
+        ${
+          isSelected
+            ? "border-blue-500 bg-blue-100 text-blue-700"
+            : "bg-white text-gray-900"
+        }
+        hover:shadow-md transition`}
     >
-      {label && label}
+      {/* 아이콘 표시 */}
+      {icon && (
+        <Image
+          src={icon}
+          alt={label}
+          width={20} // 이미지 너비
+          height={20} // 이미지 높이
+          className="object-contain"
+        />
+      )}
+      {/* 라벨 표시 */}
+      <span className="whitespace-nowrap">{label}</span>
     </button>
   );
 }
-
 
 export default MapChip;

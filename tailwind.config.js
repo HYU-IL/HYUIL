@@ -82,7 +82,6 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Pretendard", "Arial", "sans-serif"],
-
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -129,6 +128,9 @@ module.exports = {
       },
       dropShadow: {
         custom: "0px 40px 10px rgba(0,0,0,0,25)",
+      },
+      boxShadow: {
+        chip: "0px 1px 7px 0px rgba(0, 0, 0, 0.12)",
       },
     },
   },
