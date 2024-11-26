@@ -3,7 +3,7 @@ import left from "../../../public/assets/icons/left.svg";
 import Link from "next/link";
 import ChangeLocationButton from "@/components/buttons/ChangeLocButton";
 import WalkorCarButton from "@/components/buttons/WalkorCarButton";
-import KakaoMap from "@/components/KakoMap";
+import KakaoMap from "@/components/map/KakoMap";
 import BottomSheet from "@/components/BottomSheet";
 
 export default function FootHoldPage() {
