@@ -1,15 +1,31 @@
-import ViewMore from "@/components/common/ViewMore";
+import ViewMoreLeisureItem from "@/components/common/ViewMoreLeisureItem";
+import { GrPrevious } from "react-icons/gr";
 
 
-const contents = [
-  {imgurl:"/hotelImage.png", title:"강릉 디프라이빗 캠핑", subtitle:"글램핑 · 카라반 · 캠핑", info1:"주차, 와이파이 가능", info2:"숙소 최대 인원 3명", like:false, popular:true, mountain:true, ocean:false},
+const datas = [
+  {imgurl:"/hotelImage.png", address:"강릉", name:"경포그네터", parkinglot: true, liked:false, popular:true, mountain:false, ocean:true},
 ]
-
 
 export default function More() {
   return (
-    <>
-        <ViewMore title={"지루한 일상에서 활기를 느껴보자"} contents={contents} />
-    </>
+    <div className="w-full">
+        <div className="flex items-center p-[14px] border-b border-[#ededed] sticky top-0 bg-white z-10">
+          <GrPrevious className="w-[20px] h-[20px] text-gray-600" />
+          <p className="text-title2 mx-[10px]">지루한 일상에서 활기를 느껴보자</p>
+        </div>
+        {datas.map((data, index) => (
+            <ViewMoreLeisureItem
+              imgurl={data.imgurl}
+              address={data.address}
+              name={data.name}
+              parkinglot={data.parkinglot}
+              liked={data.liked}
+              popular={data.popular}
+              mountain={data.mountain}
+              ocean={data.ocean}
+
+            />
+        ))}
+    </div>
   );
 }

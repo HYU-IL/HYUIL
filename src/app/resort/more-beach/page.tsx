@@ -1,25 +1,24 @@
-import ViewMoreCampingItem from "@/components/common/ViewMoreCampingItem";
+import ViewMoreBeachItem from "@/components/common/ViewMoreBeachItem";
 import { GrPrevious } from "react-icons/gr";
 
 
 const datas = [
-  {imgurl:"/hotelImage.png", address:"연곡면", name:"강릉 솔향기 캠핑장", type:"글램핑", season:"봄-여름", liked:false, popular:true, mountain:true, ocean:false},
+  {imgurl:"/hotelImage.png", address:"강릉", name:"경포그네터", parkinglot: true, liked:false, popular:true, mountain:false, ocean:true},
 ]
 
-export default function More() {
+export default function MoreBeach() {
   return (
     <div className="w-full">
         <div className="flex items-center p-[14px] border-b border-[#ededed] sticky top-0 bg-white z-10">
           <GrPrevious className="w-[20px] h-[20px] text-gray-600" />
-          <p className="text-title2 mx-[10px]">휴일이 추천하는 강원도 캠핑</p>
+          <p className="text-title2 mx-[10px]">휴일이 추천하는 해변</p>
         </div>
         {datas.map((data, index) => (
-            <ViewMoreCampingItem
+            <ViewMoreBeachItem
               imgurl={data.imgurl}
               address={data.address}
               name={data.name}
-              type={data.type}
-              season={data.season}
+              parkinglot={data.parkinglot}
               liked={data.liked}
               popular={data.popular}
               mountain={data.mountain}

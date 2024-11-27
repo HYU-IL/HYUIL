@@ -1,16 +1,53 @@
-import ViewMore from "@/components/common/ViewMore";
+import ViewMoreOfficeItem from "@/components/common/ViewMoreOfficeItem";
+import ViewMoreResidenceItem from "@/components/common/ViewMoreResidenceItem";
+import { GrPrevious } from "react-icons/gr";
 
 
-const contents = [
-  {imgurl:"/hotelImage.png", title:"강릉 디프라이빗 캠핑", subtitle:"글램핑 · 카라반 · 캠핑", info1:"주차, 와이파이 가능", info2:"숙소 최대 인원 3명", like:false, popular:true, mountain:true, ocean:false},
+const officedatas = [
+  {imgurl:"/hotelImage.png", address:"강릉", name:"경포그네터", wifi: true, parkinglot: true, time:"8:00~18:00", liked:false, popular:true, mountain:false, ocean:true},
 ]
 
-
+const residencedatas = [
+  {imgurl:"/hotelImage.png", address:"강릉", name:"경포그네터", wifi: true, parkinglot: true, capacity:5, liked:false, popular:true, mountain:false, ocean:true},
+]
 
 export default function More() {
   return (
-    <>
-        <ViewMore title={"직장인이 꿈꾸는 워케이션"} contents={contents} />
-    </>
+    <div className="w-full">
+        <div className="flex items-center p-[14px] border-b border-[#ededed] sticky top-0 bg-white z-10">
+          <GrPrevious className="w-[20px] h-[20px] text-gray-600" />
+          <p className="text-title2 mx-[10px]">휴일이 추천하는 워케이션</p>
+        </div>
+        {officedatas.map((data, index) => (
+            <ViewMoreOfficeItem
+              imgurl={data.imgurl}
+              address={data.address}
+              name={data.name}
+              parkinglot={data.parkinglot}
+              wifi={data.wifi}
+              time={data.time}
+              liked={data.liked}
+              popular={data.popular}
+              mountain={data.mountain}
+              ocean={data.ocean}
+
+            />
+        ))}
+        {residencedatas.map((data, index) => (
+            <ViewMoreResidenceItem
+              imgurl={data.imgurl}
+              address={data.address}
+              name={data.name}
+              parkinglot={data.parkinglot}
+              wifi={data.wifi}
+              capacity={data.capacity}
+              liked={data.liked}
+              popular={data.popular}
+              mountain={data.mountain}
+              ocean={data.ocean}
+
+            />
+        ))}
+    </div>
   );
 }
