@@ -9,7 +9,7 @@ const MapSmallInnerTitleSlider = ({ id, location }: MapSmallInnerTitleSliderProp
   const locationDescription = (location: string) => {
     switch (location) {
       case "철원":
-        return "철원";
+        return "황금빛";
       case "화천":
         return "평화로운";
       case "양구":

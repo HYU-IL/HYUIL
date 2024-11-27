@@ -55,7 +55,7 @@ export default function Map({changeLoc}: MapProps) {
   }, [selectedLoc, koreanName, changeLoc]);
     
   return (
-    <div className="w-full h-[100vh]">
+    <div className="w-full">
         <div className="w-full flex justify-center">
             <div 
                 className="w-[56px] h-[34px] text-center content-center rounded-[54px] m-[10px] text-subtitle3 text-sub-core"
