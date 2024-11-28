@@ -20,7 +20,7 @@ function LocationBox({ adr, telephone }: LocationBoxProps) {
     copyToClipboard(adr || "");
   }
   return (
-    <div className="w-full h-[48%] flex flex-col items-start justify-center p-[16px] pb-8">
+    <div className="w-full h-[48%] flex flex-col items-start justify-center p-[16px] pb-4">
       <span className="text-subtitle1 font-bold">위치 및 교통</span>
       <div className="w-full h-[170px] mt-4 rounded-lg bg-gray-200" />
       <div className="flex gap-2  text-caption2 text-[#8f8f8f] py-2">
@@ -40,8 +40,6 @@ function LocationBox({ adr, telephone }: LocationBoxProps) {
       <div className="w-full items-start text-gray-600 text-body2 font-medium pt-2">
         전화번호: {telephone}
       </div>
-      {/* 기타 정보 안내 div */}
-      <div></div>
     </div>
   );
 }

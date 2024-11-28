@@ -9,6 +9,7 @@ import TitleBox from "../_component/TitleBox";
 import GuideBox from "../_component/GuideBox";
 import Divider from "../_component/Divider";
 import FacilitiesBox from "../_component/FacilitiesBox";
+import FacilityItem from "../_component/FacilityItem";
 
 export default function DetailCampingPage() {
   const facilities = {
@@ -68,7 +69,15 @@ export default function DetailCampingPage() {
 
       <Divider height="30" />
       {/* 위치 및 교통 div */}
-      <LocationBox adr={campingData.rdnm_adr} telephone={campingData.telephone}/>
+      <LocationBox
+        adr={campingData.rdnm_adr}
+        telephone={campingData.telephone}
+      />
+      {/* 시설 유무 div */}
+      <div className="w-full px-4 flex gap-4">
+        {campingData.pet?<FacilityItem label="애완동물 출입" />:<div/>}
+        {campingData.fire==="개별"?<FacilityItem label="화로대" />:<div/>}
+      </div>
       <Divider height="30" />
       {/* 이용안내 */}
       <GuideBox />
