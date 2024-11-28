@@ -31,7 +31,7 @@ function TitleBox({
       case "축제":
         return `${date}`;
       case "공유 오피스":
-        return "공유 오피스"; 
+        return "#공유 오피스"; 
       default:
         return "";
     }

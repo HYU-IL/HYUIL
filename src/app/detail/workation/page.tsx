@@ -32,6 +32,13 @@ export default function DetailBeachPage() {
         rdnm_adr={workationData.rdnm_adr}
         category="공유 오피스"
       />
+      <div className="bg-gray-400 w-[90%] h-[1px]" />
+      <div className="px-[16px] w-full h-[33%] py-[20px] flex flex-col items-start justify-center gap-[6px]">
+        <span className="text-subtitle1 font-bold">운영시간</span>
+        <p className="block w-[100%] text-body2 text-wrap whitespace-pre-wrap">
+          {workationData.oper_time} <span className="text-gray-600">(자세한 내용은 사이트 참고)</span>
+        </p>
+      </div>
       <Divider height="30" />
       <LocationBox adr={workationData.rdnm_adr} telephone={workationData.telephone}/>
       <Divider height="30" />
