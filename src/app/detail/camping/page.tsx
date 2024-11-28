@@ -57,10 +57,6 @@ export default function DetailCampingPage() {
           <p className="block w-full text-body2">{campingData.camping_type}</p>
         </div>
         <div className="py-[20px] w-full flex flex-col items-start justify-center gap-1">
-          <span className="text-subtitle1 font-bold">내부 시설</span>
-          <p className="block w-full text-body2">{campingData.facility}</p>
-        </div>
-        <div className="py-[20px] w-full flex flex-col items-start justify-center gap-1">
           <span className="text-subtitle1 font-bold">운영 기간</span>
           <p className="block w-full text-body2">{campingData.oper_date}</p>
         </div>
@@ -72,8 +68,7 @@ export default function DetailCampingPage() {
 
       <Divider height="30" />
       {/* 위치 및 교통 div */}
-      <LocationBox adr={campingData.rdnm_adr} />
-
+      <LocationBox adr={campingData.rdnm_adr} telephone={campingData.telephone}/>
       <Divider height="30" />
       {/* 이용안내 */}
       <GuideBox />

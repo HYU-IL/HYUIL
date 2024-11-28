@@ -42,7 +42,7 @@ export default function DetailBeachPage() {
         </p>
       </div>
       <Divider height="30" />
-      <LocationBox adr={beachData.rdnm_adr} />
+      <LocationBox adr={beachData.rdnm_adr} telephone={beachData.telephone} />
       <Divider height="30" />
       <div className="w-full bg-gray-500 h-[60px]" />
     </div>

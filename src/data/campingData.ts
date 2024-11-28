@@ -39,7 +39,7 @@ const campingData: campingDataType =
     pet: "가능",
     camping_type: "일반 야영장",
     oper_time: "",
-    oper_date: "4월 1일 ~ 10월 31일",
+    oper_date: "봄, 여름, 가을",
     reservation: "",
     facility: "샤워실, 개수대, 포토존",
     grass: 1,
