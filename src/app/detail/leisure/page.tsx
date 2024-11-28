@@ -6,6 +6,7 @@ import Appbar from "../_component/Appbar";
 import SearchButton from "../_component/SearchButton";
 import TitleBox from "../_component/TitleBox";
 import Divider from "../_component/Divider";
+import FacilityItem from "../_component/FacilityItem";
 
 export default function DetailLeisurePage() {
   return (
@@ -34,6 +35,10 @@ export default function DetailLeisurePage() {
         <p className="block w-[100%] text-body2 text-wrap whitespace-pre-wrap">
           {leisureData.description}
         </p>
+      </div>
+      {/* 시설 유무 div */}
+      <div className="w-full px-4 flex gap-4">
+        {leisureData.parking_lot ? <FacilityItem label="주차가능" /> : <div />}
       </div>
       <Divider height="180" />
       <div className="w-full bg-gray-500 h-[60px]" />

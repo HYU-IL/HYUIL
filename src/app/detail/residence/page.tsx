@@ -4,11 +4,10 @@ import TMP from "../../../../public/tmp.jpg";
 import residenceData from "@/data/residenceData";
 import LocationBox from "../_component/LocationBox";
 import Appbar from "../_component/Appbar";
-import SearchButton from "../_component/SearchButton";
 import TitleBox from "../_component/TitleBox";
 import GuideBox from "../_component/GuideBox";
 import Divider from "../_component/Divider";
-import FacilitiesBox from "../_component/FacilitiesBox";
+import FacilityItem from "../_component/FacilityItem";
 
 export default function DetailResidencePage() {
   return (
@@ -54,6 +53,15 @@ export default function DetailResidencePage() {
         adr={residenceData.rdnm_adr}
         telephone={residenceData.telephone}
       />
+      {/* 시설 유무 div */}
+      <div className="w-full px-4 flex gap-4">
+        {residenceData.parking_lot ? (
+          <FacilityItem label="주차가능" />
+        ) : (
+          <div />
+        )}
+        {residenceData.wifi ? <FacilityItem label="와이파이" /> : <div />}{" "}
+      </div>
       <Divider height="30" />
       {/* 이용안내 */}
       <GuideBox />

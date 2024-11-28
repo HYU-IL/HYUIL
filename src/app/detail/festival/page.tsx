@@ -7,6 +7,7 @@ import Appbar from "../_component/Appbar";
 import TitleBox from "../_component/TitleBox";
 import Divider from "../_component/Divider";
 import RIGHT from "../../../../public/assets/icons/right.svg";
+import FacilityItem from "../_component/FacilityItem";
 
 export default function DetailFestivalPage() {
   return (
@@ -54,6 +55,10 @@ export default function DetailFestivalPage() {
         <div className="w-full items-start text-gray-600 text-body2 font-medium pt-2">
           전화번호: {festivalData.telephone}
         </div>
+      </div>
+      {/* 시설 유무 div */}
+      <div className="w-full px-4 flex gap-4">
+        {festivalData.parking_lot ? <FacilityItem label="주차가능" /> : <div />}
       </div>
       <Divider height="30" />
       <div className="w-full bg-gray-500 h-[60px]" />
