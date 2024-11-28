@@ -30,10 +30,10 @@ export default function DetailBeachPage() {
         arrange="left"
         name={workationData.name}
         rdnm_adr={workationData.rdnm_adr}
-        category="펜션"
+        category="공유 오피스"
       />
       <Divider height="30" />
-      <LocationBox adr={workationData.rdnm_adr} />
+      <LocationBox adr={workationData.rdnm_adr} telephone={workationData.telephone}/>
       <Divider height="30" />
       <GuideBox />
       <Divider height="30" />

@@ -34,7 +34,7 @@ export default function DetailTemplePage() {
         category="템플스테이"
       />
       <Divider height="30" />
-      <LocationBox adr={templestayData.rdnm_adr} />
+      <LocationBox adr={templestayData.rdnm_adr} telephone={templestayData.telephone} />
       <Divider height="30" />
       <GuideBox />
       <Divider height="30" />
