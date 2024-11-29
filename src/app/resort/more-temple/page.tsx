@@ -11,9 +11,9 @@ export default function MoreTemple() {
     <div className="w-full">
         <div className="flex items-center p-[14px] border-b border-[#ededed] sticky top-0 bg-white z-10">
           <GrPrevious className="w-[20px] h-[20px] text-gray-600" />
-          <p className="text-title2 mx-[10px]">휴일이 추천하는 템플스테이</p>
+          <p className="text-title2 mx-[10px]">푸른 산 속에서 느끼는 휴양</p>
         </div>
-        {datas.map((data, index) => (
+        {datas.map((data) => (
             <ViewMoreTempleItem
               imgurl={data.imgurl}
               address={data.address}

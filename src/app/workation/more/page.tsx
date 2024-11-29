@@ -16,9 +16,9 @@ export default function More() {
     <div className="w-full">
         <div className="flex items-center p-[14px] border-b border-[#ededed] sticky top-0 bg-white z-10">
           <GrPrevious className="w-[20px] h-[20px] text-gray-600" />
-          <p className="text-title2 mx-[10px]">휴일이 추천하는 워케이션</p>
+          <p className="text-title2 mx-[10px]">직장인이 꿈꾸는 워케이션</p>
         </div>
-        {officedatas.map((data, index) => (
+        {officedatas.map((data) => (
             <ViewMoreOfficeItem
               imgurl={data.imgurl}
               address={data.address}
@@ -33,7 +33,7 @@ export default function More() {
 
             />
         ))}
-        {residencedatas.map((data, index) => (
+        {residencedatas.map((data) => (
             <ViewMoreResidenceItem
               imgurl={data.imgurl}
               address={data.address}

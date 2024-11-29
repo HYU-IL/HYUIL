@@ -11,9 +11,9 @@ export default function MoreBeach() {
     <div className="w-full">
         <div className="flex items-center p-[14px] border-b border-[#ededed] sticky top-0 bg-white z-10">
           <GrPrevious className="w-[20px] h-[20px] text-gray-600" />
-          <p className="text-title2 mx-[10px]">휴일이 추천하는 해변</p>
+          <p className="text-title2 mx-[10px]">강원도에서 실천하는 진짜 워라벨!</p>
         </div>
-        {datas.map((data, index) => (
+        {datas.map((data) => (
             <ViewMoreBeachItem
               imgurl={data.imgurl}
               address={data.address}

@@ -29,12 +29,12 @@ export default function ViewMoreFestivalItem({imgurl, address, name, startdate, 
             <div className="border-b flex py-[16px]">
                 <div className="w-[130px] h-[170px] rounded-[8px] bg-gray-400 flex-shrink-0 ml-[24px] mr-[18px] relative overflow-hidden">
                     {imgurl ? 
-                    <Image
-                    src={imgurl}
-                    alt="이미지"
-                    layout="fill"
-                    objectFit="cover"
-                    />
+                    <Image 
+                    src={imgurl} 
+                    alt="이미지" 
+                    fill 
+                    className="object-cover"
+                  />
                     :
                     <></>}
                 </div>
