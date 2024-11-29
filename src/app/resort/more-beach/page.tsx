@@ -13,8 +13,9 @@ export default function MoreBeach() {
           <GrPrevious className="w-[20px] h-[20px] text-gray-600" />
           <p className="text-title2 mx-[10px]">강원도에서 실천하는 진짜 워라벨!</p>
         </div>
-        {datas.map((data) => (
+        {datas.map((data, index) => (
             <ViewMoreBeachItem
+              key={index}
               imgurl={data.imgurl}
               address={data.address}
               name={data.name}

@@ -13,8 +13,9 @@ export default function MoreTemple() {
           <GrPrevious className="w-[20px] h-[20px] text-gray-600" />
           <p className="text-title2 mx-[10px]">푸른 산 속에서 느끼는 휴양</p>
         </div>
-        {datas.map((data) => (
+        {datas.map((data, index) => (
             <ViewMoreTempleItem
+              key={index}
               imgurl={data.imgurl}
               address={data.address}
               name={data.name}

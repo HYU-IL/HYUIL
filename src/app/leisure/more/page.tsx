@@ -13,8 +13,9 @@ export default function More() {
           <GrPrevious className="w-[20px] h-[20px] text-gray-600" />
           <p className="text-title2 mx-[10px]">지루한 일상에서 활기를 느껴보자</p>
         </div>
-        {datas.map((data) => (
+        {datas.map((data, index) => (
             <ViewMoreLeisureItem
+              key={index}
               imgurl={data.imgurl}
               address={data.address}
               name={data.name}

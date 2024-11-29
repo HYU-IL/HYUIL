@@ -14,8 +14,9 @@ export default function More() {
           <GrPrevious className="w-[20px] h-[20px] text-gray-600" />
           <p className="text-title2 mx-[10px]">휴일이 추천하는 편안한 휴양지</p>
         </div>
-        {datas.map((data) => (
+        {datas.map((data, index) => (
             <ViewMoreBeachItem
+              key={index}
               imgurl={data.imgurl}
               address={data.address}
               name={data.name}
@@ -27,8 +28,9 @@ export default function More() {
 
             />
         ))}
-        {datas.map((data) => (
+        {datas.map((data, index) => (
             <ViewMoreTempleItem
+              key={index}
               imgurl={data.imgurl}
               address={data.address}
               name={data.name}
