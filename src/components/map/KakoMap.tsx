@@ -9,27 +9,51 @@ interface Chip {
   type: string; // Chip의 라벨
 }
 
-export default function KakaoMap() {
+export default function KakaoMap({
+  onChipSelection,
+}: {
+  onChipSelection: (chips: string[]) => void;
+}) {
   const ChipList = [
     {
       icon: ChipHeart,
       type: "나의 찜",
+      items: [
+        { label: "나의 찜 아이템 1", imgurl: "/tmp1.jpg" },
+        { label: "나의 찜 아이템 2", imgurl: "/tmp2.jpg" },
+      ],
     },
     {
       icon: ChipPlace,
       type: "관광명소",
+      items: [
+        { label: "강릉 그랑블루요트", imgurl: "/tmp3.jpg" },
+        { label: "경포대", imgurl: "/tmp4.jpg" },
+      ],
     },
     {
       icon: ChipBalloon,
       type: "문화시설",
+      items: [
+        { label: "강릉 문화예술회관", imgurl: "/tmp5.jpg" },
+        { label: "강릉 미술관", imgurl: "/tmp6.jpg" },
+      ],
     },
     {
       icon: ChipCoffee,
       type: "카페",
+      items: [
+        { label: "강릉 카페 1", imgurl: "/tmp7.jpg" },
+        { label: "강릉 카페 2", imgurl: "/tmp8.jpg" },
+      ],
     },
     {
       icon: ChipFood,
       type: "음식점",
+      items: [
+        { label: "강릉 음식점 1", imgurl: "/tmp9.jpg" },
+        { label: "강릉 음식점 2", imgurl: "/tmp10.jpg" },
+      ],
     },
   ];
 
@@ -45,11 +69,12 @@ export default function KakaoMap() {
   }
 
   const toggleChip = (type: string): void => {
-    setSelectedChips((prev) =>
-      prev.includes(type)
-        ? prev.filter((item) => item !== type)
-        : [...prev, type]
-    );
+    const newSelectedChips = selectedChips.includes(type)
+      ? selectedChips.filter((item) => item !== type)
+      : [...selectedChips, type];
+
+    setSelectedChips(newSelectedChips);
+    onChipSelection(newSelectedChips); // 부모에게 선택된 chips를 전달
   };
 
   return (
