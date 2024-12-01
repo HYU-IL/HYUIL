@@ -39,13 +39,13 @@ const BottomSheet = ({ selectedChips, chipData }: BottomSheetProps) => {
   return (
     <motion.div
       className={`fixed bottom-0 left-0 right-0 ${
-        isOpen ? "h-[60%]" : "h-[80px]"
+        isOpen ? "h-[303px]" : "h-[80px]"
       } bg-white rounded-t-[16px] shadow-[0_-2px_10px_rgba(0,0,0,0.1)] z-50 overflow-hidden`}
-      drag="y" // Y축으로만 드래그 가능
-      dragConstraints={{ top: 0, bottom: 0 }} // 드래그 제한
-      onDragEnd={handleDragEnd} // 드래그 종료 시 동작 처리
+      drag="y"
+      dragConstraints={{ top: 0, bottom: 0 }}
+      onDragEnd={handleDragEnd}
       initial={{ y: "calc(100% - 80px)" }}
-      animate={{ y: isOpen ? 0 : "calc(100% - 80px)" }}
+      animate={{ y: isOpen ? "calc(100% - 303px)" : "calc(100% - 80px)" }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
     >
       {/* 클릭 영역 */}
@@ -79,7 +79,7 @@ const BottomSheet = ({ selectedChips, chipData }: BottomSheetProps) => {
           {/* bottom sheet 내용 들어갈 부분 */}
 
           <div className="flex items-center justify-between w-full text-title2 text-primary-core">
-            강릉시 속 관광 명소
+            나의 찜
             <Link href="" className="text-caption2 text-gray-800">
               더보기 &gt;
             </Link>
