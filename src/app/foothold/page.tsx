@@ -6,7 +6,7 @@ import ChangeLocationButton from "@/components/buttons/ChangeLocButton";
 import WalkorCarButton from "@/components/buttons/WalkorCarButton";
 import KakaoMap from "@/components/map/KakoMap";
 import BottomSheet from "@/components/BottomSheet";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function FootHoldPage() {
   const ChipData = [
@@ -46,6 +46,8 @@ export default function FootHoldPage() {
       ],
     },
   ];
+
+  const mapRef = useRef<{ handleLevel: (type: string) => void } | null>(null);
   const [selectedChips, setSelectedChips] = useState<string[]>([]);
 
   const onChipSelection = (chips: string[]) => {
@@ -61,16 +63,18 @@ export default function FootHoldPage() {
           <Image src={left} alt="left" />
         </Link>
         <div className="flex justify-center">
-          <WalkorCarButton />
+          <WalkorCarButton
+            onModeChange={(mode) => mapRef.current?.handleLevel(mode)}
+          />
         </div>
         <div className="flex justify-end">
           <ChangeLocationButton />
         </div>
       </div>
       <div style={{ width: "100vw", height: "100vh" }}>
-        <KakaoMap onChipSelection={onChipSelection} />
+        <KakaoMap ref={mapRef} onChipSelection={onChipSelection} />
       </div>
-      <BottomSheet selectedChips={selectedChips} chipData={ChipData} />
+      <BottomSheet />
     </div>
   );
 }

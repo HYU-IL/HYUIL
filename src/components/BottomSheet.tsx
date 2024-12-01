@@ -8,12 +8,7 @@ import Image from "next/image";
 import HandleBar from "../../public/assets/icons/HandleBar.svg";
 import Close from "../../public/assets/icons/Close.svg";
 
-interface BottomSheetProps {
-  selectedChips: string[];
-  chipData: any[]; // Chip 데이터 타입
-}
-
-const BottomSheet = ({ selectedChips, chipData }: BottomSheetProps) => {
+const BottomSheet = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
@@ -31,10 +26,6 @@ const BottomSheet = ({ selectedChips, chipData }: BottomSheetProps) => {
       setIsOpen(true);
     }
   };
-
-  const filteredItems = chipData.filter((chip) =>
-    selectedChips.includes(chip.type)
-  );
 
   return (
     <motion.div

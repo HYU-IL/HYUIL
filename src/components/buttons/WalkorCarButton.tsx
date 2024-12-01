@@ -1,11 +1,16 @@
 "use client";
 import React, { useState } from "react";
 
-export default function WalkorCarButton() {
+export default function WalkorCarButton({
+  onModeChange,
+}: {
+  onModeChange: (mode: string) => void;
+}) {
   const [selected, setSelected] = useState<string>("walk"); // 초기값: "도보"
 
   const handleSelect = (value: string) => {
     setSelected(value);
+    onModeChange(value === "walk" ? "decrease" : "increase"); // 모드에 따라 확대/축소
   };
 
   return (
