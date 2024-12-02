@@ -11,7 +11,7 @@ export interface beachDataType {
   mountain: boolean;
   ocean: boolean;
 }
-const beachData: beachDataType[] = [
+ export const beachData: beachDataType[] = [
   {
   id: 1,
   name: "강문 해변",

@@ -8,7 +8,7 @@ export interface templestayDataType {
   ocean: boolean;
   mountain: boolean;
 }
-const templestayData: templestayDataType[] = [
+export const templestayData: templestayDataType[] = [
   {
     id: 1,
     name: "보현사",

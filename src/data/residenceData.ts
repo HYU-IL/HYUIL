@@ -11,7 +11,7 @@ export interface residenceDataType {
   ocean: boolean;
   mountain: boolean;
 }
-const residenceData: residenceDataType[] = [{
+export const residenceData: residenceDataType[] = [{
   id: 1,
   name: "강릉 스카이베이 숙소",
   rdnm_adr: "강원 강릉시 강문동 258-4",
