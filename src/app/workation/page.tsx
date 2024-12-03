@@ -7,8 +7,12 @@ import SmallListItem from "@/components/sliders/SmallListItem";
 import VerticalItem from "@/components/sliders/VerticalItem";
 import Mountain from "../../../public/assets/images/Mountain.svg";
 import Private from "../../../public/assets/images/Private.svg";
+import {workationData} from "@/data/workationData";
+import {residenceData} from "@/data/residenceData";
 
 export default function WorkationPage() {
+  const workation_data = workationData;
+  const residence_data = residenceData;
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-start">
       {/* 상단바 */}
@@ -30,32 +34,20 @@ export default function WorkationPage() {
         </span>
         <div className="flex items-center justify-between w-full text-subtitle3 text-primary-core">
           직장인이 꿈꾸는 워케이션, 일과 쉼 사이
-          <Link href="" className="text-caption2 text-gray-800">
+          <Link href="/workation/more" className="text-caption2 text-gray-800">
             더보기 &gt;
           </Link>
         </div>
       </div>
       <div className="w-full whitespace-nowrap overflow-x-auto flex gap-x-[4px] scrollbar-hide pt-3 px-[16px] pb-[20px]">
-        <VerticalItem
-          label="조용한 스카이라운지 프라이빗 워케이션"
-          imgurl="/tmp.jpg"
-          addr="강릉"
-        />
-        <VerticalItem
-          label="조용한 스카이라운지 프라이빗 워케이션"
-          imgurl="/tmp.jpg"
-          addr="강릉"
-        />
-        <VerticalItem
-          label="조용한 스카이라운지 프라이빗 워케이션"
-          imgurl="/tmp.jpg"
-          addr="강릉"
-        />
-        <VerticalItem
-          label="조용한 스카이라운지 프라이빗 워케이션"
-          imgurl="/tmp.jpg"
-          addr="강릉"
-        />
+        {residence_data.map((place, index) => (
+          <VerticalItem
+            key={index}
+            label={place.name}
+            imgurl={place.image}
+            addr={place.rdnm_adr.split(" ")[1]}
+          />
+            ))}
       </div>
 
       {/* 워케이션 리스트 div */}
@@ -68,7 +60,7 @@ export default function WorkationPage() {
           <div className="text-subtitle1 text-gray-800">
             <span className="text-primary-core">푸른 산 속에서 일과 쉼</span>
           </div>
-          <Link href="" className="text-caption2 text-gray-800">
+          <Link href="/workation/more" className="text-caption2 text-gray-800">
             더보기 &gt;
           </Link>
         </div>
@@ -79,12 +71,12 @@ export default function WorkationPage() {
         {/* 워케이션 리스트(4개 고정) */}
         <div className="grid grid-cols-1 w-full gap-y-6 mt-3 place-content-center">
           <div className="w-full flex justify-between items-center">
-            <MediumCardItem label="강릉 디프라이빗 캠핑" />
-            <MediumCardItem label="강릉 디프라이빗 캠핑" />
+            <MediumCardItem label={workation_data[0].name} imgurl={workation_data[0].image}/>
+            <MediumCardItem label={workation_data[4].name} imgurl={workation_data[4].image}/>
           </div>
           <div className="flex justify-between items-center w-full">
-            <MediumCardItem label="강릉 디프라이빗 캠핑" />
-            <MediumCardItem label="강릉 디프라이빗 캠핑" />
+            <MediumCardItem label={workation_data[3].name} imgurl={workation_data[3].image} />
+            <MediumCardItem label={residence_data[3].name} imgurl={residence_data[3].image} />
           </div>
         </div>
       </div>
@@ -96,16 +88,16 @@ export default function WorkationPage() {
         </span>
         <div className="flex items-center justify-between w-full text-subtitle1 text-primary-core">
           BEST 인기 워케이션
-          <Link href="" className="text-caption2 text-gray-800">
+          <Link href="/workation/more" className="text-caption2 text-gray-800">
             더보기 &gt;
           </Link>
         </div>
       </div>
       <div className="w-full whitespace-nowrap overflow-x-auto flex gap-x-[8px] scrollbar-hide pt-3 px-[24px] pb-[50px]">
-        <SmallListItem label="강릉 디프라이빗 캠핑" imgurl="/tmp.jpg" />
-        <SmallListItem label="강릉 디프라이빗 캠핑" imgurl="/tmp.jpg" />
-        <SmallListItem label="강릉 디프라이빗 캠핑" imgurl="/tmp.jpg" />
-        <SmallListItem label="강릉 디프라이빗 캠핑" imgurl="/tmp.jpg" />
+        <SmallListItem label={residence_data[0].name} imgurl={residence_data[0].image} />
+        <SmallListItem label={residence_data[4].name} imgurl={residence_data[4].image} />
+        <SmallListItem label={workation_data[1].name} imgurl={workation_data[1].image} />
+        <SmallListItem label={workation_data[0].name} imgurl={workation_data[0].image} />
       </div>
 
       {/* bottom div */}
