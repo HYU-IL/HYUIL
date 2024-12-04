@@ -1,5 +1,4 @@
 import Image from "next/image";
-import CategoryTitle from "@/components/common/CategoryTitle";
 import left from "../../../public/assets/icons/left.svg";
 import Link from "next/link";
 import MediumCardItem from "@/components/common/MediumCardItem";

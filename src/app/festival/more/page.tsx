@@ -15,7 +15,7 @@ export default function More() {
             <ViewMoreFestivalItem
             key={index}
               imgurl={data.image}
-              address={data.rdnm_adr}
+              address={data.place}
               name={data.name}
               startdate={data.start_date}
               enddate={data.end_date}

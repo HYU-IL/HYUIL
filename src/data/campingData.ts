@@ -128,7 +128,7 @@ export const campingData: campingDataType[] =
     name: "캄파슬로우",
     rdnm_adr: "강원특별자치도 원주시 판부면 백운산길 67-105",
     telephone: "0507-1363-0380",
-    image: "/assets/images/mockimg/camping5.png",
+    image: "/assets/images/mockimg/camping4.png",
     description:
       "캠파슬로우 캠핑장을 찾아주셔서 감사합니다. 캠파슬로우에서 자연을 만끽해보세요! 네이버 톡톡을 이용해서 문의 부탁드립니다.",
     url: "https://campaslow2014.modoo.at",

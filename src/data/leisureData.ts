@@ -7,6 +7,7 @@ export interface leisureDataType {
   url: string;
   ocean: boolean;
   mountain: boolean;
+  location: string;
 }
 
 export const leisureData: leisureDataType[] = [
@@ -19,6 +20,7 @@ export const leisureData: leisureDataType[] = [
     url: "https://wabadada-ranking-web.vercel.app/",
     ocean: false,
     mountain: true,
+    location: "경포"
   },
   {
     id: 2,
@@ -29,6 +31,7 @@ export const leisureData: leisureDataType[] = [
     url: "https://kyungpodive.modoo.at/",
     ocean: false,
     mountain: true,
+    location: "경포"
   },
   {
     id: 3,
@@ -45,6 +48,7 @@ export const leisureData: leisureDataType[] = [
     url: "https://oceanrailbike.com/main/main.do",
     ocean: true,
     mountain: false,
+    location: "삼척"
   },
   {
     id: 4,
@@ -56,6 +60,7 @@ export const leisureData: leisureDataType[] = [
     url: "https://www.choochoopark.com/",
     ocean: false,
     mountain: true,
+    location: "삼척"
   },
   {
     id: 5,
@@ -66,6 +71,7 @@ export const leisureData: leisureDataType[] = [
     url: "http://www.ccmullegil.co.kr/new/index.html",
     ocean: true,
     mountain: true,
+    location: "춘천"
   },
 ];
 

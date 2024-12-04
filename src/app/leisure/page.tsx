@@ -1,5 +1,4 @@
 import Image from "next/image";
-import CategoryTitle from "@/components/common/CategoryTitle";
 import left from "../../../public/assets/icons/left.svg";
 import Link from "next/link";
 import MediumCardItem from "@/components/common/MediumCardItem";
@@ -7,8 +6,10 @@ import SmallListItem from "@/components/sliders/SmallListItem";
 import VerticalItem from "@/components/sliders/VerticalItem";
 import Mountain from "../../../public/assets/images/Mountain.svg";
 import Private from "../../../public/assets/images/Private.svg";
+import {leisureData} from "@/data/leisureData"; 
 
 export default function LeisurePage() {
+  const leisure_data = leisureData
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-start">
       {/* 상단바 */}
@@ -30,42 +31,20 @@ export default function LeisurePage() {
         </span>
         <div className="flex items-center justify-between w-full text-subtitle3 text-primary-core">
           지루한 일상에서 활기를 느껴보자
-          <Link href="" className="text-caption2 text-gray-800">
+          <Link href="/leisure/more" className="text-caption2 text-gray-800">
             더보기 &gt;
           </Link>
         </div>
       </div>
       <div className="w-full whitespace-nowrap overflow-x-auto flex gap-x-[4px] scrollbar-hide pt-3 px-[16px] pb-[20px]">
-        <VerticalItem
-          label="강릉 레저 패러글라딩 1인 비행권"
-          imgurl="/tmp.jpg"
-          addr="강릉"
-        />
-        <VerticalItem
-          label="강릉 스키 강습 풀 패키지 얼리엇"
-          imgurl="/tmp.jpg"
-          addr="강릉"
-        />
-        <VerticalItem
-          label="강릉 서핑 입문 강습 + 장비렌탈"
-          imgurl="/tmp.jpg"
-          addr="강릉"
-        />
-        <VerticalItem
-          label="강릉 레저 패러글라딩 1인 비행권"
-          imgurl="/tmp.jpg"
-          addr="강릉"
-        />
-        <VerticalItem
-          label="강릉 스키 강습 풀 패키지 얼리엇"
-          imgurl="/tmp.jpg"
-          addr="강릉"
-        />
-        <VerticalItem
-          label="강릉 서핑 입문 강습 + 장비렌탈"
-          imgurl="/tmp.jpg"
-          addr="강릉"
-        />
+      {leisure_data.map((place, index) => (
+          <VerticalItem
+            key={index}
+            label={place.name}
+            imgurl={place.image}
+            addr={""}
+          />
+            ))}
       </div>
 
       {/* 워케이션 리스트 div */}
@@ -80,7 +59,7 @@ export default function LeisurePage() {
               일 끝나고 즐기는 강릉 레저
             </span>
           </div>
-          <Link href="" className="text-caption2 text-gray-800">
+          <Link href="/leisure/more" className="text-caption2 text-gray-800">
             더보기 &gt;
           </Link>
         </div>
@@ -91,12 +70,12 @@ export default function LeisurePage() {
         {/* 워케이션 리스트(4개 고정) */}
         <div className="grid grid-cols-1 w-full gap-y-6 mt-3 place-content-center">
           <div className="w-full flex justify-between items-center">
-            <MediumCardItem label="강릉 그랑블루요트 투어 더베이" />
-            <MediumCardItem label="강릉 모나용평 관광 케이블카" />
+            <MediumCardItem label={leisure_data[3].name} imgurl={leisure_data[3].image} />
+            <MediumCardItem label={leisure_data[2].name} imgurl={leisure_data[2].image} />
           </div>
           <div className="flex justify-between items-center w-full">
-            <MediumCardItem label="강릉 오션플라잉 짚라인" />
-            <MediumCardItem label="오션 플라잉 테마파크 종합패키지" />
+            <MediumCardItem label={leisure_data[4].name} imgurl={leisure_data[4].image} />
+            <MediumCardItem label={leisure_data[1].name} imgurl={leisure_data[1].image} />
           </div>
         </div>
       </div>
@@ -114,10 +93,10 @@ export default function LeisurePage() {
         </div>
       </div>
       <div className="w-full whitespace-nowrap overflow-x-auto flex gap-x-[8px] scrollbar-hide pt-3 px-[24px] pb-[50px]">
-        <SmallListItem label="강릉 그랑블루요트 투어" imgurl="/tmp.jpg" />
-        <SmallListItem label="강릉 스카이 관광케이블카" imgurl="/tmp.jpg" />
-        <SmallListItem label="강릉 스카이 관광케이블카" imgurl="/tmp.jpg" />
-        <SmallListItem label="강릉 스카이 관광케이블카" imgurl="/tmp.jpg" />
+        <SmallListItem label={leisure_data[0].name} imgurl={leisure_data[0].image} />
+        <SmallListItem label={leisure_data[4].name} imgurl={leisure_data[4].image} />
+        <SmallListItem label={leisure_data[2].name} imgurl={leisure_data[2].image} />
+        <SmallListItem label={leisure_data[3].name} imgurl={leisure_data[3].image} />
       </div>
 
       {/* bottom div */}
