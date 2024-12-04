@@ -11,7 +11,7 @@ function MapChip({ icon, label, isSelected, onClick }: MapChipProps) {
   return (
     <button
       onClick={onClick}
-      className={`flex items-center max-w-full gap-[4px] pl-[8px] pr-[12px] py-[6px] border rounded-full cursor-pointer whitespace-nowrap overflow-visible shadow-chip 
+      className={`inline-flex items-center w-auto gap-[4px] pl-[8px] pr-[28px] py-[6px] border rounded-full cursor-pointer whitespace-nowrap overflow-visible shadow-chip 
         ${
           isSelected
             ? "border-blue-500 bg-blue-100 text-blue-700"
@@ -24,13 +24,13 @@ function MapChip({ icon, label, isSelected, onClick }: MapChipProps) {
         <Image
           src={icon}
           alt={label}
-          width={20} // 이미지 너비
-          height={20} // 이미지 높이
+          width={40} // 이미지 너비
+          height={40} // 이미지 높이
           className="object-contain"
         />
       )}
       {/* 라벨 표시 */}
-      <span className="whitespace-nowrap">{label}</span>
+      <span className="w-fit">{label}</span>
     </button>
   );
 }
