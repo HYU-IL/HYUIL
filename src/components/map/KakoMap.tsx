@@ -20,9 +20,9 @@ const KakaoMap = forwardRef(function KakaoMap(
     }
 
     if (type === "increase") {
-      mapInstance.setLevel(mapInstance.getLevel() + 1, { animate: true });
+      mapInstance.setLevel(6, { animate: true });
     } else if (type === "decrease") {
-      mapInstance.setLevel(mapInstance.getLevel() - 1, { animate: true });
+      mapInstance.setLevel(4, { animate: true });
     }
   };
 
@@ -32,11 +32,11 @@ const KakaoMap = forwardRef(function KakaoMap(
   }));
 
   return (
-    <div style={{ width: "100vw", height: "100vh", position: "relative" }}>
+    <div style={{ width: "100%", height: "100%", position: "relative" }}>
       <Map
-        level={3}
+        level={4}
         onCreate={(map) => setMapInstance(map)}
-        center={{ lat: 33.5563, lng: 126.79581 }}
+        center={{ lat: 37.764246, lng: 128.90026 }}
         className="w-full h-full"
       />
     </div>
