@@ -12,11 +12,6 @@ export default function FootHoldPage() {
   const mapRef = useRef<{ handleLevel: (type: string) => void } | null>(null);
   const [selectedChips, setSelectedChips] = useState<string[]>([]);
 
-  const onChipSelection = (chips: string[]) => {
-    setSelectedChips(chips);
-    console.log("chips:", selectedChips);
-  };
-
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-start">
       {/* 상단바 */}
@@ -34,7 +29,7 @@ export default function FootHoldPage() {
         </div>
       </div>
       <div className="w-screen h-screen">
-        <KakaoMap ref={mapRef} onChipSelection={onChipSelection} />
+        <KakaoMap ref={mapRef} />
       </div>
       <BottomSheet />
     </div>
