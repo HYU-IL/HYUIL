@@ -1,4 +1,5 @@
 import SmallInnerTitleItem from "./SmallInnerTitleItem";
+import Link from 'next/link';
 
 interface MapSmallInnerTitleSliderProps {
   id: number;
@@ -49,6 +50,25 @@ const MapSmallInnerTitleSlider = ({ id, location }: MapSmallInnerTitleSliderProp
     }
   };
 
+  const nextlink = (id: number) => {
+    switch (id) {
+      case 0:
+        return "/mypage/like";
+      case 1:
+        return "/workation/more";
+      case 2:
+        return "/camping/more";
+      case 3:
+        return "/resort/more";
+      case 4:
+        return "/leisure/more";
+      case 5:
+        return "/festival/more";
+      default:
+        return "/main";
+    }
+  };
+
   const Description = locationDescription(location);
 
   const renderDescription = (category: string) => (
@@ -57,7 +77,7 @@ const MapSmallInnerTitleSlider = ({ id, location }: MapSmallInnerTitleSliderProp
         <p className="text-subtitle3 text-primary-core">{Description}&nbsp;{location}</p>
         <p className="text-subtitle3 text-gray-900">{category}</p>
       </div>
-      <div className="text-caption2 text-gray-800 mr-[16px]">더보기 {'>'} </div>
+      <Link href={nextlink(id)}><div className="text-caption2 text-gray-800 mr-[16px]">더보기 {'>'} </div></Link>
     </div>
   );
 
