@@ -25,7 +25,7 @@ export default function MyPage() {
                 <div className="mx-[10px]">
                     <div className="text-caption3 text-gray-600">ABOUT WROKERS</div>
                     <div>
-                        <span className="text-subtitle1 text-secondary-700 ">AAA</span> 
+                        <span className="text-subtitle1 text-secondary-700 ">김국민</span> 
                         <span className=" text-secondary-700 font-medium text-[18px]"> 님</span><br/> 
                         <span className=" text-secondary-700 font-medium text-[18px]">안녕하세요</span></div>
                 </div>
