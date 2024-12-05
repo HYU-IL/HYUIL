@@ -62,8 +62,8 @@ export default function Main() {
           <div className="text-subtitle3 text-secondary-core mx-[24px] pb-[10px]">원하는 휴일을 선택하세요</div>
           <div className="flex justify-center my-[5px] flex-wrap">
             {MenuOptions.map((option, index) => (
-              <Link href={option.url}>
-              <div key={index} className="w-[96px] h-[96px] bg-white rounded-[16px] border-[0.5px] border-[#dbdbdb] flex flex-col justify-center items-center mx-[6px] my-[3px]">
+              <Link href={option.url} key={index}>
+              <div className="w-[96px] h-[96px] bg-white rounded-[16px] border-[0.5px] border-[#dbdbdb] flex flex-col justify-center items-center mx-[6px] my-[3px]">
                 <Image src={option.icon} width={53} height={53} alt="category"/>
                 <p className="text-body2 m-[1px]">{option.title}</p>
                 <p className="text-caption3 text-gray-500">{option.description}</p>
