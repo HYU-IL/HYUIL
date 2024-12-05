@@ -9,6 +9,7 @@ import {campingData} from "@/data/campingData";
 import {festivalData} from "@/data/festivalData"; 
 import {leisureData} from "@/data/leisureData"; 
 import {workationData} from "@/data/workationData"; 
+import Image from "next/image";
 
 export default function Main() {
 
@@ -39,16 +40,16 @@ export default function Main() {
     return (
       <div className="w-full ">
         <div className="w-full flex justify-between">
-          <img src={"/assets/icons/MainLogo.svg"} className="mx-[24px]"/>
+          <Image src={"/assets/icons/MainLogo.svg"} width={125} height={22} className="mx-[24px]" alt="mainlogo"/>
           <div className="w-[50%] flex justify-between bg-[#ededed]">
             <div className="bg-white w-[20%] rounded-br-[24px]"></div>
             <div className="bg-white w-[80%]">
               <div className="flex h-[46px] bg-[#ededed] justify-center rounded-tl-[23px]">
                 <button className="bg-white w-[44px] h-[44px] m-[3px] rounded-[13px] border-[0.5px] border-[#dbdbdb] flex justify-center items-center">
-                  <Link href="/mypage"><img src={"assets/icons/User.svg"}/></Link>
+                  <Link href="/mypage"><Image src={"assets/icons/User.svg"} width={29} height={29} alt="user"/></Link>
                 </button>
                 <button className="bg-white w-[44px] h-[44px] m-[3px] rounded-[13px] border-[0.5px] border-[#dbdbdb] flex justify-center items-center">
-                  <Link href="/mypage/alert"><img src={"/assets/icons/Bell.svg"}/></Link>
+                  <Link href="/foothold"><Image src={"/assets/icons/Location.svg"} width={25} height={25} alt="location"/></Link>
                 </button>
               </div>
             </div>
@@ -63,7 +64,7 @@ export default function Main() {
             {MenuOptions.map((option, index) => (
               <Link href={option.url}>
               <div key={index} className="w-[96px] h-[96px] bg-white rounded-[16px] border-[0.5px] border-[#dbdbdb] flex flex-col justify-center items-center mx-[6px] my-[3px]">
-                <img src={option.icon} />
+                <Image src={option.icon} width={53} height={53} alt="category"/>
                 <p className="text-body2 m-[1px]">{option.title}</p>
                 <p className="text-caption3 text-gray-500">{option.description}</p>
               </div>
@@ -79,7 +80,7 @@ export default function Main() {
         <div className="ml-[16px]">
           <div>
             <div className="flex my-[2px]">
-              <img src={"/assets/icons/HotPlace.svg"} className="mr-[3px]"/>
+              <Image src={"/assets/icons/HotPlace.svg"} className="mr-[3px]" alt="hotplace" width={62} height={24}/>
             </div>
             <div className="flex justify-between items-center">
               <div className="my-[7px]">
