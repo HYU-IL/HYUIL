@@ -13,11 +13,11 @@ export interface festivalDataType {
   ocean: boolean;
   mountain: boolean;
 }
-const festivalData: festivalDataType[] = [
+export const festivalData: festivalDataType[] = [
   {
     id: 1,
     name: "춘천에서 통하나봄",
-    image: "",
+    image: "/assets/images/mockimg/festival1.png",
     start_date: "2024-10-15",
     end_date: "2024-10-18",
     place: "강릉대도호부관아",
@@ -32,7 +32,7 @@ const festivalData: festivalDataType[] = [
 {
   id: 2,
   name: "고니골빛축제",
-  image: "",
+  image: "/assets/images/mockimg/festival2.png",
   start_date: "2024-11-23",
   end_date: "2025-02-02",
   place: "양잠테마단지 내",
@@ -47,7 +47,7 @@ const festivalData: festivalDataType[] = [
 {
   id: 3,
   name: "강릉 커피축제",
-  image: "",
+  image: "/assets/images/mockimg/festival3.png",
   start_date: "2024-10-24",
   end_date: "2024-10-27",
   place: "강릉커피거리 및 강릉시 일원",
@@ -62,7 +62,7 @@ const festivalData: festivalDataType[] = [
 {
   id: 4,
   name: "얼음나라 화천 산천어 축제",
-  image: "",
+  image: "/assets/images/mockimg/festival4.png",
   start_date: "2025-01-11",
   end_date: "2025-02-02",
   place: "화천천",
@@ -77,7 +77,7 @@ const festivalData: festivalDataType[] = [
 {
   id: 5,
   name: "정선 아리랑제",
-  image: "",
+  image: "/assets/images/mockimg/festival5.png",
   start_date: "2024-10-02",
   end_date: "2024-12-25",
   place: "정선 공설운동장",

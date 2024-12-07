@@ -7,13 +7,15 @@ import MediumCardItem from "@/components/common/MediumCardItem";
 import Carousel from "@/components/sliders/Carousel";
 import BannerImage1 from "../../../public/assets/images/BannerImage1.svg";
 import SmallListItem from "@/components/sliders/SmallListItem";
+import {festivalData} from "@/data/festivalData"; 
 
 export default function FestivalPage() {
+  const festival_data = festivalData
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-start">
       {/* 상단바 */}
       <div className="grid grid-cols-3 w-full px-[16px] py-3 items-center">
-        <Link href="" className="flex justify-start">
+        <Link href="/main" className="flex justify-start">
           <Image src={left} alt="left" />
         </Link>
         <div className="flex justify-center">
@@ -32,12 +34,12 @@ export default function FestivalPage() {
             </div>
           </div>
           <div className="w-full flex justify-end px-2">
-            <Link href="" className="text-caption2 text-gray-800">
+            <Link href="/festival/more" className="text-caption2 text-gray-800">
               더보기 &gt;
             </Link>
           </div>
           <div className="items-center justify-center w-full h-[248px]">
-            <Carousel />
+            <Carousel datas={festivalData}/>
           </div>
         </div>
       </div>
@@ -56,7 +58,7 @@ export default function FestivalPage() {
           <div className="text-subtitle3 text-gray-800">
             <span className="text-primary-core">얼마남지 않은</span> 축제
           </div>
-          <Link href="" className="text-caption2 text-gray-800">
+          <Link href="/festival/more" className="text-caption2 text-gray-800">
             더보기 &gt;
           </Link>
         </div>
@@ -67,12 +69,12 @@ export default function FestivalPage() {
         {/* 캠핑 리스트(4개 고정) */}
         <div className="grid grid-cols-1 w-full gap-y-6 mt-3 place-content-center">
           <div className="w-full flex justify-between items-center">
-            <MediumCardItem label="강릉 디프라이빗 캠핑" />
-            <MediumCardItem label="강릉 디프라이빗 캠핑" />
+            <MediumCardItem label={festival_data[0].name} imgurl={festival_data[0].image}/>
+            <MediumCardItem label={festival_data[4].name} imgurl={festival_data[4].image}/>
           </div>
           <div className="flex justify-between items-center w-full">
-            <MediumCardItem label="강릉 디프라이빗 캠핑" />
-            <MediumCardItem label="강릉 디프라이빗 캠핑" />
+            <MediumCardItem label={festival_data[1].name} imgurl={festival_data[1].image}/>
+            <MediumCardItem label={festival_data[2].name} imgurl={festival_data[2].image}/>
           </div>
         </div>
       </div>
@@ -82,16 +84,16 @@ export default function FestivalPage() {
         <SubInfoTypo label="모든 직장인들이 선택한" />
         <div className="flex items-center justify-between w-full text-subtitle3 text-primary-core">
           BEST 인기 축제
-          <Link href="" className="text-caption2 text-gray-800">
+          <Link href="/festival/more" className="text-caption2 text-gray-800">
             더보기 &gt;
           </Link>
         </div>
       </div>
       <div className="w-full whitespace-nowrap overflow-x-auto flex gap-x-[8px] scrollbar-hide pt-3 px-[16px] pb-[50px]">
-        <SmallListItem label="강릉 그랑블루요트" imgurl="/tmp.jpg" />
-        <SmallListItem label="강릉 그랑블루요트" imgurl="/tmp.jpg" />
-        <SmallListItem label="강릉 그랑블루요트" imgurl="/tmp.jpg" />
-        <SmallListItem label="강릉 그랑블루요트" imgurl="/tmp.jpg" />
+        <SmallListItem label={festival_data[3].name} imgurl={festival_data[3].image} />
+        <SmallListItem label={festival_data[1].name} imgurl={festival_data[1].image} />
+        <SmallListItem label={festival_data[2].name} imgurl={festival_data[2].image} />
+        <SmallListItem label={festival_data[0].name} imgurl={festival_data[0].image} />
       </div>
 
       {/* bottom div */}

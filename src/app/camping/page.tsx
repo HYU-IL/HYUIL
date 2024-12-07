@@ -8,13 +8,15 @@ import Private from "../../../public/assets/images/Private.svg";
 import MediumCardItem from "@/components/common/MediumCardItem";
 import MediumInnerTitleItem from "@/components/sliders/MediumInnerTitleItem";
 import Carousel from "@/components/sliders/Carousel";
+import {campingData} from "@/data/campingData"; 
 
 export default function CampingPage() {
+  const camping_data = campingData
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-start">
       {/* 상단바 */}
       <div className="grid grid-cols-3 w-full px-[16px] py-3 items-center">
-        <Link href="" className="flex justify-start">
+        <Link href="/main" className="flex justify-start">
           <Image src={left} alt="left" />
         </Link>
         <div className="flex justify-center">
@@ -31,12 +33,12 @@ export default function CampingPage() {
               <span className="text-primary-core">휴일</span>이 추천하는 강릉
               캠핑
             </div>
-            <Link href="" className="text-caption2 text-gray-800">
+            <Link href="/camping/more" className="text-caption2 text-gray-800">
               더보기 &gt;
             </Link>
           </div>
           <div className="items-center justify-center w-full h-[248px]">
-            <Carousel/>
+            <Carousel datas={campingData}/>
           </div>
         </div>
       </div>
@@ -54,7 +56,7 @@ export default function CampingPage() {
           <span className="text-primary-core text-subtitle3">
             푸른 산 속에서 캠핑 하룻밤
           </span>
-          <Link href="" className="text-caption2 text-gray-800">
+          <Link href="/camping/more" className="text-caption2 text-gray-800">
             더보기 &gt;
           </Link>
         </div>
@@ -65,12 +67,12 @@ export default function CampingPage() {
         {/* 캠핑 리스트(4개 고정) */}
         <div className="grid grid-cols-1 w-full gap-y-6 mt-3 place-content-center">
           <div className="w-full flex justify-between items-center">
-            <MediumCardItem label="강릉 디프라이빗 캠핑" />
-            <MediumCardItem label="강릉 디프라이빗 캠핑" />
+            <MediumCardItem label={camping_data[4].name} imgurl={camping_data[4].image} />
+            <MediumCardItem label={camping_data[3].name} imgurl={camping_data[3].image}/>
           </div>
           <div className="flex justify-between items-center w-full">
-            <MediumCardItem label="강릉 디프라이빗 캠핑" />
-            <MediumCardItem label="강릉 디프라이빗 캠핑" />
+            <MediumCardItem label={camping_data[2].name} imgurl={camping_data[2].image} />
+            <MediumCardItem label={camping_data[1].name} imgurl={camping_data[1].image} />
           </div>
         </div>
       </div>
@@ -81,7 +83,7 @@ export default function CampingPage() {
           <div className="text-subtitle3 text-gray-800">
             <span className="text-primary-core">고민 끝! </span>인기 캠핑 모음
           </div>
-          <Link href="" className="text-caption2 text-gray-800">
+          <Link href="/camping/more" className="text-caption2 text-gray-800">
             더보기 &gt;
           </Link>
         </div>
@@ -89,10 +91,10 @@ export default function CampingPage() {
           #인기 캠핑 #낭만적인 워케이션
         </span>
         <div className="w-full whitespace-nowrap overflow-x-auto flex gap-x-[8px] scrollbar-hide pt-3">
-          <MediumInnerTitleItem label="강릉시-황리단 민속마을" />
-          <MediumInnerTitleItem label="강릉시-황리단 민속마을" />
-          <MediumInnerTitleItem label="강릉시-황리단 민속마을" />
-          <MediumInnerTitleItem label="강릉시-황리단 민속마을" />
+          <MediumInnerTitleItem label={camping_data[0].name} imgurl={camping_data[0].image} />
+          <MediumInnerTitleItem label={camping_data[1].name} imgurl={camping_data[1].image}/>
+          <MediumInnerTitleItem label={camping_data[2].name} imgurl={camping_data[2].image} />
+          <MediumInnerTitleItem label={camping_data[3].name} imgurl={camping_data[3].image} />
         </div>
       </div>
 

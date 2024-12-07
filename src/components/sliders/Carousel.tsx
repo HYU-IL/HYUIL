@@ -32,8 +32,16 @@ const items = [
     imgurl: "/HotelImage.png"
   }
 ]
+interface CarouselItem{
+  name:string;
+  image:string;
 
-function Carousel() {
+}
+interface CarouselProps{
+  datas: CarouselItem[]
+}
+function Carousel({datas}:CarouselProps) {
+
   const [activeIndex, setActiveIndex] = useState(0);
   const settings = {
     className: "center",
@@ -50,23 +58,23 @@ function Carousel() {
   return (
     <div className="slider-container h-[248px] relative ">
       <Slider {...settings}>
-      {items.map((item, index) => (
+      {datas.map((item, index) => (
         <div key={index} className="my-[50px] flex flex-col justify-center items-center">
           <div className="item h-[110px] mx-[16px]  flex flex-col items-center justify-center relative">
           <Image
-              src={item.imgurl}
+              src={item.image}
               alt="background"
               layout="fill"
               className="object-cover rounded-[7px]"
             />
           </div>
-          <div className="text text-center font-Pretendard ">{item.title}</div>
+          <div className="text text-center font-Pretendard ">{item.name}</div>
         </div>
           
          ))}
       </Slider>
       <div className="absolute bottom-2 right-2 mx-[10px] "> 
-        <div className="bg-black w-[30px] h-[24px] opacity-[40%] rounded-[55px] text-white text-[10px] text-center flex items-center justify-center">{activeIndex+1}/6</div>
+        <div className="bg-black w-[30px] h-[24px] opacity-[40%] rounded-[55px] text-white text-[10px] text-center flex items-center justify-center">{activeIndex+1}/{datas.length}</div>
       </div>
     </div>
   );

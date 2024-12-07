@@ -11,7 +11,7 @@ export interface residenceDataType {
   ocean: boolean;
   mountain: boolean;
 }
-const residenceData: residenceDataType[] = [{
+export const residenceData: residenceDataType[] = [{
   id: 1,
   name: "강릉 스카이베이 숙소",
   rdnm_adr: "강원 강릉시 강문동 258-4",
@@ -19,7 +19,7 @@ const residenceData: residenceDataType[] = [{
   max_capacity: 6,
   parking_lot: true,
   wifi: true,
-  image: "",
+  image: "/assets/images/mockimg/residence1.png",
   telephone: "010-0000-0000",
   ocean: true,
   mountain: true,
@@ -31,7 +31,7 @@ const residenceData: residenceDataType[] = [{
   max_capacity: 3,
   parking_lot: true,
   wifi: true,
-  image: "",
+  image: "/assets/images/mockimg/residence2.png",
   telephone: "033-673-7000",
   ocean: true,
   mountain: false,
@@ -43,7 +43,7 @@ const residenceData: residenceDataType[] = [{
   max_capacity: 2,
   parking_lot: true,
   wifi: true,
-  image: "",
+  image: "/assets/images/mockimg/residence3.png",
   telephone: "031-580-8000",
   ocean: true,
   mountain: true,
@@ -55,7 +55,7 @@ const residenceData: residenceDataType[] = [{
   max_capacity: 3,
   parking_lot: true,
   wifi: true,
-  image: "",
+  image: "/assets/images/mockimg/residence4.png",
   telephone: "033-592-3100",
   ocean: false,
   mountain: true,
@@ -67,7 +67,7 @@ const residenceData: residenceDataType[] = [{
   max_capacity: 3,
   parking_lot: true,
   wifi: true,
-  image: "",
+  image: "/assets/images/mockimg/residence5.png",
   telephone: "033-743-6700",
   ocean: false,
   mountain: true,
