@@ -8,6 +8,8 @@ export interface beachDataType {
   image: string;
   url: string;
   parking_lot: boolean;
+  mountain: boolean;
+  ocean: boolean;
 }
 
 const beachData: beachDataType[] = [

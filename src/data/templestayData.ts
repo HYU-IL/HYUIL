@@ -5,6 +5,8 @@ export interface templestayDataType {
   telephone: string;
   image: string;
   url: string;
+  ocean: boolean;
+  mountain: boolean;
 }
 
 const templestayData: templestayDataType[] = [
