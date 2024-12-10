@@ -9,9 +9,8 @@ export interface workationDataType {
   image: string;
   url: string;
   telephone: string;
-  ocean: boolean;
-  mountain: boolean;
 }
+
 const workationData: workationDataType[] = [{
   id: 1,
   name: "파도살롱",

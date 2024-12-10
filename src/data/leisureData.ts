@@ -5,8 +5,6 @@ export interface leisureDataType {
   description: string;
   parking_lot: boolean;
   url: string;
-  ocean: boolean;
-  mountain: boolean;
 }
 
 const leisureData: leisureDataType[] = [

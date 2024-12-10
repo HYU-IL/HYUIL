@@ -10,9 +10,8 @@ export interface festivalDataType {
   description: string,
   parking_lot: boolean,
   url: string,
-  ocean: boolean;
-  mountain: boolean;
 }
+
 const festivalData: festivalDataType[] = [
   {
     id: 1,

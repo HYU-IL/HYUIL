@@ -8,8 +8,6 @@ export interface residenceDataType {
   wifi: boolean;
   image: string;
   telephone: string;
-  ocean: boolean;
-  mountain: boolean;
 }
 const residenceData: residenceDataType[] = [{
   id: 1,
