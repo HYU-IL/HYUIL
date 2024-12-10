@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import TMP from "../../../../public/tmp.jpg";
+import BeachImage from "../../../../public/assets/images/bg_ocean.png";
 import beachData from "@/data/beachData";
 import LocationBox from "../_component/LocationBox";
 import Appbar from "../_component/Appbar";
@@ -9,6 +9,7 @@ import TitleBox from "../_component/TitleBox";
 import Divider from "../_component/Divider";
 import FacilityItem from "../_component/FacilityItem";
 export default function DetailBeachPage() {
+  const exData = beachData[0]
   return (
     <div className="flex flex-col w-full whitespace-nowrap h-full items-center">
       {/* 상단바 div */}
@@ -17,19 +18,19 @@ export default function DetailBeachPage() {
       {/* 이미지 div */}
       <div className="flex flex-col w-full h-[288px] overflow-hidden relative">
         <Image
-          src={TMP}
+          src={BeachImage}
           objectFit="cover"
           alt="tmp"
           className="w-full h-auto"
         />
-        <SearchButton url={beachData.url} />
+        <SearchButton url={exData.url} />
       </div>
 
       {/* title div */}
       <TitleBox
         arrange="left"
-        name={beachData.name}
-        rdnm_adr={beachData.rdnm_adr}
+        name={exData.name}
+        rdnm_adr={exData.rdnm_adr}
         category="해변"
       />
 
@@ -38,14 +39,14 @@ export default function DetailBeachPage() {
       <div className="px-[16px] w-full h-[33%] py-[20px] flex flex-col items-start justify-center gap-[6px]">
         <span className="text-subtitle1 font-bold">해변 소개</span>
         <p className="block w-[100%] text-body2 text-wrap whitespace-pre-wrap">
-          {beachData.description}
+          {exData.description}
         </p>
       </div>
       <Divider height="30" />
-      <LocationBox adr={beachData.rdnm_adr} telephone={beachData.telephone} />
+      <LocationBox adr={exData.rdnm_adr} telephone={exData.telephone} />
       {/* 시설 유무 div */}
       <div className="w-full px-4 flex gap-4">
-        {beachData.parking_lot ? <FacilityItem label="주차가능" /> : <div />}
+        {exData.parking_lot ? <FacilityItem label="주차가능" /> : <div />}
       </div>
       <Divider height="30" />
       <div className="w-full bg-gray-500 h-[60px]" />

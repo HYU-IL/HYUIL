@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import TMP from "../../../../public/tmp.jpg";
+import TMP from "../../../../public/assets/images/bg_camping.png";
 import campingData from "@/data/campingData";
 import LocationBox from "../_component/LocationBox";
 import Appbar from "../_component/Appbar";
@@ -12,12 +12,13 @@ import FacilitiesBox from "../_component/FacilitiesBox";
 import FacilityItem from "../_component/FacilityItem";
 
 export default function DetailCampingPage() {
+  const exData = campingData[0];
   const facilities = {
-    grass: campingData.grass,
-    deck: campingData.deck,
-    soil: campingData.soil,
-    crushed_stone: campingData.crushed_stone,
-    gravel: campingData.gravel,
+    grass: exData.grass,
+    deck: exData.deck,
+    soil: exData.soil,
+    crushed_stone: exData.crushed_stone,
+    gravel: exData.gravel,
   };
   return (
     <div className="flex flex-col w-full whitespace-nowrap h-full items-center">
@@ -32,14 +33,14 @@ export default function DetailCampingPage() {
           alt="tmp"
           className="w-full h-auto"
         />
-        <SearchButton url={campingData.url} />
+        <SearchButton url={exData.url} />
       </div>
 
       {/* title div */}
       <TitleBox
         arrange="left"
-        name={campingData.name}
-        rdnm_adr={campingData.rdnm_adr}
+        name={exData.name}
+        rdnm_adr={exData.rdnm_adr}
         category="캠핑장"
       />
 
@@ -50,16 +51,16 @@ export default function DetailCampingPage() {
         <div className="py-[20px] w-[100%] flex flex-col items-start justify-center gap-1">
           <span className="text-subtitle1 font-bold">캠핑 소개</span>
           <p className="block w-[100%] text-body2 text-wrap">
-            {campingData.description}
+            {exData.description}
           </p>
         </div>
-        <div className="py-[20px] w-full flex flex-col items-start justify-center gap-1">
+        <div className="py-[20px] w-full flex flex-col campingDataitems-start justify-center gap-1">
           <span className="text-subtitle1 font-bold">캠핑 유형</span>
-          <p className="block w-full text-body2">{campingData.camping_type}</p>
+          <p className="block w-full text-body2">{exData.camping_type}</p>
         </div>
         <div className="py-[20px] w-full flex flex-col items-start justify-center gap-1">
           <span className="text-subtitle1 font-bold">운영 기간</span>
-          <p className="block w-full text-body2">{campingData.oper_date}</p>
+          <p className="block w-full text-body2">{exData.oper_date}</p>
         </div>
       </div>
 
@@ -70,13 +71,13 @@ export default function DetailCampingPage() {
       <Divider height="30" />
       {/* 위치 및 교통 div */}
       <LocationBox
-        adr={campingData.rdnm_adr}
-        telephone={campingData.telephone}
+        adr={exData.rdnm_adr}
+        telephone={exData.telephone}
       />
       {/* 시설 유무 div */}
       <div className="w-full px-4 flex gap-4">
-        {campingData.pet?<FacilityItem label="애완동물 출입" />:<div/>}
-        {campingData.fire==="개별"?<FacilityItem label="화로대" />:<div/>}
+        {exData.pet?<FacilityItem label="애완동물 출입" />:<div/>}
+        {exData.fire==="개별"?<FacilityItem label="화로대" />:<div/>}
       </div>
       <Divider height="30" />
       {/* 이용안내 */}

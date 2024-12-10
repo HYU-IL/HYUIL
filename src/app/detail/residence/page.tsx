@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import TMP from "../../../../public/tmp.jpg";
+import TMP from "../../../../public/assets/images/bg_resort.png";
 import residenceData from "@/data/residenceData";
 import LocationBox from "../_component/LocationBox";
 import Appbar from "../_component/Appbar";
@@ -10,6 +10,7 @@ import Divider from "../_component/Divider";
 import FacilityItem from "../_component/FacilityItem";
 
 export default function DetailResidencePage() {
+  const exData = residenceData[0];
   return (
     <div className="flex flex-col w-full whitespace-nowrap h-full items-center">
       {/* 상단바 div */}
@@ -29,8 +30,8 @@ export default function DetailResidencePage() {
       {/* title div */}
       <TitleBox
         arrange="left"
-        name={residenceData.name}
-        rdnm_adr={residenceData.rdnm_adr}
+        name={exData.name}
+        rdnm_adr={exData.rdnm_adr}
         category="숙소"
       />
 
@@ -41,7 +42,7 @@ export default function DetailResidencePage() {
         <div className="py-[20px] w-full flex flex-col items-start justify-center gap-1">
           <span className="text-subtitle1 font-bold">수용 인원</span>
           <p className="block w-full text-body2">
-            {`${residenceData.capacity}명부터 최대 ${residenceData.max_capacity}명 인원`}{" "}
+            {`${exData.capacity}명부터 최대 ${exData.max_capacity}명 인원`}{" "}
             <span className="text-gray-600">(자세한 내용은 사이트 참고)</span>
           </p>
         </div>
@@ -50,17 +51,17 @@ export default function DetailResidencePage() {
       <Divider height="30" />
       {/* 위치 및 교통 div */}
       <LocationBox
-        adr={residenceData.rdnm_adr}
-        telephone={residenceData.telephone}
+        adr={exData.rdnm_adr}
+        telephone={exData.telephone}
       />
       {/* 시설 유무 div */}
       <div className="w-full px-4 flex gap-4">
-        {residenceData.parking_lot ? (
+        {exData.parking_lot ? (
           <FacilityItem label="주차가능" />
         ) : (
           <div />
         )}
-        {residenceData.wifi ? <FacilityItem label="와이파이" /> : <div />}{" "}
+        {exData.wifi ? <FacilityItem label="와이파이" /> : <div />}{" "}
       </div>
       <Divider height="30" />
       {/* 이용안내 */}
