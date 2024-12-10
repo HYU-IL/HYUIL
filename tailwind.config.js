@@ -82,6 +82,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Pretendard", "Arial", "sans-serif"],
+
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

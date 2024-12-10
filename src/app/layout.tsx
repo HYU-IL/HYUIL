@@ -16,14 +16,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html lang="kr">
       <Head>
         <link
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
           rel="stylesheet"
         />
       </Head>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        <script
+          async
+          src={`https://t1.kakaocdn.net/kakao_js_sdk/${process.env.NEXT_PUBLIC_VERSION}/kakao.min.js`}
+          integrity={`${process.env.NEXT_PUBLIC_INTEGRITY}`}
+          crossOrigin="anonymous"
+        ></script>
+        {children}
+      </body>
     </html>
   );
 }

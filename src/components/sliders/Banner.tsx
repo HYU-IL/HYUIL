@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import "./banner.css";
+import Image from 'next/image';
 
 function Banner() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -23,27 +24,46 @@ function Banner() {
   return (
     <div className="slider-container h-[133px] relative ">
       <Slider {...settings}>
-        <div className="flex flex-col justify-center items-center">
-          <div className="h-[100px] px-[2px] flex flex-col items-center justify-center relative">
-            <img className="w-full h-[100px] object-cover rounded-[7px]" src={"/assets/images/BannerImage1.svg"}/>
+        <div className="flex justify-center px-[2px]">
+          <div className="w-full h-[100px] relative">
+            <Image
+              src="/assets/images/BannerImage1.svg"
+              alt="배너"
+              layout="fill"
+              className="object-cover rounded-[7px]"
+            />
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center">
-          <div className="h-[100px] px-[2px] flex flex-col items-center justify-center relative">
-            <img className="w-full h-[100px] object-cover rounded-[7px]" src={"/assets/images/BannerImage2.svg"}/>
+        <div className="flex justify-center px-[2px]">
+          <div className="w-full h-[100px] relative">
+            <Image
+              src="/assets/images/BannerImage2.svg"
+              alt="배너"
+              layout="fill"
+              className="object-cover rounded-[7px]"
+            />
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center">
-          <div className="h-[100px] px-[2px] flex flex-col items-center justify-center relative">
-            <img className="w-full h-[100px] object-cover rounded-[7px]" src={"/assets/images/BannerImage1.svg"}/>
+        <div className="flex justify-center px-[2px]">
+          <div className="w-full h-[100px] relative">
+            <Image
+              src="/assets/images/BannerImage1.svg"
+              alt="배너"
+              layout="fill"
+              className="object-cover rounded-[7px]"
+            />
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center">
-          <div className="h-[100px] px-[2px] flex flex-col items-center justify-center relative">
-            <img className="w-full h-[100px] object-cover rounded-[7px]" src={"/assets/images/BannerImage2.svg"}/>
+        <div className="flex justify-center px-[2px]">
+          <div className="w-full h-[100px] relative px-[2px]">
+            <Image
+              src="/assets/images/BannerImage2.svg"
+              alt="배너"
+              layout="fill"
+              className="object-cover rounded-[7px]"
+            />
           </div>
-        </div>
-          
+        </div>  
       </Slider>
     </div>
   );
