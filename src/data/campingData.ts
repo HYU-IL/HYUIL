@@ -28,7 +28,9 @@ export interface campingDataType {
   ocean: boolean;
   mountain: boolean;
 }
+
 export const campingData: campingDataType[] =
+
 [ 
   {
     id: 1,
@@ -59,7 +61,7 @@ export const campingData: campingDataType[] =
     carav_cnt: 0,
     indv_carav_cnt: 0,
     ocean: false,
-    mountain: true
+    mountain: true,
   },
   {
     id: 2,

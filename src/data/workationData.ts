@@ -12,7 +12,10 @@ export interface workationDataType {
   ocean: boolean;
   mountain: boolean;
 }
-export const workationData: workationDataType[] = [{
+
+export const workationData: workationDataType[] = [
+  {
+
   id: 1,
   name: "파도살롱",
   rdnm_adr: "강원특별자치도 강릉시 강릉대로 198, 2층",
