@@ -13,7 +13,7 @@ export default function MoreTemple() {
           <p className="text-title2 mx-[10px]">푸른 산 속에서 느끼는 휴양</p>
         </div>
         {temple_data.map((data, index) => (
-            <ViewMoreTempleItem
+            <Link href="../detail/temple"><ViewMoreTempleItem
               key={index}
               imgurl={data.image}
               address={data.rdnm_adr}
@@ -23,7 +23,7 @@ export default function MoreTemple() {
               mountain={data.mountain}
               ocean={data.ocean}
 
-            />
+            /></Link>
         ))}
     </div>
   );

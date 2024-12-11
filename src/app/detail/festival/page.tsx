@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import TMP from "../../../../public/assets/images/bg_festival.png";
+import TMP from "../../../../public/assets/images/mockimg/festival1.png";
 import festivalData from "@/data/festivalData";
 import Appbar from "../_component/Appbar";
 import TitleBox from "../_component/TitleBox";

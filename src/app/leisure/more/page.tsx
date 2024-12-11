@@ -20,7 +20,7 @@ export default function More() {
           <p className="text-title2 mx-[10px]">지루한 일상에서 활기를 느껴보자</p>
         </div>
         {leisure_data.map((data, index) => (
-            <ViewMoreLeisureItem
+            <Link href="../detail/leisure"><ViewMoreLeisureItem
               key={index}
               imgurl={data.image}
               address={data.location}
@@ -30,8 +30,7 @@ export default function More() {
               popular={index%3===0 ? true : false}
               mountain={data.mountain}
               ocean={data.ocean}
-
-            />
+            /></Link>
         ))}
     </div>
   );

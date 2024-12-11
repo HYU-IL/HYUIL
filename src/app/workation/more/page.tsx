@@ -25,7 +25,7 @@ export default function More() {
           <p className="text-title2 mx-[10px]">직장인이 꿈꾸는 워케이션</p>
         </div>
         {workation_data.map((data, index) => (
-            <ViewMoreOfficeItem
+            <Link href="../detail/workation"><ViewMoreOfficeItem
               key={index}
               imgurl={data.image}
               address={data.rdnm_adr}
@@ -38,10 +38,10 @@ export default function More() {
               mountain={data.mountain}
               ocean={data.ocean}
 
-            />
+            /></Link>
         ))}
         {residence_data.map((data, index) => (
-            <ViewMoreResidenceItem
+            <Link href="../detail/residence"><ViewMoreResidenceItem
               key={index}
               imgurl={data.image}
               address={data.rdnm_adr}
@@ -54,7 +54,7 @@ export default function More() {
               mountain={data.mountain}
               ocean={data.ocean}
 
-            />
+            /></Link>
         ))}
     </div>
   );

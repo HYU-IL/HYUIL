@@ -24,7 +24,7 @@ export default function More() {
           <p className="text-title2 mx-[10px]">휴일이 추천하는 편안한 휴양지</p>
         </div>
         {temple_data.map((data, index) => (
-            <ViewMoreTempleItem
+            <Link href="../detail/temple"><ViewMoreTempleItem
               key={index}
               imgurl={data.image}
               address={data.rdnm_adr}
@@ -34,10 +34,10 @@ export default function More() {
               mountain={data.mountain}
               ocean={data.ocean}
 
-            />
+            /></Link>
         ))}
         {beach_data.map((data, index) => (
-            <ViewMoreBeachItem
+            <Link href="../detail/beach"><ViewMoreBeachItem
               key={index}
               imgurl={data.image}
               address={data.rdnm_adr.split(" ").slice(1, 3).join(" ")}
@@ -48,7 +48,7 @@ export default function More() {
               mountain={data.mountain}
               ocean={data.ocean}
 
-            />
+            /></Link>
         ))}
     </div>
   );

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import TMP from "../../../../public/assets/images/bg_mountain.png";
+import TMP from "../../../../public/assets/images/mockimg/temple1.png";
 import templestayData from "@/data/templestayData";
 import LocationBox from "../_component/LocationBox";
 import Appbar from "../_component/Appbar";

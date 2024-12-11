@@ -13,7 +13,7 @@ export default function MoreBeach() {
           <p className="text-title2 mx-[10px]">강원도에서 실천하는 진짜 워라벨!</p>
         </div>
         {beach_data.map((data, index) => (
-            <ViewMoreBeachItem
+            <Link href="../detail/beach"><ViewMoreBeachItem
               key={index}
               imgurl={data.image}
               address={data.rdnm_adr.split(" ").slice(1, 3).join(" ")}
@@ -24,7 +24,7 @@ export default function MoreBeach() {
               mountain={data.mountain}
               ocean={data.ocean}
 
-            />
+            /></Link>
         ))}
     </div>
   );

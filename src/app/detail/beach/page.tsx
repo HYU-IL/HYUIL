@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import BeachImage from "../../../../public/assets/images/bg_ocean.png";
+import BeachImage from "../../../../public/assets/images/mockimg/beach1.png";
 import beachData from "@/data/beachData";
 import LocationBox from "../_component/LocationBox";
 import Appbar from "../_component/Appbar";

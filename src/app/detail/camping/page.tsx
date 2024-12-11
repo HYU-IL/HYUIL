@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import TMP from "../../../../public/assets/images/bg_camping.png";
+import TMP from "../../../../public/assets/images/mockimg/camping1.png";
 import campingData from "@/data/campingData";
 import LocationBox from "../_component/LocationBox";
 import Appbar from "../_component/Appbar";
