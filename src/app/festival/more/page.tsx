@@ -20,18 +20,19 @@ export default function More() {
           <p className="text-title2 mx-[10px]">휴일이 추천하는 강원도 축제</p>
         </div>
         {festival_data.map((data, index) => (
-            <Link href="../detail/festival"><ViewMoreFestivalItem
-            key={index}
-              imgurl={data.image}
-              address={data.place}
-              name={data.name}
-              startdate={data.start_date}
-              enddate={data.end_date}
-              liked={false}
-              popular={index%4===0 ? true : false}
-              mountain={data.mountain}
-              ocean={data.ocean}
-            /></Link>
+            <Link href="../detail/festival" key={index}>
+              <ViewMoreFestivalItem
+                imgurl={data.image}
+                address={data.place}
+                name={data.name}
+                startdate={data.start_date}
+                enddate={data.end_date}
+                liked={false}
+                popular={index%4===0 ? true : false}
+                mountain={data.mountain}
+                ocean={data.ocean}
+              />
+            </Link>
         ))}
     </div>
   );

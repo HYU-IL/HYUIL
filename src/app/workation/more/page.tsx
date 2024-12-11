@@ -25,20 +25,20 @@ export default function More() {
           <p className="text-title2 mx-[10px]">직장인이 꿈꾸는 워케이션</p>
         </div>
         {workation_data.map((data, index) => (
-            <Link href="../detail/workation"><ViewMoreOfficeItem
-              key={index}
-              imgurl={data.image}
-              address={data.rdnm_adr}
-              name={data.name}
-              parkinglot={data.parking_lot}
-              wifi={data.wifi}
-              time={data.oper_time}
-              liked={false}
-              popular={index%3==0 ? true : false}
-              mountain={data.mountain}
-              ocean={data.ocean}
-
-            /></Link>
+            <Link href="../detail/workation" key={index}>
+              <ViewMoreOfficeItem
+                imgurl={data.image}
+                address={data.rdnm_adr}
+                name={data.name}
+                parkinglot={data.parking_lot}
+                wifi={data.wifi}
+                time={data.oper_time}
+                liked={false}
+                popular={index%3==0 ? true : false}
+                mountain={data.mountain}
+                ocean={data.ocean}
+              />
+            </Link>
         ))}
         {residence_data.map((data, index) => (
             <Link href="../detail/residence" key={index}>
