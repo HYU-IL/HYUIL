@@ -13,7 +13,9 @@ export interface workationDataType {
   mountain: boolean;
 }
 
-const workationData: workationDataType[] = [{
+export const workationData: workationDataType[] = [
+  {
+
   id: 1,
   name: "파도살롱",
   rdnm_adr: "강원특별자치도 강릉시 강릉대로 198, 2층",
@@ -21,7 +23,7 @@ const workationData: workationDataType[] = [{
   parking_lot: true,
   wifi: true,
   oper_time: "00:00~24:00",
-  image: "",
+  image: "/assets/images/mockimg/office1.png",
   url: "https://thewavecompany.co.kr/padosalon",
   telephone: "070-4140-8867",
   ocean: true,
@@ -34,7 +36,7 @@ const workationData: workationDataType[] = [{
   parking_lot: true,
   wifi: true,
   oper_time: "10:00~18:00",
-  image: "",
+  image: "/assets/images/mockimg/office2.png",
   url: "https://waveworksyy.com/yyVisit",
   telephone: "033-673-3383",
   ocean: true,
@@ -47,7 +49,7 @@ const workationData: workationDataType[] = [{
   parking_lot: true,
   wifi: true,
   oper_time: "00:00~24:00",
-  image: "",
+  image: "/assets/images/mockimg/office3.png",
   url: "https://blog.naver.com/hamoni1212",
   telephone: "0507-1349-5998",
   ocean: false,
@@ -60,7 +62,7 @@ const workationData: workationDataType[] = [{
   parking_lot: true,
   wifi: true,
   oper_time: "09:00~17:00",
-  image: "",
+  image: "/assets/images/mockimg/office4.png",
   url: "https://blog.naver.com/seorin-firstep/223248181816",
   telephone: "033-901-4589",
   ocean: false,
@@ -73,7 +75,7 @@ const workationData: workationDataType[] = [{
   parking_lot: true,
   wifi: true,
   oper_time: "12:00~18:00",
-  image: "",
+  image: "/assets/images/mockimg/office5.png",
   url: "http://hillers.kr/main.html",
   telephone: "033-672-6777",
   ocean: false,

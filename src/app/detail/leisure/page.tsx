@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import TMP from "../../../../public/assets/images/bg_leisure.png";
+import TMP from "../../../../public/assets/images//mockimg/leisure1.png";
 import leisureData from "@/data/leisureData";
 import Appbar from "../_component/Appbar";
 import SearchButton from "../_component/SearchButton";

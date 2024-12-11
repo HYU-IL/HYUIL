@@ -1,4 +1,12 @@
 import SmallInnerTitleItem from "./SmallInnerTitleItem";
+import Link from 'next/link';
+import {campingData} from "@/data/campingData"; 
+import {festivalData} from "@/data/festivalData"; 
+import {leisureData} from "@/data/leisureData"; 
+import {workationData} from "@/data/workationData"; 
+import {beachData} from "@/data/beachData";
+import { residenceData } from "@/data/residenceData";
+import { LikeData } from "@/data/likeData";
 
 interface MapSmallInnerTitleSliderProps {
   id: number;
@@ -6,6 +14,14 @@ interface MapSmallInnerTitleSliderProps {
 }
 
 const MapSmallInnerTitleSlider = ({ id, location }: MapSmallInnerTitleSliderProps) => {
+  const like_data = LikeData;
+  const camping_data = campingData;
+  const festival_data = festivalData;
+  const leisure_data = leisureData;
+  const workation_data = workationData;
+  const beach_data = beachData;
+  const residence_data = residenceData;
+
   const locationDescription = (location: string) => {
     switch (location) {
       case "철원":
@@ -49,6 +65,44 @@ const MapSmallInnerTitleSlider = ({ id, location }: MapSmallInnerTitleSliderProp
     }
   };
 
+  const nextlink = (id: number) => {
+    switch (id) {
+      case 0:
+        return "/mypage/like";
+      case 1:
+        return "/workation/more";
+      case 2:
+        return "/camping/more";
+      case 3:
+        return "/resort/more";
+      case 4:
+        return "/leisure/more";
+      case 5:
+        return "/festival/more";
+      default:
+        return "/main";
+    }
+  };
+
+  const slider_data = (id: number) => {
+    switch (id) {
+      case 0:
+        return like_data;
+      case 1:
+        return workation_data;
+      case 2:
+        return camping_data;
+      case 3:
+        return beach_data;
+      case 4:
+        return leisure_data;
+      case 5:
+        return festival_data;
+      default:
+        return workation_data;
+    }
+  };
+
   const Description = locationDescription(location);
 
   const renderDescription = (category: string) => (
@@ -57,7 +111,7 @@ const MapSmallInnerTitleSlider = ({ id, location }: MapSmallInnerTitleSliderProp
         <p className="text-subtitle3 text-primary-core">{Description}&nbsp;{location}</p>
         <p className="text-subtitle3 text-gray-900">{category}</p>
       </div>
-      <div className="text-caption2 text-gray-800 mr-[16px]">더보기 {'>'} </div>
+      <Link href={nextlink(id)}><div className="text-caption2 text-gray-800 mr-[16px]">더보기 {'>'} </div></Link>
     </div>
   );
 
@@ -69,7 +123,7 @@ const MapSmallInnerTitleSlider = ({ id, location }: MapSmallInnerTitleSliderProp
             <p className="text-subtitle3 text-gray-900">내가 선택한</p>
             <p className="text-subtitle3 text-primary-core">찜</p>
           </div>
-          <div className="text-caption2 text-gray-800 mr-[16px]">더보기 {'>'} </div>
+          <Link href={"/mypage/like"}><div className="text-caption2 text-gray-800 mr-[16px]">더보기 {'>'} </div></Link>
         </div>
       )}
       {id === 1 && renderDescription("에서 워케이션!")}
@@ -79,12 +133,9 @@ const MapSmallInnerTitleSlider = ({ id, location }: MapSmallInnerTitleSliderProp
       {id === 5 && renderDescription("에서 지역축제!")}
 
       <div className="whitespace-nowrap overflow-x-auto flex gap-x-[8px] scrollbar-hide">
-        <SmallInnerTitleItem />
-        <SmallInnerTitleItem />
-        <SmallInnerTitleItem />
-        <SmallInnerTitleItem />
-        <SmallInnerTitleItem />
-        <SmallInnerTitleItem />
+        {(slider_data(id)).map((item, index) => (
+          <SmallInnerTitleItem key={index} label={item.name} imgurl={item.image} />
+        ))}
       </div>
       <div className="h-[48px]" />
     </div>

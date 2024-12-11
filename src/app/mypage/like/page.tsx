@@ -1,17 +1,22 @@
+"use client";
 import Image from 'next/image';
-import CategoryTitle from "@/components/common/CategoryTitle";
+import { useRouter } from "next/navigation";
 import { GrPrevious } from "react-icons/gr";
+import {LikeData} from "@/data/likeData";
 
-const LikeList = [
-  { name: "강릉 디프라이빗 캠핑 & 글램핑", address: "강릉 수성읍 경반리 583-17", subtitle: "글램핑 · 카라반 · 캠핑", imgurl: "/hotelImage.png" },
-  { name: "강릉 디프라이빗 캠핑 & 글램핑", address: "강릉 수성읍 경반리 583-17", subtitle: "글램핑 · 카라반 · 캠핑", imgurl: "" },
-];
+const LikeList = LikeData;
 
 export default function Like() {
+    const router = useRouter();
+
+    const handleBack = () => {
+      router.back();
+    };
+
   return (
     <div className="w-full h-[100vh]">
       <div className="relative flex justify-between items-center p-[14px] border-b border-[#ededed]">
-            <GrPrevious className="ml-0 w-[20px] h-[20px] text-gray-600"/>
+            <GrPrevious className="ml-0 w-[20px] h-[20px] text-gray-600" onClick={handleBack}/>
             <div className="absolute left-1/2 transform -translate-x-1/2 text-primary-core text-title2">나의 찜</div>
         </div>
       <div className="w-[90%] m-auto">
@@ -34,14 +39,14 @@ export default function Like() {
               {LikeList.map((like, index) => (
                 <div key={index} className="flex my-[20px]">
                   <div className="w-[80px] h-[80px] min-w-[80px] bg-[#f2f2f2] rounded-[4px] overflow-hidden relative">
-                    {like.imgurl ? (
-                      <Image src={like.imgurl} alt={`${like.name} 이미지`} fill className="object-cover" />
+                    {like.image ? (
+                      <Image src={like.image} alt={`${like.name} 이미지`} fill className="object-cover" />
                     ) : null}
                   </div>
                   <div className="mt-[0px] ml-[16px]">
-                    <p className="text-gray-700 text-caption2">{like.subtitle}</p>
+                    <p className="text-gray-700 text-caption2">{like.category}</p>
                     <p className="text-gray-900 text-subtitle3">{like.name}</p>
-                    <p className="text-primary-core text-caption3 my-[4px]">{like.address}</p>
+                    <p className="text-primary-core text-caption3 my-[4px]">{like.rdmn_adr}</p>
                   </div>
                 </div>
               ))}

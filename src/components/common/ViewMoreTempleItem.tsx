@@ -33,14 +33,14 @@ export default function ViewMoreTempleItem({imgurl, address, name, liked, popula
                             {mountain && <Image src="/assets/icons/Mountain.svg" width={64} height={24} alt="mountain" className="mx-[2px]"/>}
                             {ocean && <Image src="/assets/icons/Ocean.svg" width={47} height={24} alt="ocean" className="mx-[2px]"/>}
                         </div>
-                        <p className="text-caption2 text-primary-900">{address} 템플스테이</p>
+                        <p className="text-caption2 text-primary-900">{address.split(" ")[1]} 템플스테이</p>
                         <p className="text-subtitle3 text-primary-900">{name}</p>
                     </div>
                     <div className="w-full flex flex-col items-end">
                         <div className="w-[28px] h-[28px] rounded-[8px] my-[5px] bg-gray-400 flex justify-center items-center">
                             <VscHeartFilled className={`text-[25px] ${liked ? "text-system-red" : "text-gray-500"}`}/>
                         </div>
-                        <p className="text-caption1 text-gray-600">{address}</p>
+                        <p className="text-caption1 text-gray-600">{address.split(" ")[1]}&nbsp; {address.split(" ")[2]}</p>
                     </div>
                     
                 </div>

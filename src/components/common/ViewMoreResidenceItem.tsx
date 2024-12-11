@@ -38,7 +38,7 @@ export default function ViewMoreResidenceItem({imgurl, address, name, wifi, park
                             {mountain && <Image src="/assets/icons/Mountain.svg" width={64} height={24} alt="mountain" className="mx-[2px]"/>}
                             {ocean && <Image src="/assets/icons/Ocean.svg" width={47} height={24} alt="ocean" className="mx-[2px]"/>}
                         </div>
-                        <p className="text-caption2 text-primary-900">강릉시 숙소</p>
+                        <p className="text-caption2 text-primary-900">{address.split(" ")[1]} 숙소</p>
                         <p className="text-subtitle3 text-primary-900">{name}</p>
                         <p className="text-caption2 text-gray-700">숙소</p>
                     </div>
