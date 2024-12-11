@@ -96,7 +96,7 @@ export default function Main() {
           </div>
           <div className="whitespace-nowrap overflow-x-auto flex gap-x-[8px] scrollbar-hide">
           {workation_data.map((place, index) => (
-              <Link href="../detail/workation"><LargeListItem key={index} label={place.name} imgurl={place.image}/></Link>
+              <Link href="../detail/workation" key={index}><LargeListItem label={place.name} imgurl={place.image}/></Link>
             ))}
           </div>
 
@@ -112,7 +112,7 @@ export default function Main() {
           </div>
           <div className="whitespace-nowrap overflow-x-auto flex gap-x-[8px] scrollbar-hide">
           {festival_data.map((item, index) => (
-              <Link href="../detail/festival"><SmallListItem key={index} label={item.name} imgurl={item.image} /></Link>
+              <Link href="../detail/festival" key={index}><SmallListItem label={item.name} imgurl={item.image} /></Link>
             ))}
           </div>
 
@@ -131,7 +131,7 @@ export default function Main() {
           </div>
           <div className="whitespace-nowrap overflow-x-auto flex gap-x-[8px] scrollbar-hide">
           {camping_data.map((item, index) => (
-              <Link href="/detail/camping"><MediumInnerTitleItem key={index} label={item.name} imgurl={item.image} /></Link>
+              <Link href="/detail/camping" key={index}><MediumInnerTitleItem label={item.name} imgurl={item.image} /></Link>
             ))}
           </div>
 
@@ -147,7 +147,7 @@ export default function Main() {
           </div>
           <div className="whitespace-nowrap overflow-x-auto flex gap-x-[8px] scrollbar-hide">
           {leisure_data.map((item, index) => (
-              <Link href="/detail/leisure"><MediumListItem key={index} label={item.name} imgurl={item.image} addr={""} /></Link>
+              <Link href="/detail/leisure" key={index}><MediumListItem label={item.name} imgurl={item.image} addr={""} /></Link>
             ))}
           </div>
         </div>

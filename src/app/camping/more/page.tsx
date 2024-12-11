@@ -20,8 +20,8 @@ export default function More() {
           <p className="text-title2 mx-[10px]">휴일이 추천하는 강원도 캠핑</p>
         </div>
         {camping_data.map((data, index) => (
-            <Link href="../detail/camping"><ViewMoreCampingItem
-              key={index}
+          <Link href="../detail/camping" key={index}>
+            <ViewMoreCampingItem
               imgurl={data.image}
               address={data.rdnm_adr}
               name={data.name}
@@ -31,7 +31,8 @@ export default function More() {
               popular={index%3 === 0 ? true : false}
               mountain={data.mountain}
               ocean={data.ocean}
-            /></Link>
+            />
+          </Link>
         ))}
     </div>
   );

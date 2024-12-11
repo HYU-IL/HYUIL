@@ -41,20 +41,20 @@ export default function More() {
             /></Link>
         ))}
         {residence_data.map((data, index) => (
-            <Link href="../detail/residence"><ViewMoreResidenceItem
-              key={index}
-              imgurl={data.image}
-              address={data.rdnm_adr}
-              name={data.name}
-              parkinglot={data.parking_lot}
-              wifi={data.wifi}
-              capacity={data.capacity}
-              liked={false}
-              popular={index%5==0 ? true : false}
-              mountain={data.mountain}
-              ocean={data.ocean}
-
-            /></Link>
+            <Link href="../detail/residence" key={index}>
+              <ViewMoreResidenceItem
+                imgurl={data.image}
+                address={data.rdnm_adr}
+                name={data.name}
+                parkinglot={data.parking_lot}
+                wifi={data.wifi}
+                capacity={data.capacity}
+                liked={false}
+                popular={index%5==0 ? true : false}
+                mountain={data.mountain}
+                ocean={data.ocean}
+              />
+            </Link>
         ))}
     </div>
   );

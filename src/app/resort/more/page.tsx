@@ -24,31 +24,32 @@ export default function More() {
           <p className="text-title2 mx-[10px]">휴일이 추천하는 편안한 휴양지</p>
         </div>
         {temple_data.map((data, index) => (
-            <Link href="../detail/temple"><ViewMoreTempleItem
-              key={index}
-              imgurl={data.image}
-              address={data.rdnm_adr}
-              name={data.name}
-              liked={false}
-              popular={index%2===0 ? true : false}
-              mountain={data.mountain}
-              ocean={data.ocean}
-
-            /></Link>
+            <Link href="../detail/temple" key={index}>
+              <ViewMoreTempleItem
+                imgurl={data.image}
+                address={data.rdnm_adr}
+                name={data.name}
+                liked={false}
+                popular={index%2===0 ? true : false}
+                mountain={data.mountain}
+                ocean={data.ocean}
+              />
+            </Link>
         ))}
         {beach_data.map((data, index) => (
-            <Link href="../detail/beach"><ViewMoreBeachItem
-              key={index}
-              imgurl={data.image}
-              address={data.rdnm_adr.split(" ").slice(1, 3).join(" ")}
-              name={data.name}
-              parkinglot={data.parking_lot}
-              liked={false}
-              popular={index%2===0 ? true : false}
-              mountain={data.mountain}
-              ocean={data.ocean}
-
-            /></Link>
+            <Link href="../detail/beach" key={index}>
+              <ViewMoreBeachItem
+                key={index}
+                imgurl={data.image}
+                address={data.rdnm_adr.split(" ").slice(1, 3).join(" ")}
+                name={data.name}
+                parkinglot={data.parking_lot}
+                liked={false}
+                popular={index%2===0 ? true : false}
+                mountain={data.mountain}
+                ocean={data.ocean}
+              />
+            </Link>
         ))}
     </div>
   );

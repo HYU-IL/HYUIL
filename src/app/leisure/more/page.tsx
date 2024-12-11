@@ -20,17 +20,19 @@ export default function More() {
           <p className="text-title2 mx-[10px]">지루한 일상에서 활기를 느껴보자</p>
         </div>
         {leisure_data.map((data, index) => (
-            <Link href="../detail/leisure"><ViewMoreLeisureItem
-              key={index}
-              imgurl={data.image}
-              address={data.location}
-              name={data.name}
-              parkinglot={data.parking_lot}
-              liked={false}
-              popular={index%3===0 ? true : false}
-              mountain={data.mountain}
-              ocean={data.ocean}
-            /></Link>
+            <Link href="../detail/leisure" key={index}>
+              <ViewMoreLeisureItem
+                key={index}
+                imgurl={data.image}
+                address={data.location}
+                name={data.name}
+                parkinglot={data.parking_lot}
+                liked={false}
+                popular={index%3===0 ? true : false}
+                mountain={data.mountain}
+                ocean={data.ocean}
+              />
+            </Link>
         ))}
     </div>
   );
