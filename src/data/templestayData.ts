@@ -8,6 +8,7 @@ export interface templestayDataType {
   ocean: boolean;
   mountain: boolean;
 }
+
 const templestayData: templestayDataType[] = [
   {
     id: 1,

@@ -11,6 +11,7 @@ export interface beachDataType {
   mountain: boolean;
   ocean: boolean;
 }
+
 const beachData: beachDataType[] = [
   {
   id: 1,

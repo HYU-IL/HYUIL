@@ -1,18 +1,19 @@
 export interface festivalDataType {
-  id: number,
-  name: string,
-  image: string,
-  start_date: string,
-  end_date: string,
-  place: string,
-  rdnm_adr: string,
-  telephone: string,
-  description: string,
-  parking_lot: boolean,
-  url: string,
+  id: number;
+  name: string;
+  image: string;
+  start_date: string;
+  end_date: string;
+  place: string;
+  rdnm_adr: string;
+  telephone: string;
+  description: string;
+  parking_lot: boolean;
+  url: string;
   ocean: boolean;
   mountain: boolean;
 }
+
 const festivalData: festivalDataType[] = [
   {
     id: 1,
