@@ -149,6 +149,20 @@ const KakaoMap = forwardRef(function KakaoMap(_, ref) {
                         />
                       </header>
                       <section className="flex flex-col pt-[8px] pb-[16px] gap-y-[4px]">
+                        <div className="inline-flex items-center w-fit gap-[4px] px-[8px] py-[4px] border rounded-full cursor-pointer whitespace-nowrap overflow-visible shadow-chip border-sub-core bg-sub-100 ">
+                          <Image
+                            src={
+                              ChipList.find((c) => c.label === place.category)
+                                ?.icon
+                            }
+                            alt={`${place.category} icon`}
+                            width={24}
+                            height={24}
+                          />
+                          <span className="w-fi text-gray-900 text-body2">
+                            {place.category}
+                          </span>
+                        </div>
                         <p className="text-subtitle2 text-gray-600">
                           {place.address}
                         </p>
