@@ -1,0 +1,11 @@
+<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon / tabler-icons / parking" clip-path="url(#clip0_153_1448)">
+<path id="Vector" d="M15.526 3.35547H5.52604C4.60557 3.35547 3.85938 4.10166 3.85938 5.02214V15.0221C3.85938 15.9426 4.60557 16.6888 5.52604 16.6888H15.526C16.4465 16.6888 17.1927 15.9426 17.1927 15.0221V5.02214C17.1927 4.10166 16.4465 3.35547 15.526 3.35547Z" fill="#3DA2FF"/>
+<path id="Vector_2" d="M8.02734 13.3561V6.68945H11.3607C11.8027 6.68945 12.2266 6.86505 12.5392 7.17761C12.8517 7.49017 13.0273 7.91409 13.0273 8.35612C13.0273 8.79815 12.8517 9.22207 12.5392 9.53463C12.2266 9.84719 11.8027 10.0228 11.3607 10.0228H8.02734" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_153_1448">
+<rect width="20" height="20" fill="white" transform="translate(0.527344 0.0224609)"/>
+</clipPath>
+</defs>
+</svg>

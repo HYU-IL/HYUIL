@@ -12,6 +12,7 @@ import {
   ChipBalloon,
   ChipCoffee,
   ChipFood,
+  ChipParking,
 } from "./index";
 import CloseButton from "../../../public/assets/icons/Close.svg";
 import MapChip from "../buttons/MapChip";
@@ -55,7 +56,7 @@ const KakaoMap = forwardRef(function KakaoMap(_, ref) {
       marker: "/assets/images/foothold/foodMarker.svg",
     },
     {
-      icon: ChipHeart, // 나의 찜 아이콘 재사용
+      icon: ChipParking, // 나의 찜 아이콘 재사용
       label: "주차장",
       type: "PK6",
       marker: "/assets/images/foothold/parkingMarker.svg",
@@ -63,8 +64,8 @@ const KakaoMap = forwardRef(function KakaoMap(_, ref) {
   ];
 
   const [center, setCenter] = useState<Center>({
-    lat: 37.764519,
-    lng: 128.899617,
+    lat: 37.762252,
+    lng: 128.898057,
   });
   const [mapInstance, setMapInstance] = useState<kakao.maps.Map | null>(null);
   const [selectedChips, setSelectedChips] = useState<string[]>([]);
@@ -113,6 +114,20 @@ const KakaoMap = forwardRef(function KakaoMap(_, ref) {
         draggable={true}
         className="w-full h-full"
       >
+        <MapMarker // 마커를 생성합니다
+          position={{
+            // 마커가 표시될 위치입니다
+            lat: 37.762252,
+            lng: 128.898057,
+          }}
+          image={{
+            src: "/assets/images/foothold/locationMarker.svg", // 마커이미지의 주소입니다
+            size: {
+              width: 46,
+              height: 49,
+            }, // 마커이미지의 크기입니다
+          }}
+        />
         {selectedChips.flatMap((chip) =>
           footholdData
             .filter((place) => place.category === chip)
