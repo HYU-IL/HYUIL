@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import LOGO from "../../../public/assets/images/logo.svg";
 import PAPERICON from "../../../public/assets/icons/paperplaneicon.svg";
 import StepCard from "./_component/StepCard";
@@ -22,7 +23,8 @@ import BYCAROFF from "../../../public/assets/images/step_car_off.svg";
 import BYROADOFF from "../../../public/assets/images/step_road_off.svg";
 import DOWN from "../../../public/assets/icons/downicon.svg";
 import UP from "../../../public/assets/icons/upicon.svg";
-import KAKAO from "../../../public/assets/images/kakaobutton.svg";
+import KAKAO from "../../../public/assets/images/kakaobtn.svg";
+import KakaoButton from "./_component/KakaoButton";
 export default function SignupPage() {
   const [whatStep, setWhatStep] = useState<number>(1); // percentage bar를 위한
   const whatPercent =
@@ -80,7 +82,6 @@ export default function SignupPage() {
       scrollCallBack(3);
       setWhatStep(3);
     }
-    console.log(data.residence);
   };
 
   // step3 버튼 클릭 메소드
@@ -103,15 +104,7 @@ export default function SignupPage() {
       {/* 상단바 div(고정) */}
       <div className="flex flex-col w-full fixed top-0 left-0 bg-opacity-0 z-50">
         <div className="w-full h-[48px] items-center justify-center flex border-b bg-white">
-          <Image
-            src={LOGO}
-            alt="logo"
-            className="w-[76px]"
-            onClick={() => {
-              console.log(whatStep);
-              console.log(data);
-            }}
-          />
+          <Image src={LOGO} alt="logo" className="w-[76px]" />
         </div>
         <div className="flex flex-col w-full items-center justify-center">
           <div className="flex flex-row w-full h-[3px]">
@@ -364,7 +357,10 @@ export default function SignupPage() {
 
         <div className="flex flex-col w-full h-[30%] items-center gap-2 text-gray-800 text-body2 mt-[150px]">
           SNS 계정으로 간편 가입하기
-          <Image src={KAKAO} alt="kakao" onClick={() => {}} />
+          {/* <KakaoButton/> */}
+          <Link href={"/main"}>
+            <Image alt="kakaobtn" src={KAKAO} />
+          </Link>
         </div>
       </div>
     </div>

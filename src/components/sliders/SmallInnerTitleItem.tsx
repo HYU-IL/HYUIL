@@ -3,20 +3,20 @@ import tempImage from "../../../public/tempImage.png";
 
 interface SmallInnerTitleItemProps {
   label?: string;
-  //   imgurl?: string;
+  imgurl?: string;
 }
 
 function SmallInnerTitleItem({
   label,
-  //   imgurl,
-  ...props
+  imgurl,
+  //...props
 }: SmallInnerTitleItemProps) {
   return (
-    <div className="relative border-black rounded-[4px] w-[160px] h-[121px] overflow-hidden">
+    <div className="relative border-black rounded-[4px] min-w-[160px] h-[121px] overflow-hidden">
       <Image
         alt={"backgroundImg"}
         layout="fill"
-        src={tempImage}
+        src={imgurl ? imgurl : tempImage}
         objectFit="cover"
       />
       <div className="flex absolute justify-center items-center w-full h-[17.6px] bg-black opacity-40 z-10  bottom-0 rounded-b-[4px]">
