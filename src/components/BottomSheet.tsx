@@ -67,8 +67,6 @@ const BottomSheet = () => {
       </div>
       {isOpen && (
         <div className="px-[24px] pt-[24px]">
-          {/* bottom sheet 내용 들어갈 부분 */}
-
           <div className="flex items-center justify-between w-full text-title2 text-primary-core">
             나의 찜
             <Link href="" className="text-caption2 text-gray-800">
@@ -76,10 +74,19 @@ const BottomSheet = () => {
             </Link>
           </div>
           <div className="w-full whitespace-nowrap overflow-x-auto flex gap-x-[4px] scrollbar-hide pt-[12px] pb-[28px]">
-            <SmallBottomSheetItem label="강릉 그랑블루요트" imgurl="/tmp.jpg" />
-            <SmallBottomSheetItem label="강릉 그랑블루요트" imgurl="/tmp.jpg" />
-            <SmallBottomSheetItem label="강릉 그랑블루요트" imgurl="/tmp.jpg" />
-            <SmallBottomSheetItem label="강릉 그랑블루요트" imgurl="/tmp.jpg" />
+            <SmallBottomSheetItem
+              label="강릉 스카이베이 숙소"
+              imgurl="/assets/images/mockimg/residence1.png"
+            />
+            <SmallBottomSheetItem
+              label="웨이브웍스 양양"
+              imgurl="/assets/images/mockimg/office2.png"
+            />
+            <SmallBottomSheetItem label="속초 해수욕장" imgurl="/tmp.jpg" />
+            <SmallBottomSheetItem
+              label="강릉 그랑블루요트"
+              imgurl="/assets/images/mockimg/beach3.png"
+            />
           </div>
         </div>
       )}
