@@ -1,40 +1,39 @@
-.slick-dots{
-    display: flex;
-    justify-content: start;
-    align-items: center;
+.slider-container .slick-dots {
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
 
-.slick-dots li{
-    padding: 0px;
-    margin: 0px 1px;
+.slider-container .slick-dots li {
+  padding: 0px;
+  margin: 0px 1px;
 }
 
-.slick-dots li button{
+.slider-container .slick-dots li button {
   height: 7.3px;
-  text-align: center; 
+  text-align: center;
 }
 
+.slider-container .slick-dots li button::before {
+  width: 20.67px;
+  height: 7.3px;
+  line-height: 0;
+  text-align: center;
+  font-size: 7.4px;
+  color: #dbdbdb;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .slick-dots li button::before {
-    width: 20.67px; 
-    height: 7.3px;
-    line-height: 0;
-    text-align: center; 
-    font-size: 7.4px;
-    color: #dbdbdb;
-    opacity: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.slider-container .slick-dots .slick-active button::before {
+  color: #5fba8e !important;
+  background-color: #5fba8e;
+  opacity: 1;
+  border-radius: 8px !important;
+}
 
-  
-  .slick-dots .slick-active button::before {
-    color: #5fba8e !important; 
-    background-color: #5fba8e; 
-    opacity: 1;
-    border-radius: 8px !important; 
-  }
   
 
 
